@@ -1,0 +1,56 @@
+/* Professional Dark Theme for SentinelX */
+
+QMainWindow {
+    background-color: #0E1117;
+}
+
+/* Sidebar styling */
+#Sidebar {
+    background-color: #161B22;
+    border-right: 1px solid #30363D;
+}
+
+#AppTitle {
+    color: #58A6FF;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Navigation Buttons */
+#NavButton {
+    background-color: transparent;
+    color: #C9D1D9;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 15px;
+    border: none;
+    border-radius: 6px;
+}
+
+#NavButton:hover {
+    background-color: #21262D;
+    color: #FFFFFF;
+}
+
+#NavButton:pressed {
+    background-color: #30363D;
+}
+
+#NavButton:checked {
+    background-color: #1F6FEB;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* Main Content Area */
+#MainContent {
+    background-color: #0D1117;
+}
+
+#PageContent {
+    color: #8B949E;
+    font-size: 20px;
+}

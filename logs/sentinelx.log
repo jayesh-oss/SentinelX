@@ -1,0 +1,317 @@
+2026-02-23 01:22:28,456 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:22:28,474 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:22:28,474 - root - WARNING - No YARA rules found in directory.
+2026-02-23 01:24:47,357 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:24:47,358 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:24:47,358 - root - WARNING - No YARA rules found in directory.
+2026-02-23 01:31:04,009 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:31:04,010 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:31:04,010 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:31:17,693 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:31:17,754 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 01:32:32,151 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:32:32,151 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:32:32,152 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:32:44,156 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:32:44,156 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:32:44,157 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:33:42,223 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:33:42,223 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:33:42,224 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:34:11,012 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:34:11,057 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 01:36:03,761 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:36:03,761 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:36:03,762 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:44:22,939 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:44:22,939 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:44:22,940 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:44:22,940 - root - INFO - Successfully compiled 1 YARA rule files.
+2026-02-23 01:44:22,940 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 01:44:22,941 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 01:44:22,967 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 01:54:08,256 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 01:54:08,256 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 01:54:09,077 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 01:54:09,891 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 01:54:09,892 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 01:54:09,892 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 01:54:10,184 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 01:55:16,507 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 01:55:17,582 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:04:34,535 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:34,535 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:34,535 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:34,536 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:34,536 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:34,536 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:35,961 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:35,997 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:36,070 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:36,070 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:04:36,070 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:04:36,123 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:04:36,318 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:36,357 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:04:36,390 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:36,391 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:04:36,536 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:04:36,537 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:04:46,396 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:04:48,232 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:10:05,033 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:10:05,034 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:10:05,819 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:10:06,588 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:10:06,588 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:10:06,589 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:10:07,387 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:10:07,387 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:10:07,388 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:10:07,403 - root - ERROR - Failed to start WMI Process Watcher: <x_wmi: WMI returned a syntax error: you're probably running inside a thread without first calling pythoncom.CoInitialize[Ex] (no underlying exception)>
+2026-02-23 02:10:07,416 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:10:38,008 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:10:38,008 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:10:38,791 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:10:39,585 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:10:39,585 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:10:39,586 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:10:40,356 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:10:40,357 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:10:40,357 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:10:40,372 - root - ERROR - Failed to start WMI Process Watcher: <x_wmi: WMI returned a syntax error: you're probably running inside a thread without first calling pythoncom.CoInitialize[Ex] (no underlying exception)>
+2026-02-23 02:10:40,383 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:11:58,447 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:11:58,448 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:11:59,267 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:12:00,079 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:12:00,080 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:12:00,080 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:12:00,891 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:12:00,892 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:12:00,892 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:12:00,921 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:13:32,636 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:13:32,636 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:13:33,435 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:13:34,227 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:13:34,228 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:13:34,228 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:13:35,017 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:13:35,018 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:13:35,018 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:13:35,046 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:13:53,006 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:13:53,007 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:13:53,771 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:13:54,537 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:13:54,537 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:13:54,538 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:13:55,308 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:13:55,309 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:13:55,309 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:13:55,335 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:24:07,908 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:24:07,909 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:24:08,689 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:24:09,464 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:24:09,464 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:24:09,465 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:24:10,238 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:24:10,238 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:24:10,238 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:24:10,264 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:24:40,659 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:24:41,054 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:24:41,055 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:24:44,164 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:24:45,188 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:27:11,250 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:27:11,251 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:27:12,058 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:27:12,859 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:27:12,859 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:27:12,860 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:27:13,658 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:27:13,659 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:27:13,659 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:27:13,694 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:34:40,065 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:34:40,066 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:34:40,829 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:34:41,583 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:34:41,583 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:34:41,584 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:34:42,350 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:34:42,350 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:34:42,350 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:34:42,379 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:34:42,381 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:34:47,854 - root - INFO - Starting System-Wide Memory Hunt...
+2026-02-23 02:34:48,771 - root - INFO - Memory Hunt Completed. RWX Pages Found: 160 across 52 Processes.
+2026-02-23 02:35:43,303 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:35:44,372 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:35:44,377 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:35:45,370 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:35:45,376 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:43:42,730 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:43:42,731 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:43:43,536 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:43:43,541 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:43:43,546 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:43:44,317 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:43:44,318 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:43:44,318 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:43:44,322 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:43:45,093 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:43:45,093 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:43:45,094 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:43:45,122 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:43:45,124 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:44:02,922 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:44:03,662 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:44:04,987 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 02:44:05,023 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:44:05,357 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\8deb6c9637432be1e33061c53fce369f_Rubeus.exe.isolated
+2026-02-23 02:44:05,362 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:45:00,566 - root - INFO - [LIVE BEHAVIOR FEED] Launch: \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe {E041C90B-68BA-42C9-991E-477B73A75C90} -Embedding (PID: 27284)
+2026-02-23 02:45:00,759 - root - WARNING - THREAT EXECUTED! Terminating PID 27284: \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe {E041C90B-68BA-42C9-991E-477B73A75C90} -Embedding
+2026-02-23 02:45:00,761 - root - INFO - Successfully killed malicious process PID 27284
+2026-02-23 02:45:00,762 - root - ERROR - Failed to quarantine \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe: [WinError 5] Access is denied: '\\\\?\\C:\\Windows\\System32\\SecurityHealth\\10.0.29429.1000-0\\SecurityHealthHost.exe'
+2026-02-23 02:45:03,824 - root - INFO - [LIVE BEHAVIOR FEED] Launch: \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe {E041C90B-68BA-42C9-991E-477B73A75C90} -Embedding (PID: 24080)
+2026-02-23 02:45:04,165 - root - WARNING - THREAT EXECUTED! Terminating PID 24080: \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe {E041C90B-68BA-42C9-991E-477B73A75C90} -Embedding
+2026-02-23 02:45:04,167 - root - INFO - Successfully killed malicious process PID 24080
+2026-02-23 02:45:04,168 - root - ERROR - Failed to quarantine \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe: [WinError 5] Access is denied: '\\\\?\\C:\\Windows\\System32\\SecurityHealth\\10.0.29429.1000-0\\SecurityHealthHost.exe'
+2026-02-23 02:45:20,036 - root - INFO - [LIVE BEHAVIOR FEED] Launch: \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe {E041C90B-68BA-42C9-991E-477B73A75C90} -Embedding (PID: 26056)
+2026-02-23 02:45:20,400 - root - WARNING - THREAT EXECUTED! Terminating PID 26056: \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe {E041C90B-68BA-42C9-991E-477B73A75C90} -Embedding
+2026-02-23 02:45:20,400 - root - ERROR - Failed to kill process 26056: process PID not found (pid=26056)
+2026-02-23 02:45:20,401 - root - ERROR - Failed to quarantine \\?\C:\Windows\System32\SecurityHealth\10.0.29429.1000-0\SecurityHealthHost.exe: [WinError 5] Access is denied: '\\\\?\\C:\\Windows\\System32\\SecurityHealth\\10.0.29429.1000-0\\SecurityHealthHost.exe'
+2026-02-23 02:48:35,342 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:48:35,342 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:48:36,129 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:48:36,133 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:48:36,137 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:48:36,905 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:48:36,905 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:48:36,906 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:48:36,910 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:48:37,694 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:48:37,695 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:48:37,695 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:48:37,725 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:48:37,727 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:48:47,226 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:48:47,975 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:48:49,282 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 02:48:49,316 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:48:50,621 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 02:48:50,627 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:51:23,970 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:51:23,970 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:51:25,496 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:51:25,527 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:51:25,528 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process
+2026-02-23 02:51:25,531 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 02:52:16,999 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:52:17,000 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:52:17,781 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:52:17,786 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:52:17,791 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:52:18,571 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:52:18,572 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:52:18,573 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:52:18,577 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:52:19,358 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:52:19,359 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:52:19,359 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:52:19,388 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:52:19,391 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:52:50,922 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:52:51,675 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:52:52,122 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 02:52:52,126 - root - INFO - Database initialized at sentinelx.db
+2026-02-23 02:56:22,038 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 02:56:22,039 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:56:22,853 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:56:22,858 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:56:22,863 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:56:23,677 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:56:23,677 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:56:23,678 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 02:56:23,682 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 02:56:24,490 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 02:56:24,491 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:56:24,491 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 02:56:24,523 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:56:24,525 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 02:56:38,135 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:56:38,135 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:56:38,135 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:38,136 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:38,136 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:38,136 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:38,702 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:56:38,716 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:56:38,770 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:56:38,774 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 02:56:40,159 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:40,282 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:40,287 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:56:40,469 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:40,504 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:56:40,506 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 02:57:05,808 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:05,809 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:05,809 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:05,810 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:05,810 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:05,811 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:06,423 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:06,474 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:06,484 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:57:06,484 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:57:06,534 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:06,537 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 02:57:07,402 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:07,486 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:57:07,839 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:07,839 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:07,852 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [Errno 2] No such file or directory: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:57:07,853 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 02:57:54,728 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:54,728 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:54,728 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:54,729 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:54,730 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:54,730 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:55,376 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:55,420 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:57:55,445 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:55,496 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:57:55,498 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 2] The system cannot find the file specified: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:57:55,500 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 02:57:56,962 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:57,086 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:57,163 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:57:57,167 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 02:58:17,944 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:58:17,944 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:58:17,944 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:58:17,945 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:58:17,946 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:58:18,471 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:58:18,474 - root - ERROR - Failed to quarantine J:\SentinelX_Test\Rubeus.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\SentinelX_Test\\Rubeus.exe'
+2026-02-23 02:58:18,535 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:58:18,538 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 02:58:19,890 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:58:19,890 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:58:19,937 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:58:19,954 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [Errno 2] No such file or directory: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:58:19,955 - root - ERROR - Failed to quarantine J:\SentinelX_Test\mimikatz.exe: [Errno 2] No such file or directory: 'J:\\SentinelX_Test\\mimikatz.exe'
+2026-02-23 02:58:19,955 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 02:59:00,163 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:59:00,597 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 02:59:00,600 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 02:59:22,547 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:59:23,755 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 02:59:23,759 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated

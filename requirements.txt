@@ -1,0 +1,10 @@
+PySide6
+yara-python
+scikit-learn
+xgboost
+psutil
+pefile
+vt-py
+watchdog
+pywin32
+cryptography
