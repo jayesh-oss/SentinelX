@@ -315,3 +315,111 @@
 2026-02-23 02:59:22,547 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
 2026-02-23 02:59:23,755 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
 2026-02-23 02:59:23,759 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 03:02:42,386 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:02:42,386 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:02:43,167 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:02:43,171 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:02:43,175 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:02:43,951 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:02:43,952 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:02:43,952 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 03:02:43,956 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:02:44,731 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:02:44,732 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:02:44,732 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 03:02:44,764 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:02:44,767 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:06:14,297 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:06:14,297 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:06:14,299 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:06:14,299 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:06:26,233 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:06:26,498 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:06:26,621 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:06:26,684 - root - INFO - Successfully quarantined J:\SentinelX_Test\LaZagne.exe to quarantine\81448745b5d62608b37888b38e9f276a_LaZagne.exe.isolated
+2026-02-23 03:06:26,720 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:07:14,218 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\csvc.exe
+2026-02-23 03:07:14,218 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\csvc.exe
+2026-02-23 03:07:14,318 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\csvc.exe
+2026-02-23 03:07:14,342 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\csvc.exe
+2026-02-23 03:07:14,344 - root - INFO - Successfully quarantined J:\SentinelX_Test\csvc.exe to quarantine\ec07e0a9f904ea799064a5151803273d_csvc.exe.isolated
+2026-02-23 03:07:31,360 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\crto.profile
+2026-02-23 03:07:31,361 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\crto.profile
+2026-02-23 03:07:31,362 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\crto.profile
+2026-02-23 03:07:31,392 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\crto.profile: 'DOS Header magic not found.'
+2026-02-23 03:07:31,416 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\crto.profile: 'DOS Header magic not found.'
+2026-02-23 03:07:31,440 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\crto.profile: 'DOS Header magic not found.'
+2026-02-23 03:07:31,440 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\crto.profile
+2026-02-23 03:07:31,440 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\crto.profile
+2026-02-23 03:07:31,440 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\crto.profile
+2026-02-23 03:07:31,441 - root - ERROR - Failed to quarantine J:\SentinelX_Test\crto.profile: [WinError 2] The system cannot find the file specified: 'J:\\SentinelX_Test\\crto.profile'
+2026-02-23 03:07:31,441 - root - ERROR - Failed to quarantine J:\SentinelX_Test\crto.profile: [WinError 2] The system cannot find the file specified: 'J:\\SentinelX_Test\\crto.profile'
+2026-02-23 03:07:31,443 - root - INFO - Successfully quarantined J:\SentinelX_Test\crto.profile to quarantine\c6331c0d771a02b6c20173f49c6c1bef_crto.profile.isolated
+2026-02-23 03:11:00,298 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,298 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,298 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,299 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,483 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\lightbill.jpeg: 'DOS Header magic not found.'
+2026-02-23 03:11:00,493 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\lightbill.jpeg: 'DOS Header magic not found.'
+2026-02-23 03:11:00,508 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\lightbill.jpeg: 'DOS Header magic not found.'
+2026-02-23 03:11:00,508 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\lightbill.jpeg: 'DOS Header magic not found.'
+2026-02-23 03:11:00,509 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,509 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,509 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,510 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\lightbill.jpeg
+2026-02-23 03:11:00,531 - root - ERROR - Failed to quarantine J:\SentinelX_Test\lightbill.jpeg: [WinError 32] The process cannot access the file because it is being used by another process
+2026-02-23 03:11:00,532 - root - ERROR - Failed to quarantine J:\SentinelX_Test\lightbill.jpeg: [Errno 2] No such file or directory: 'J:\\SentinelX_Test\\lightbill.jpeg'
+2026-02-23 03:11:00,532 - root - ERROR - Failed to quarantine J:\SentinelX_Test\lightbill.jpeg: [Errno 2] No such file or directory: 'J:\\SentinelX_Test\\lightbill.jpeg'
+2026-02-23 03:11:00,533 - root - INFO - Successfully quarantined J:\SentinelX_Test\lightbill.jpeg to quarantine\831e2e626ef1f9eec0c8c1cff81ac573_lightbill.jpeg.isolated
+2026-02-23 03:14:13,318 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:14:13,318 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:14:14,083 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:14:14,088 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:14:14,092 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:14:14,865 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:14:14,866 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:14:14,867 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 03:14:14,871 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:14:15,636 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:14:15,637 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:14:15,637 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 03:14:15,662 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:14:15,664 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:27:44,661 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:27:44,662 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:27:44,740 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py (PID: 25260)
+2026-02-23 03:27:44,972 - root - WARNING - THREAT EXECUTED! Terminating PID 25260: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py
+2026-02-23 03:27:44,988 - root - INFO - Successfully killed malicious process PID 25260
+2026-02-23 03:27:44,989 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 03:29:39,043 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:29:39,044 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:39,140 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" .\main.py (PID: 26536)
+2026-02-23 03:29:39,390 - root - WARNING - THREAT EXECUTED! Terminating PID 26536: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" .\main.py
+2026-02-23 03:29:39,407 - root - INFO - Successfully killed malicious process PID 26536
+2026-02-23 03:29:39,409 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 03:29:45,026 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:29:45,027 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:45,790 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:29:45,795 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:29:45,795 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:45,799 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:29:45,799 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:46,587 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:29:46,588 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:46,588 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 03:29:46,593 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:29:46,593 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:47,384 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:29:47,385 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:47,385 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 03:29:47,419 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:29:47,421 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:30:04,029 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:30:09,381 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\LaZagne.exe
+2026-02-23 03:30:09,385 - root - INFO - Successfully quarantined J:\SentinelX_Test\LaZagne.exe to quarantine\81448745b5d62608b37888b38e9f276a_LaZagne.exe.isolated
+2026-02-23 03:30:29,860 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\csvc.exe
+2026-02-23 03:30:29,870 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\csvc.exe
+2026-02-23 03:30:29,874 - root - INFO - Successfully quarantined J:\SentinelX_Test\csvc.exe to quarantine\ec07e0a9f904ea799064a5151803273d_csvc.exe.isolated
+2026-02-23 03:32:06,722 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:32:07,952 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:32:07,954 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated

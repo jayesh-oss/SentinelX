@@ -85,6 +85,30 @@ class DatabaseManager:
             ''', (file_path, scan_type, result, threat_name))
             conn.commit()
 
+    def get_hash_reputation(self, file_hash):
+        """Returns True if known malware, False if explicitly whitelisted, None if unknown."""
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT known_malware FROM hash_reputation WHERE hash = ?", (file_hash,))
+                result = cursor.fetchone()
+                return bool(result[0]) if result else None
+        except sqlite3.Error:
+            return None
+
+    def set_hash_reputation(self, file_hash, is_malware):
+        """Sets a hash as either malware (True) or whitelisted (False)."""
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    INSERT OR REPLACE INTO hash_reputation (hash, score, known_malware)
+                    VALUES (?, 0, ?)
+                ''', (file_hash, 1 if is_malware else 0))
+                conn.commit()
+        except sqlite3.Error as e:
+            logging.error(f"Failed to set hash reputation: {e}")
+
 # Testing logic if run as standalone
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)

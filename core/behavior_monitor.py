@@ -2,6 +2,8 @@ import time
 import os
 import threading
 import logging
+import threading
+import logging
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from core.scanner import CoreScanner
@@ -14,25 +16,48 @@ class SentinelEventHandler(FileSystemEventHandler):
         self.scanner = CoreScanner()
         self.yara_engine = YaraEngine()
         self.quarantine_mgr = QuarantineManager()
+        self.scan_lock = threading.Lock()
+        self.last_scanned = {}
+        # Only watch files that can actually harm the system
+        self.monitored_extensions = {'.exe', '.dll', '.bat', '.ps1', '.vbs', '.cmd'}
+
+    def is_target_file(self, file_path):
+        ext = os.path.splitext(file_path)[1].lower()
+        return ext in self.monitored_extensions
 
     def on_created(self, event):
-        if not event.is_directory:
+        if not event.is_directory and self.is_target_file(event.src_path):
             self.process_file(event.src_path)
 
     def on_modified(self, event):
-        if not event.is_directory:
+        if not event.is_directory and self.is_target_file(event.src_path):
             self.process_file(event.src_path)
 
     def process_file(self, file_path):
         """Scans the file in a separate thread to avoid blocking Watchdog."""
-        # Simple debounce or wait for file write lock to release
+        
+        # Debounce rapid overlapping watchdog events
+        with self.scan_lock:
+            current_time = time.time()
+            if file_path in self.last_scanned:
+                if current_time - self.last_scanned[file_path] < 3.0:
+                    return # Skip if we scanned this exact file within the last 3 seconds
+            self.last_scanned[file_path] = current_time
+
         def scan_worker():
             try:
-                # Wait briefly for file to be completely written
+                # Wait briefly for file to be completely written to disk
                 time.sleep(1.0)
                 if not os.path.exists(file_path):
                     return
 
+                # Re-verify lock isn't held by OS
+                try:
+                    with open(file_path, 'a'): pass
+                except IOError:
+                    # File is currently locked by the writer process, delay and try again
+                    time.sleep(2.0)
+                    
                 logging.info(f"Real-Time Monitor scanning: {file_path}")
                 
                 # Check YARA first for speed

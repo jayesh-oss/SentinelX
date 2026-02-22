@@ -41,22 +41,26 @@ class QuarantineManager:
             return False
 
     def restore_file(self, record_id):
-        """Restores a file from quarantine back to its original path."""
+        """Restores a file from quarantine back to its original path and whitelists it."""
         try:
             with sqlite3.connect(self.db.db_path) as conn:
                 cursor = conn.cursor()
-                cursor.execute("SELECT original_path, quarantine_path FROM quarantine_records WHERE id = ?", (record_id,))
+                cursor.execute("SELECT original_path, quarantine_path, hash FROM quarantine_records WHERE id = ?", (record_id,))
                 record = cursor.fetchone()
 
                 if not record:
                     return False
 
-                orig_path, quar_path = record
+                orig_path, quar_path, file_hash = record
 
                 if os.path.exists(quar_path):
                     # Ensure destination directory exists
                     os.makedirs(os.path.dirname(orig_path), exist_ok=True)
                     shutil.move(quar_path, orig_path)
+
+                # Add hash to whitelist so Watchdog doesn't immediately re-quarantine it
+                if file_hash:
+                    self.db.set_hash_reputation(file_hash, False)
 
                 # Remove from DB
                 cursor.execute("DELETE FROM quarantine_records WHERE id = ?", (record_id,))

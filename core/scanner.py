@@ -3,12 +3,12 @@ import hashlib
 import pefile
 import math
 from core.ml_engine import MLEngine
+from database.db_manager import DatabaseManager
 
 class CoreScanner:
     def __init__(self):
         self.ml_engine = MLEngine()
-        # Engines initialized here later
-        pass
+        self.db = DatabaseManager()
     
     def calculate_hashes(self, file_path):
         """Calculates MD5, SHA1, and SHA256 hashes for a file."""
@@ -96,11 +96,26 @@ class CoreScanner:
 
     def scan_file(self, file_path):
         """Main routine to scan a file comprehensively."""
+        hashes = self.calculate_hashes(file_path)
+        file_hash = hashes.get('md5')
+        
+        if file_hash:
+            rep = self.db.get_hash_reputation(file_hash)
+            if rep is False: # Explicitly marked as safe/whitelisted
+                return {
+                    "file": file_path,
+                    "hashes": hashes,
+                    "pe_analysis": {},
+                    "yara_matches": [],
+                    "ml_score": 0.0,
+                    "threat_level": "Clean"
+                }
+
         ml_score = self.ml_engine.predict(file_path)
         
         result = {
             "file": file_path,
-            "hashes": self.calculate_hashes(file_path),
+            "hashes": hashes,
             "pe_analysis": self.analyze_pe(file_path),
             "yara_matches": [],
             "ml_score": ml_score,
