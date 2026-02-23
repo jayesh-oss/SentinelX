@@ -3,16 +3,17 @@ import threading
 import logging
 import psutil
 import os
+import sys
 import pythoncom
 from core.scanner import CoreScanner
 from core.yara_engine import YaraEngine
 from core.quarantine import QuarantineManager
 
 class ProcessMonitor:
-    def __init__(self, target_directory="J:\\SentinelX_Test"):
+    def __init__(self, scanner, yara_engine, target_directory="J:\\SentinelX_Test"):
         self.target_directory = target_directory.lower()
-        self.scanner = CoreScanner()
-        self.yara_engine = YaraEngine()
+        self.scanner = scanner
+        self.yara_engine = yara_engine
         self.quarantine_mgr = QuarantineManager()
         self.is_running = False
         self.thread = None
@@ -46,6 +47,13 @@ class ProcessMonitor:
                         
                     exe_lower = exe_path.lower()
                     
+                    # Self-Protection: Never kill our own Host Process
+                    if int(new_process.ProcessId) == os.getpid():
+                        continue
+                        
+                    if exe_lower == sys.executable.lower() or exe_lower.endswith('\\sentinelx.exe'):
+                        continue
+                    
                     # Ignore common Windows system directories to avoid locking the OS
                     if exe_lower.startswith("c:\\windows\\") or exe_lower.startswith("c:\\program files"):
                         continue
@@ -76,14 +84,12 @@ class ProcessMonitor:
             # Check YARA first for speed
             yara_matches = self.yara_engine.scan_file(file_path)
             
-            # Check Heuristics
+            # Check Static & ML Heuristics
             res = self.scanner.scan_file(file_path)
             
-            threat_name = "Clean"
-            if yara_matches:
-                threat_name = f"Malicious ({', '.join(yara_matches)})"
-            elif res.get('threat_level') != "Clean":
-                threat_name = res.get('threat_level')
+            # Unify into Threat Thresholds
+            res = self.scanner.evaluate_threat(res, yara_matches, None)
+            threat_name = res.get('threat_level', 'Clean')
 
             if threat_name != "Clean":
                 logging.warning(f"THREAT EXECUTED! Terminating PID {pid}: {cmd_line}")

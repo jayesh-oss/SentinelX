@@ -48,13 +48,12 @@ class ScanThread(QThread):
                     vt_result = self.vt_engine.lookup_hash(file_hash)
                     res['vt_result'] = vt_result
 
-                # Determine overall Threat
-                if yara_matches:
-                    res['threat_level'] = f"Malicious ({', '.join(yara_matches)})"
-                elif res.get('vt_result', {}).get('status') in ['success', 'cached']:
-                    vt_data = res.get('vt_result', {}).get('data', {})
-                    if vt_data and vt_data.get('malicious', 0) >= 3:
-                        res['threat_level'] = f"Malicious (Cloud: {vt_data['malicious']}/{vt_data['total']})"
+                # Determine overall Threat using Unified Scoring
+                vt_data = res.get('vt_result', {}).get('data') if res.get('vt_result', {}).get('status') in ['success', 'cached'] else None
+                res = self.scanner.evaluate_threat(res, yara_matches, vt_data)
+                
+                # Add back for UI extraction
+                res['yara_matches'] = yara_matches
                     
                 self.result.emit(res)
             except Exception as e:
@@ -68,6 +67,7 @@ class ScannerTab(QWidget):
     def __init__(self):
         super().__init__()
         self.quarantine_mgr = QuarantineManager()
+        self.auto_quarantine = True
         self.layout = QVBoxLayout(self)
         self.layout.setContentsMargins(30, 30, 30, 30)
         self.layout.setSpacing(20)
@@ -143,10 +143,11 @@ class ScannerTab(QWidget):
         results_title.setStyleSheet("font-size: 18px; font-weight: bold; color: #E6EDF3;")
         self.layout.addWidget(results_title)
 
-        self.txt_results = QTextEdit()
-        self.txt_results.setReadOnly(True)
+        from PySide6.QtWidgets import QTextBrowser
+        self.txt_results = QTextBrowser()
+        self.txt_results.setOpenExternalLinks(True)
         self.txt_results.setStyleSheet("""
-            QTextEdit {
+            QTextBrowser {
                 background-color: #0D1117;
                 border: 1px solid #30363D;
                 border-radius: 8px;
@@ -254,13 +255,16 @@ class ScannerTab(QWidget):
         
         # Determine Auto Quarantine
         if threat_level != "Clean":
-            file_path = result['file']
-            file_hash = hashes.get('md5', 'unknown')
-            success = self.quarantine_mgr.quarantine_file(file_path, threat_level, file_hash)
-            if success:
-                 html += f"<p style='color: #D29922; font-weight: bold;'>⚠️ ACTION TAKEN: File has been automatically Quarantined.</p>"
+            if self.auto_quarantine:
+                file_path = result['file']
+                file_hash = hashes.get('md5', 'unknown')
+                success = self.quarantine_mgr.quarantine_file(file_path, threat_level, file_hash)
+                if success:
+                     html += f"<p style='color: #D29922; font-weight: bold;'>⚠️ ACTION TAKEN: File has been automatically Quarantined.</p>"
+                else:
+                     html += f"<p style='color: #F85149; font-weight: bold;'>🚨 ACTION FAILED: Could not quarantine file.</p>"
             else:
-                 html += f"<p style='color: #F85149; font-weight: bold;'>🚨 ACTION FAILED: Could not quarantine file.</p>"
+                html += f"<p style='color: #D29922; font-weight: bold;'>⚠️ AUTO-QUARANTINE DISABLED. Manual verification required.</p>"
 
         # Prepend to results so newest is at the top
         current_html = self.txt_results.toHtml()

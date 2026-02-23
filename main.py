@@ -41,36 +41,38 @@ def main():
     setup_logging()
     logging.info("Starting SentinelX Antivirus Engine...")
 
-    # Initialize Backend Engines
-    db = DatabaseManager(db_path="database/sentinelx.db")
-    yara_engine = YaraEngine(rules_dir="rules")
-    scanner = CoreScanner()
+    try:
+        # Initialize Backend Engines
+        db = DatabaseManager(db_path="database/sentinelx.db")
+        yara_engine = YaraEngine(rules_dir="rules")
+        scanner = CoreScanner()
 
-    # Start Real-Time Protection
-    monitor = BehaviorMonitor(target_directory="J:\\SentinelX_Test")
-    monitor.start()
-    
-    # Start Active Process Execution Execution Protection
-    process_monitor = ProcessMonitor(target_directory="J:\\SentinelX_Test")
-    process_monitor.start()
+        # Start Real-Time Protection
+        monitor = BehaviorMonitor(target_directory="J:\\SentinelX_Test")
+        monitor.start()
+        
+        # Start Active Process Execution Execution Protection
+        process_monitor = ProcessMonitor(scanner, yara_engine, target_directory="J:\\SentinelX_Test")
+        process_monitor.start()
 
-    # Initialize Frontend (GUI)
-    app = QApplication(sys.argv)
-    
-    # Set application-wide font for consistency
-    font = app.font()
-    font.setFamily("Segoe UI")
-    app.setFont(font)
-    
-    app.setStyleSheet(load_stylesheet())
+        # Initialize Frontend (GUI)
+        app = QApplication(sys.argv)
+        
+        # Set application-wide font for consistency
+        font = app.font()
+        font.setFamily("Segoe UI")
+        app.setFont(font)
+        
+        app.setStyleSheet(load_stylesheet())
 
-    window = MainWindow()
-    window.show()
+        window = MainWindow(monitor, process_monitor)
+        window.show()
 
-    # Example of wiring signals to slots
-    # window.scanner_tab.btn_scan.clicked.connect(scanner.scan_file)
-
-    sys.exit(app.exec())
+        sys.exit(app.exec())
+    except Exception as e:
+        import traceback
+        logging.error(f"FATAL ERROR ON STARTUP: {e}")
+        logging.error(traceback.format_exc())
 
 if __name__ == "__main__":
     main()

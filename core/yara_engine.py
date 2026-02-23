@@ -28,6 +28,7 @@ class YaraEngine:
             return
 
         try:
+            logging.info(f"Attempting to compile {len(rule_files)} YARA rules...")
             self.compiled_rules = yara.compile(filepaths=rule_files)
             logging.info(f"Successfully compiled {len(rule_files)} YARA rule files.")
         except yara.SyntaxError as e:

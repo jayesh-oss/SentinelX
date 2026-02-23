@@ -18,8 +18,8 @@ class SentinelEventHandler(FileSystemEventHandler):
         self.quarantine_mgr = QuarantineManager()
         self.scan_lock = threading.Lock()
         self.last_scanned = {}
-        # Only watch files that can actually harm the system
-        self.monitored_extensions = {'.exe', '.dll', '.bat', '.ps1', '.vbs', '.cmd'}
+        # Monitor files, but we will force non-executables to 'Clean' later
+        self.monitored_extensions = {'.exe', '.dll', '.bat', '.ps1', '.vbs', '.cmd', '.pdf', '.doc', '.docx', '.xls', '.xlsx'}
 
     def is_target_file(self, file_path):
         ext = os.path.splitext(file_path)[1].lower()
@@ -63,14 +63,12 @@ class SentinelEventHandler(FileSystemEventHandler):
                 # Check YARA first for speed
                 yara_matches = self.yara_engine.scan_file(file_path)
                 
-                # Check Heuristics
+                # Check Heuristics & Static Analysis
                 res = self.scanner.scan_file(file_path)
                 
-                threat_name = "Clean"
-                if yara_matches:
-                    threat_name = f"Malicious ({', '.join(yara_matches)})"
-                elif res.get('threat_level') != "Clean":
-                    threat_name = res.get('threat_level')
+                # Evaluate Unified Threat Score (Real-time omits VT to avoid API rate limits)
+                res = self.scanner.evaluate_threat(res, yara_matches, None)
+                threat_name = res.get('threat_level', 'Clean')
 
                 if threat_name != "Clean":
                     logging.warning(f"THREAT DETECTED by Real-Time Protection: {file_path}")
@@ -86,7 +84,6 @@ class SentinelEventHandler(FileSystemEventHandler):
 class BehaviorMonitor:
     def __init__(self, target_directory="J:\\SentinelX_Test"):
         self.target_directory = target_directory
-        self.observer = Observer()
         self.event_handler = SentinelEventHandler()
         self.is_running = False
 
@@ -98,13 +95,15 @@ class BehaviorMonitor:
                 pass # Fallback gracefully
                 return
 
+        # Observers can only be started once, so we instantiate a new one each time
+        self.observer = Observer()
         self.observer.schedule(self.event_handler, self.target_directory, recursive=True)
         self.observer.start()
         self.is_running = True
         logging.info(f"Real-Time Protection started. Monitoring: {self.target_directory}")
 
     def stop(self):
-        if self.is_running:
+        if self.is_running and hasattr(self, 'observer'):
             self.observer.stop()
             self.observer.join()
             self.is_running = False

@@ -64,7 +64,7 @@ class QuarantineTab(QWidget):
         
         self.chk_select_all = QCheckBox("Select All")
         self.chk_select_all.setStyleSheet("color: #E6EDF3; font-weight: bold; margin-left: 20px;")
-        self.chk_select_all.stateChanged.connect(self.toggle_select_all)
+        self.chk_select_all.toggled.connect(self.toggle_select_all)
         
         self.btn_restore = QPushButton("Restore Selected")
         self.btn_restore.setCursor(Qt.PointingHandCursor)
@@ -118,13 +118,13 @@ class QuarantineTab(QWidget):
         except Exception as e:
             print(f"Error loading quarantine data: {e}")
 
-    def toggle_select_all(self, state):
+    def toggle_select_all(self, checked):
         for row in range(self.table.rowCount()):
             chk_widget = self.table.cellWidget(row, 0)
             if chk_widget:
                 chk_box = chk_widget.findChild(QCheckBox)
                 if chk_box:
-                    chk_box.setChecked(state == Qt.Checked)
+                    chk_box.setChecked(checked)
 
     def get_selected_ids(self):
         selected_ids = []

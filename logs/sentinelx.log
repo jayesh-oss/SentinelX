@@ -423,3 +423,443 @@
 2026-02-23 03:32:06,722 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
 2026-02-23 03:32:07,952 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
 2026-02-23 03:32:07,954 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 03:33:04,045 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:33:04,046 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:04,814 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:33:04,818 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:33:04,818 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:04,822 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:33:04,822 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:05,584 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:33:05,585 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:05,586 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 03:33:05,590 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:33:05,590 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:06,359 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:33:06,360 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:06,360 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 03:33:06,394 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:06,396 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:33:39,725 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 03:33:40,176 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 03:33:40,178 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 03:33:58,700 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 03:33:59,019 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 03:33:59,021 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 03:35:17,339 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:35:17,340 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:35:18,097 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:35:18,822 - root - INFO - Successfully quarantined J:\SentinelX_Test\crto.profile to quarantine\c6331c0d771a02b6c20173f49c6c1bef_crto.profile.isolated
+2026-02-23 03:35:18,825 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:35:19,179 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Jay_Tiwari-2026 (1).pdf: 'DOS Header magic not found.'
+2026-02-23 03:35:22,862 - root - INFO - Successfully quarantined J:\SentinelX_Test\Jay_Tiwari-2026 (1).pdf to quarantine\867d87a41625a1e382ce482bca1b2971_Jay_Tiwari-2026 (1).pdf.isolated
+2026-02-23 03:35:22,865 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:08,152 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:43:08,152 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:08,913 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:43:08,918 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:43:08,918 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:08,922 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:43:08,922 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:09,690 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:43:09,690 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:09,691 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 03:43:09,695 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:43:09,695 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:10,487 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:43:10,487 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:10,488 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 03:43:10,517 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:43:10,519 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:34,741 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:44:34,742 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:35,563 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:44:35,568 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:44:35,568 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:35,573 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:44:35,573 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:36,384 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:44:36,384 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:36,385 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 03:44:36,389 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:44:36,389 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:37,197 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:44:37,197 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:37,198 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 03:44:37,231 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:44:37,233 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:45:09,084 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:45:09,084 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:45:09,837 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:45:10,916 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:45:14,068 - root - INFO - Successfully quarantined J:\SentinelX_Test\Jay_Tiwari-2026 (1).pdf to quarantine\867d87a41625a1e382ce482bca1b2971_Jay_Tiwari-2026 (1).pdf.isolated
+2026-02-23 03:45:14,071 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:46:09,209 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:46:09,210 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:46:09,974 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:46:10,582 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:46:10,838 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Math-4-May-2025.pdf: 'DOS Header magic not found.'
+2026-02-23 03:46:12,994 - root - INFO - Successfully quarantined J:\SentinelX_Test\Math-4-May-2025.pdf to quarantine\04a6e62967a6b1879a9d33d592f524ca_Math-4-May-2025.pdf.isolated
+2026-02-23 03:46:12,996 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:50:19,203 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:50:20,431 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:50:20,435 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 03:50:26,898 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:50:28,126 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:50:28,130 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 03:50:38,297 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:50:39,530 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 03:50:39,534 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 03:54:29,177 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:54:29,177 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:54:29,952 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:54:29,957 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:54:29,957 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:54:29,961 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:54:29,962 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:54:30,735 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:54:30,736 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:54:30,736 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 03:54:30,741 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 03:54:30,741 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:54:31,498 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 03:54:31,499 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:54:31,499 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 03:54:31,529 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:54:31,531 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:56:41,214 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" .\main.py (PID: 29536)
+2026-02-23 03:56:41,292 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:56:41,293 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:56:41,493 - root - WARNING - THREAT EXECUTED! Terminating PID 29536: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" .\main.py
+2026-02-23 03:56:41,509 - root - INFO - Successfully killed malicious process PID 29536
+2026-02-23 03:56:41,510 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 03:56:46,558 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:56:46,558 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:56:46,566 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" .\main.py (PID: 23764)
+2026-02-23 03:56:46,833 - root - WARNING - THREAT EXECUTED! Terminating PID 23764: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" .\main.py
+2026-02-23 03:56:46,849 - root - INFO - Successfully killed malicious process PID 23764
+2026-02-23 03:56:46,849 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 03:57:25,255 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py (PID: 25764)
+2026-02-23 03:57:25,525 - root - WARNING - THREAT EXECUTED! Terminating PID 25764: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py
+2026-02-23 03:57:25,533 - root - INFO - Successfully killed malicious process PID 25764
+2026-02-23 03:57:25,533 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 03:58:14,504 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py (PID: 25360)
+2026-02-23 03:58:14,590 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:58:14,591 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:58:14,776 - root - WARNING - THREAT EXECUTED! Terminating PID 25360: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py
+2026-02-23 03:58:14,791 - root - INFO - Successfully killed malicious process PID 25360
+2026-02-23 03:58:14,792 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 03:58:33,761 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py (PID: 18820)
+2026-02-23 03:58:33,952 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 03:58:33,952 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 03:58:34,034 - root - WARNING - THREAT EXECUTED! Terminating PID 18820: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py
+2026-02-23 03:58:34,049 - root - INFO - Successfully killed malicious process PID 18820
+2026-02-23 03:58:34,049 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 03:59:13,292 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py (PID: 10000)
+2026-02-23 03:59:13,558 - root - WARNING - THREAT EXECUTED! Terminating PID 10000: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" main.py
+2026-02-23 03:59:13,568 - root - INFO - Successfully killed malicious process PID 10000
+2026-02-23 03:59:13,569 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 04:09:27,671 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" -c "from core.scanner import CoreScanner; print('Scanner module loaded successfully!')" (PID: 29200)
+2026-02-23 04:09:27,959 - root - WARNING - THREAT EXECUTED! Terminating PID 29200: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" -c "from core.scanner import CoreScanner; print('Scanner module loaded successfully!')"
+2026-02-23 04:09:27,967 - root - INFO - Successfully killed malicious process PID 29200
+2026-02-23 04:09:27,968 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 04:09:35,205 - root - INFO - [LIVE BEHAVIOR FEED] Launch: \\?\C:\Users\pain\AppData\Local\Discord\app-1.0.9225\modules\discord_hook-1\discord_hook\3b21a77722c6d5\DiscordHookHelper64.exe offsets 137438957904 (PID: 20556)
+2026-02-23 04:09:36,213 - root - WARNING - THREAT EXECUTED! Terminating PID 20556: \\?\C:\Users\pain\AppData\Local\Discord\app-1.0.9225\modules\discord_hook-1\discord_hook\3b21a77722c6d5\DiscordHookHelper64.exe offsets 137438957904
+2026-02-23 04:09:36,213 - root - ERROR - Failed to kill process 20556: process PID not found (pid=20556)
+2026-02-23 04:09:36,218 - root - INFO - Successfully quarantined \\?\C:\Users\pain\AppData\Local\Discord\app-1.0.9225\modules\discord_hook-1\discord_hook\3b21a77722c6d5\DiscordHookHelper64.exe to quarantine\05314722de1081dabf5de2e0934061f5_DiscordHookHelper64.exe.isolated
+2026-02-23 04:09:36,230 - root - INFO - [LIVE BEHAVIOR FEED] Launch: \\?\C:\Users\pain\AppData\Local\Discord\app-1.0.9225\modules\discord_hook-1\discord_hook\3b21a77722c6d5\DiscordHookHelper.exe offsets 274877911376 (PID: 26784)
+2026-02-23 04:09:37,029 - root - WARNING - THREAT EXECUTED! Terminating PID 26784: \\?\C:\Users\pain\AppData\Local\Discord\app-1.0.9225\modules\discord_hook-1\discord_hook\3b21a77722c6d5\DiscordHookHelper.exe offsets 274877911376
+2026-02-23 04:09:37,029 - root - ERROR - Failed to kill process 26784: process PID not found (pid=26784)
+2026-02-23 04:09:37,034 - root - INFO - Successfully quarantined \\?\C:\Users\pain\AppData\Local\Discord\app-1.0.9225\modules\discord_hook-1\discord_hook\3b21a77722c6d5\DiscordHookHelper.exe to quarantine\4dd54622efec68e0562fa3f52b8719d7_DiscordHookHelper.exe.isolated
+2026-02-23 04:10:37,802 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" -c "from core.yara_engine import YaraEngine; y = YaraEngine(rules_dir='rules')" (PID: 7164)
+2026-02-23 04:10:38,079 - root - WARNING - THREAT EXECUTED! Terminating PID 7164: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" -c "from core.yara_engine import YaraEngine; y = YaraEngine(rules_dir='rules')"
+2026-02-23 04:10:38,080 - root - ERROR - Failed to kill process 7164: process PID not found (pid=7164)
+2026-02-23 04:10:38,081 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 04:10:49,592 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" -c "from core.scanner import CoreScanner; s = CoreScanner()" (PID: 18680)
+2026-02-23 04:10:49,861 - root - WARNING - THREAT EXECUTED! Terminating PID 18680: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" -c "from core.scanner import CoreScanner; s = CoreScanner()"
+2026-02-23 04:10:49,869 - root - INFO - Successfully killed malicious process PID 18680
+2026-02-23 04:10:49,870 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 04:11:37,852 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" debug5.py (PID: 16604)
+2026-02-23 04:11:38,107 - root - WARNING - THREAT EXECUTED! Terminating PID 16604: "C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe" debug5.py
+2026-02-23 04:11:38,121 - root - INFO - Successfully killed malicious process PID 16604
+2026-02-23 04:11:38,122 - root - ERROR - Failed to quarantine C:\Users\pain\AppData\Local\Programs\Python\Python313\python.exe: [WinError 5] Access is denied: 'C:\\Users\\pain\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+2026-02-23 13:21:46,335 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 13:21:46,345 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:21:46,352 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:21:48,068 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:21:48,074 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:21:48,074 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:21:48,078 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:21:48,078 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:21:48,084 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:21:49,566 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:21:49,567 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:21:49,568 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 13:21:49,568 - root - ERROR - FATAL ERROR ON STARTUP: ProcessMonitor.__init__() missing 2 required positional arguments: 'scanner' and 'yara_engine'
+2026-02-23 13:21:49,569 - root - ERROR - Traceback (most recent call last):
+  File "J:\Projects\Github\SentinelX\main.py", line 55, in main
+    process_monitor = ProcessMonitor(target_directory="J:\\SentinelX_Test")
+TypeError: ProcessMonitor.__init__() missing 2 required positional arguments: 'scanner' and 'yara_engine'
+
+2026-02-23 13:28:07,252 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 13:28:07,253 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:28:07,256 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:28:08,001 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:28:08,005 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:28:08,005 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:28:08,009 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:28:08,009 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:28:08,012 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:28:08,752 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:28:08,753 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:28:08,753 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 13:28:08,754 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:28:08,754 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 13:28:09,078 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:28:09,080 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:29:03,597 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:29:03,597 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:29:03,600 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:29:04,325 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:29:05,142 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:29:05,397 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Math-4-May-2025.pdf: 'DOS Header magic not found.'
+2026-02-23 13:29:07,634 - root - INFO - Successfully quarantined J:\SentinelX_Test\Math-4-May-2025.pdf to quarantine\04a6e62967a6b1879a9d33d592f524ca_Math-4-May-2025.pdf.isolated
+2026-02-23 13:29:07,639 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:33:40,416 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 13:33:40,417 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:33:40,420 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:33:41,237 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:33:41,242 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:33:41,243 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:33:41,247 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:33:41,247 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:33:41,250 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:33:42,058 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:33:42,059 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:33:42,059 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 13:33:42,060 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:33:42,060 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 13:33:42,088 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:33:42,090 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:15,965 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 13:40:15,965 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:15,968 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:40:16,740 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:40:16,745 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:40:16,745 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:16,751 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:40:16,751 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:16,754 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:40:17,513 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:40:17,513 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:17,514 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 13:40:17,515 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:17,515 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 13:40:17,543 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:17,545 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:29,419 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:40:29,419 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:29,422 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:40:30,172 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:40:30,959 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:40:31,211 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Math-4-May-2025.pdf: 'DOS Header magic not found.'
+2026-02-23 13:40:33,592 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:41:56,464 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 13:42:22,605 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 13:42:35,591 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:42:35,592 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:42:35,595 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:42:36,339 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:42:38,022 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:42:38,287 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Math-4-May-2025.pdf: 'DOS Header magic not found.'
+2026-02-23 13:42:40,667 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:42:40,996 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:02,999 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 13:43:03,000 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:03,003 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:43:03,777 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:43:03,781 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:43:03,782 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:03,786 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:43:03,787 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:03,790 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:43:04,541 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:43:04,541 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:04,542 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 13:43:04,543 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:04,543 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 13:43:04,568 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:04,570 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:12,729 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 13:43:29,045 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:43:29,046 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:29,049 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:43:29,788 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:43:30,487 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:30,744 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Math-4-May-2025.pdf: 'DOS Header magic not found.'
+2026-02-23 13:43:33,027 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:43:33,388 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:14,752 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 13:53:14,753 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:14,756 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:53:15,578 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:53:15,583 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:53:15,583 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:15,588 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:53:15,588 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:15,591 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:53:16,396 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:53:16,396 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:16,397 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 13:53:16,397 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:16,397 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 13:53:16,420 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:16,422 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:38,441 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 13:53:38,441 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:38,444 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 13:53:39,186 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 13:53:39,854 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:40,109 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Math-4-May-2025.pdf: 'DOS Header magic not found.'
+2026-02-23 13:53:42,925 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:53:43,244 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 13:53:43,249 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 13:54:04,559 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 13:54:04,874 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 13:54:04,877 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 13:54:22,692 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Jay_Tiwari-2026 (1).pdf
+2026-02-23 13:55:48,251 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 13:55:48,577 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 13:55:48,580 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 13:55:53,861 - root - INFO - Real-Time Protection stopped.
+2026-02-23 13:55:53,861 - root - INFO - Real-Time Process Execution Monitoring stopped.
+2026-02-23 14:10:26,016 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 14:10:26,016 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:10:26,019 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:10:26,814 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:10:26,818 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:10:26,819 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:10:26,823 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:10:26,823 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:10:26,826 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:10:27,648 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:10:27,649 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:10:27,649 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 14:10:27,650 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:10:27,650 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 14:10:27,674 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:10:27,676 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:18:39,589 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:18:39,589 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:18:39,592 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:18:40,383 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:18:41,080 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:18:44,108 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:18:44,359 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Math-4-May-2025.pdf: 'DOS Header magic not found.'
+2026-02-23 14:18:46,679 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:18:47,030 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 14:18:47,036 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:19:20,014 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 14:19:20,341 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-02-23 14:19:20,344 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 14:19:28,469 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Elitehubs PC Quotation.pdf
+2026-02-23 14:19:31,732 - root - ERROR - ML Feature Extraction failed on J:\SentinelX_Test\Elitehubs PC Quotation.pdf: 'DOS Header magic not found.'
+2026-02-23 14:20:00,222 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 14:20:01,453 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 14:20:01,456 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 14:20:13,174 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 14:20:14,058 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 14:20:14,061 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 14:20:57,709 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\csvc.exe
+2026-02-23 14:20:57,719 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\csvc.exe
+2026-02-23 14:20:57,721 - root - INFO - Successfully quarantined J:\SentinelX_Test\csvc.exe to quarantine\ec07e0a9f904ea799064a5151803273d_csvc.exe.isolated
+2026-02-23 14:22:16,603 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 14:22:16,603 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:16,606 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:22:17,396 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:22:17,401 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:22:17,401 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:17,406 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:22:17,407 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:17,410 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:22:18,187 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:22:18,188 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:18,189 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 14:22:18,189 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:18,189 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 14:22:18,218 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:18,220 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:38,789 - root - INFO - Real-Time Protection stopped.
+2026-02-23 14:22:38,789 - root - INFO - Real-Time Process Execution Monitoring stopped.
+2026-02-23 14:22:39,597 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 14:22:39,598 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 14:22:58,695 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:22:58,695 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:22:58,698 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:22:59,459 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:23:00,344 - root - INFO - Successfully quarantined J:\SentinelX_2\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 14:23:00,349 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:23:00,678 - root - INFO - Successfully quarantined J:\SentinelX_2\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 14:23:00,682 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:47:49,321 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 14:47:49,322 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:47:49,324 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:47:50,123 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:47:50,128 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:47:50,128 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:47:50,132 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:47:50,132 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:47:50,135 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:47:50,932 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:47:50,933 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:47:50,933 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 14:47:50,934 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:47:50,934 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 14:47:50,965 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:47:50,968 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:48:51,648 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 14:48:51,648 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:48:51,651 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 14:48:52,381 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 14:48:52,707 - root - INFO - Successfully quarantined J:\SentinelX_2\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 14:48:52,710 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 14:50:43,302 - root - INFO - Real-Time Protection stopped.
+2026-02-23 14:50:43,302 - root - INFO - Real-Time Process Execution Monitoring stopped.
+2026-02-23 14:50:44,096 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 14:50:44,097 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 14:51:22,048 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 14:51:22,922 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 14:51:22,927 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 15:04:49,937 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-02-23 15:04:49,938 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:04:49,940 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 15:04:50,761 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 15:04:50,766 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 15:04:50,767 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:04:50,771 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 15:04:50,771 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:04:50,774 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 15:04:51,584 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 15:04:51,585 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:04:51,586 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-02-23 15:04:51,586 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:04:51,586 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 15:04:51,613 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:04:51,615 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:05:24,056 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 15:05:24,957 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\mimikatz.exe
+2026-02-23 15:05:24,962 - root - INFO - Successfully quarantined J:\SentinelX_Test\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 15:05:42,632 - root - INFO - Real-Time Protection stopped.
+2026-02-23 15:05:43,133 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_2
+2026-02-23 15:05:43,133 - root - INFO - Real-Time Process Execution Monitoring stopped.
+2026-02-23 15:05:43,634 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-02-23 15:05:43,634 - root - INFO - Monitor Directory dynamically updated to: J:\SentinelX_2
+2026-02-23 15:05:52,349 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_2\mimikatz.exe
+2026-02-23 15:05:53,240 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_2\mimikatz.exe
+2026-02-23 15:05:53,244 - root - INFO - Successfully quarantined J:\SentinelX_2\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-02-23 15:07:03,150 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-02-23 15:07:03,151 - root - INFO - Database initialized at database/sentinelx.db
+2026-02-23 15:07:03,154 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-02-23 15:07:03,916 - root - INFO - Successfully compiled 1156 YARA rule files.
+2026-02-23 15:07:04,241 - root - INFO - Successfully quarantined J:\SentinelX_2\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-02-23 15:07:04,244 - root - INFO - Database initialized at database/sentinelx.db

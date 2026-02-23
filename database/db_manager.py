@@ -85,6 +85,20 @@ class DatabaseManager:
             ''', (file_path, scan_type, result, threat_name))
             conn.commit()
 
+    def reset_statistics(self):
+        """Clears the scan_history table to reset the dashboard counters."""
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("DELETE FROM scan_history")
+                # Also reset sqlite auto-increment sequence for cleaner IDs
+                cursor.execute("DELETE FROM sqlite_sequence WHERE name='scan_history'")
+                conn.commit()
+                return True
+        except sqlite3.Error as e:
+            logging.error(f"Failed to reset statistics: {e}")
+            return False
+
     def get_hash_reputation(self, file_hash):
         """Returns True if known malware, False if explicitly whitelisted, None if unknown."""
         try:
