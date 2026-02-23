@@ -7,4 +7,9 @@ pefile
 vt-py
 watchdog
 pywin32
+WMI
 cryptography
+requests
+joblib
+numpy
+pandas
