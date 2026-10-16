@@ -5,12 +5,12 @@ from PySide6.QtWidgets import (
     QLabel, QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox, QCheckBox
 )
 from PySide6.QtCore import Qt
-from core.quarantine import QuarantineManager
+from core import engine_registry
 
 class QuarantineTab(QWidget):
     def __init__(self):
         super().__init__()
-        self.quarantine_manager = QuarantineManager()
+        self.quarantine_manager = engine_registry.get_quarantine_manager()
         
         self.layout = QVBoxLayout(self)
         self.layout.setContentsMargins(30, 30, 30, 30)

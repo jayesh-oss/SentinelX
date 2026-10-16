@@ -71,6 +71,36 @@ class DatabaseManager:
                     )
                 ''')
                 
+                # ETW Events Log
+                cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS etw_events (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        pid INTEGER,
+                        event_type TEXT,
+                        provider TEXT,
+                        details TEXT,
+                        session_name TEXT
+                    )
+                ''')
+
+                # Sandbox Analysis Results
+                cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS sandbox_results (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        file_path TEXT,
+                        file_hash TEXT,
+                        execution_time REAL,
+                        timed_out BOOLEAN,
+                        exit_code INTEGER,
+                        behavioral_score INTEGER,
+                        behavioral_reasons TEXT,
+                        etw_event_count INTEGER,
+                        verdict TEXT
+                    )
+                ''')
+
                 conn.commit()
                 logging.info(f"Database initialized at {self.db_path}")
         except sqlite3.Error as e:
@@ -109,6 +139,23 @@ class DatabaseManager:
                 return bool(result[0]) if result else None
         except sqlite3.Error:
             return None
+
+    def log_sandbox_result(self, file_path, file_hash, execution_time, timed_out,
+                           exit_code, behavioral_score, behavioral_reasons, etw_event_count, verdict):
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    INSERT INTO sandbox_results
+                    (file_path, file_hash, execution_time, timed_out, exit_code,
+                     behavioral_score, behavioral_reasons, etw_event_count, verdict)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (file_path, file_hash, execution_time, timed_out, exit_code,
+                      behavioral_score, ", ".join(behavioral_reasons) if behavioral_reasons else "",
+                      etw_event_count, verdict))
+                conn.commit()
+        except sqlite3.Error as e:
+            logging.error(f"Failed to log sandbox result: {e}")
 
     def set_hash_reputation(self, file_hash, is_malware):
         """Sets a hash as either malware (True) or whitelisted (False)."""

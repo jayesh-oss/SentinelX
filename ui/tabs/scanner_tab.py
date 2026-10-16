@@ -1,72 +1,89 @@
 import os
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QPushButton, 
+    QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
     QLabel, QFileDialog, QProgressBar, QTextEdit, QFrame
 )
 from PySide6.QtCore import Qt, QThread, Signal
-import yara
-from core.scanner import CoreScanner
-from core.yara_engine import YaraEngine
-from database.db_manager import DatabaseManager
-from core.vt_engine import VirusTotalEngine
-from core.quarantine import QuarantineManager
+from core import engine_registry
+
 
 class ScanThread(QThread):
     progress = Signal(int)
     max_progress = Signal(int)
+    status = Signal(str)
     result = Signal(dict)
     finished = Signal()
 
     def __init__(self, target_paths):
         super().__init__()
-        # target_paths is a list of file paths
         self.target_paths = target_paths
-        self.scanner = CoreScanner()
-        self.yara_engine = YaraEngine()
-        self.vt_engine = VirusTotalEngine()
+        self.scanner = engine_registry.get_scanner()
+        self.yara_engine = engine_registry.get_yara_engine()
+        self.vt_engine = engine_registry.get_vt_engine()
 
     def run(self):
         total_files = len(self.target_paths)
         if total_files == 0:
             self.finished.emit()
             return
-            
+
         self.max_progress.emit(total_files)
 
         for i, path in enumerate(self.target_paths):
+            file_name = os.path.basename(path)
             try:
-                # Basic progress
+                self.status.emit(f"[{i+1}/{total_files}] Reading & hashing: {file_name}")
                 res = self.scanner.scan_file(path)
 
-                # Yara scanning
-                yara_matches = self.yara_engine.scan_file(path)
+                self.status.emit(f"[{i+1}/{total_files}] YARA scanning ({self.yara_engine.rule_count} rules): {file_name}")
+                yara_matches = list(dict.fromkeys(self.yara_engine.scan_file(path)))
                 res['yara_matches'] = yara_matches
-                
-                # VirusTotal Integration
+
                 file_hash = res.get('hashes', {}).get('md5', '')
                 if file_hash:
+                    self.status.emit(f"[{i+1}/{total_files}] VirusTotal lookup: {file_name}")
                     vt_result = self.vt_engine.lookup_hash(file_hash)
                     res['vt_result'] = vt_result
 
-                # Determine overall Threat using Unified Scoring
+                self.status.emit(f"[{i+1}/{total_files}] Visual CNN analysis: {file_name}")
+                # visual_cnn result is already in res from scan_file()
+
+                self.status.emit(f"[{i+1}/{total_files}] Evaluating threat score: {file_name}")
                 vt_data = res.get('vt_result', {}).get('data') if res.get('vt_result', {}).get('status') in ['success', 'cached'] else None
                 res = self.scanner.evaluate_threat(res, yara_matches, vt_data)
-                
-                # Add back for UI extraction
+
                 res['yara_matches'] = yara_matches
-                    
                 self.result.emit(res)
             except Exception as e:
-                print(f"Error scanning {path}: {e}")
-                
+                self.status.emit(f"[{i+1}/{total_files}] ERROR: {file_name} — {e}")
+
             self.progress.emit(i + 1)
-            
+
+        self.status.emit(f"Scan complete — {total_files} file(s) processed.")
         self.finished.emit()
+
+
+class SandboxThread(QThread):
+    result = Signal(object)
+    finished = Signal()
+
+    def __init__(self, file_path, etw_session=None):
+        super().__init__()
+        self.file_path = file_path
+        self.etw_session = etw_session
+
+    def run(self):
+        from core.sandbox import run_in_sandbox, SandboxConfig
+        config = SandboxConfig(timeout_seconds=30, memory_limit_mb=256)
+        res = run_in_sandbox(self.file_path, config, self.etw_session)
+        self.result.emit(res)
+        self.finished.emit()
+
 
 class ScannerTab(QWidget):
     def __init__(self):
         super().__init__()
-        self.quarantine_mgr = QuarantineManager()
+        self.quarantine_mgr = engine_registry.get_quarantine_manager()
         self.auto_quarantine = True
         self.layout = QVBoxLayout(self)
         self.layout.setContentsMargins(30, 30, 30, 30)
@@ -112,22 +129,37 @@ class ScannerTab(QWidget):
         self.btn_scan.setStyleSheet("padding: 10px; background-color: #1F6FEB; color: white; border-radius: 5px; font-weight: bold;")
         self.btn_scan.setEnabled(False)
 
+        self.btn_sandbox = QPushButton("Dynamic Analysis")
+        self.btn_sandbox.setCursor(Qt.PointingHandCursor)
+        self.btn_sandbox.setStyleSheet("padding: 10px; background-color: #6E33FF; color: white; border-radius: 5px; font-weight: bold;")
+        self.btn_sandbox.setEnabled(False)
+        self.btn_sandbox.setToolTip("Run selected PE file in a restricted sandbox for dynamic behavioral analysis")
+
         btn_layout.addWidget(self.btn_browse)
         btn_layout.addWidget(self.btn_browse_folder)
         btn_layout.addWidget(self.btn_scan)
+        btn_layout.addWidget(self.btn_sandbox)
         btn_layout.addStretch()
         
         controls_layout.addLayout(btn_layout)
         
+        self.lbl_status = QLabel("Ready.")
+        self.lbl_status.setStyleSheet("color: #58A6FF; font-size: 13px; font-family: Consolas, monospace;")
+        controls_layout.addWidget(self.lbl_status)
+
         self.progress_bar = QProgressBar()
         self.progress_bar.setValue(0)
-        self.progress_bar.setTextVisible(False)
+        self.progress_bar.setTextVisible(True)
+        self.progress_bar.setFormat("%v / %m files")
         self.progress_bar.setStyleSheet("""
             QProgressBar {
                 border: 1px solid #30363D;
                 border-radius: 4px;
                 background-color: #0D1117;
-                height: 8px;
+                height: 20px;
+                color: #8B949E;
+                font-size: 12px;
+                text-align: center;
             }
             QProgressBar::chunk {
                 background-color: #238636;
@@ -162,9 +194,11 @@ class ScannerTab(QWidget):
         self.btn_browse.clicked.connect(self.browse_file)
         self.btn_browse_folder.clicked.connect(self.browse_folder)
         self.btn_scan.clicked.connect(self.start_scan)
-        
+        self.btn_sandbox.clicked.connect(self.start_sandbox_analysis)
+
         self.target_files = []
         self.scan_thread = None
+        self.sandbox_thread = None
 
     def browse_file(self):
         file_path, _ = QFileDialog.getOpenFileName(self, "Select File to Scan", "", "All Files (*.*)")
@@ -172,6 +206,8 @@ class ScannerTab(QWidget):
             self.target_files = [os.path.normpath(file_path)]
             self.lbl_file_path.setText(f"Selected: {self.target_files[0]}")
             self.btn_scan.setEnabled(True)
+            is_pe = file_path.lower().endswith(('.exe', '.dll'))
+            self.btn_sandbox.setEnabled(is_pe)
             self.txt_results.clear()
 
     def browse_folder(self):
@@ -189,16 +225,20 @@ class ScannerTab(QWidget):
     def start_scan(self):
         if not self.target_files:
             return
-            
+
         self.btn_scan.setEnabled(False)
         self.btn_browse.setEnabled(False)
         self.btn_browse_folder.setEnabled(False)
+        self.btn_sandbox.setEnabled(False)
         self.txt_results.clear()
         self.progress_bar.setValue(0)
-        
+        self.lbl_status.setText("Initializing scan...")
+        self.lbl_status.setStyleSheet("color: #D29922; font-size: 13px; font-family: Consolas, monospace;")
+
         self.scan_thread = ScanThread(self.target_files)
         self.scan_thread.max_progress.connect(self.progress_bar.setMaximum)
         self.scan_thread.progress.connect(self.progress_bar.setValue)
+        self.scan_thread.status.connect(self._update_status)
         self.scan_thread.result.connect(self.display_results)
         self.scan_thread.finished.connect(self.scan_finished)
         self.scan_thread.start()
@@ -225,13 +265,72 @@ class ScannerTab(QWidget):
         pe = result.get('pe_analysis', {})
         if pe.get('is_pe'):
             html += f"<p><b>PE Executable:</b> Yes<br/>"
-            html += f"<b>Entropy:</b> {pe.get('entropy', 0):.2f}<br/>"
+            html += f"<b>Overall Entropy:</b> {pe.get('entropy', 0):.2f}<br/>"
             html += f"<b>Sections:</b> {pe.get('number_of_sections', 0)}</p>"
-            
+
+            # Section entropy table
+            sections = pe.get('section_analysis', [])
+            if sections:
+                html += "<table style='border-collapse:collapse; width:100%; margin:8px 0;'>"
+                html += "<tr style='background:#161B22;'>"
+                html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#58A6FF;'>Section</th>"
+                html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#58A6FF;'>Entropy</th>"
+                html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#58A6FF;'>Raw Size</th>"
+                html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#58A6FF;'>Virtual Size</th></tr>"
+                for sec in sections:
+                    ent = sec.get('entropy', 0)
+                    ent_color = '#F85149' if ent > 7.2 else ('#D29922' if ent > 6.5 else '#3FB950')
+                    html += f"<tr><td style='padding:4px 8px; border:1px solid #30363D;'>{sec['name']}</td>"
+                    html += f"<td style='padding:4px 8px; border:1px solid #30363D; color:{ent_color};'>{ent:.2f}</td>"
+                    html += f"<td style='padding:4px 8px; border:1px solid #30363D;'>{sec.get('raw_size', 0):,}</td>"
+                    html += f"<td style='padding:4px 8px; border:1px solid #30363D;'>{sec.get('virtual_size', 0):,}</td></tr>"
+                html += "</table>"
+
+            # Threat category tags
+            threat_cats = pe.get('threat_categories', {})
+            if threat_cats:
+                cat_colors = {
+                    "Process Injection": "#F85149", "Crypto (Ransomware)": "#F85149",
+                    "Credential Access": "#F85149", "Evasion / Anti-Debug": "#D29922",
+                    "Networking": "#D29922", "Persistence": "#D29922",
+                    "Code Loading": "#58A6FF", "Memory Manipulation": "#58A6FF",
+                    "Process / Thread Control": "#8B949E",
+                }
+                html += "<p><b>Threat Categories:</b><br/>"
+                for cat, apis in threat_cats.items():
+                    c = cat_colors.get(cat, '#C9D1D9')
+                    html += f"<span style='display:inline-block; background:{c}22; color:{c}; border:1px solid {c}; border-radius:4px; padding:2px 8px; margin:2px 4px 2px 0; font-size:12px;'>{cat} ({len(apis)})</span>"
+                html += "</p>"
+
+            # Full suspicious imports list
             suspicious = pe.get('suspicious_imports', [])
             if suspicious:
-                html += f"<p style='color: #F85149;'><b>Suspicious API Calls Detected:</b><br/>"
+                html += f"<p style='color: #F85149;'><b>Suspicious API Calls ({len(suspicious)}):</b><br/>"
                 html += "<br/>".join(suspicious) + "</p>"
+
+            # IAT summary by DLL
+            imports = pe.get('imports', {})
+            if imports:
+                html += f"<details><summary style='color:#58A6FF; cursor:pointer;'><b>Import Address Table ({len(imports)} DLLs)</b></summary>"
+                html += "<table style='border-collapse:collapse; width:100%; margin:8px 0;'>"
+                html += "<tr style='background:#161B22;'>"
+                html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#58A6FF;'>DLL</th>"
+                html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#58A6FF;'>Functions</th></tr>"
+                for dll, funcs in imports.items():
+                    func_names = ", ".join(f['name'] for f in funcs[:20])
+                    if len(funcs) > 20:
+                        func_names += f" ... (+{len(funcs)-20} more)"
+                    html += f"<tr><td style='padding:4px 8px; border:1px solid #30363D; color:#D29922;'>{dll}</td>"
+                    html += f"<td style='padding:4px 8px; border:1px solid #30363D; font-size:12px;'>{func_names}</td></tr>"
+                html += "</table></details>"
+
+            # Anomalies
+            anomalies = pe.get('anomalies', [])
+            if anomalies:
+                html += f"<p style='color: #F85149;'><b>PE Anomalies ({len(anomalies)}):</b><br/>"
+                for a in anomalies:
+                    html += f"&bull; {a}<br/>"
+                html += "</p>"
 
         yara = result.get('yara_matches', [])
         if yara:
@@ -250,8 +349,53 @@ class ScannerTab(QWidget):
              html += f"<span style='color: {score_color}; font-weight: bold;'>{vt_data['malicious']} / {vt_data['total']}</span> detections.<br/>"
              html += f"<a href='{vt_data['permalink']}' style='color: #58A6FF;'>View Full Report</a></p>"
 
-        # ML Score
-        html += f"<p><b>ML Score:</b> {result.get('ml_score', 0.0)}</p>"
+        # ML Score (RandomForest)
+        html += f"<p><b>ML Heuristic Score:</b> {result.get('ml_score', 0.0)}</p>"
+
+        # Visual CNN Results
+        visual = result.get('visual_cnn', {})
+        if visual.get('available'):
+            v_score = visual.get('score', 0.0)
+            v_family = visual.get('family', 'Unknown')
+            v_conf = visual.get('confidence', 0.0)
+            v_color = '#F85149' if v_score >= 0.7 else ('#D29922' if v_score >= 0.5 else '#3FB950')
+
+            html += f"""
+            <div style='background:#161B22; border:1px solid #30363D; border-radius:8px; padding:12px; margin:8px 0;'>
+                <p style='color:#A371F7; font-weight:bold; font-size:14px; margin:0 0 8px 0;'>Visual CNN Analysis (EfficientNet-B0)</p>
+                <p style='margin:4px 0;'><b>Malware Score:</b> <span style='color:{v_color}; font-weight:bold;'>{v_score:.2f}</span></p>
+                <p style='margin:4px 0;'><b>Predicted Family:</b> <span style='color:#A371F7; font-weight:bold;'>{v_family}</span> ({v_conf:.1%} confidence)</p>
+            """
+            top3 = visual.get('top3', [])
+            if top3:
+                html += "<p style='margin:4px 0;'><b>Top Predictions:</b></p>"
+                html += "<table style='border-collapse:collapse; width:100%; margin:4px 0;'>"
+                html += "<tr style='background:#0D1117;'>"
+                html += "<th style='padding:3px 8px; border:1px solid #30363D; color:#A371F7; font-size:12px;'>Family</th>"
+                html += "<th style='padding:3px 8px; border:1px solid #30363D; color:#A371F7; font-size:12px;'>Confidence</th></tr>"
+                for pred in top3:
+                    p_color = '#F85149' if pred['name'] != 'Benign' else '#3FB950'
+                    html += f"<tr><td style='padding:3px 8px; border:1px solid #30363D; color:{p_color};'>{pred['name']}</td>"
+                    html += f"<td style='padding:3px 8px; border:1px solid #30363D;'>{pred['confidence']:.1%}</td></tr>"
+                html += "</table>"
+            html += "</div>"
+
+            # Display grayscale visualization of the binary
+            grayscale_bytes = visual.get('grayscale_png')
+            if grayscale_bytes:
+                import base64
+                b64 = base64.b64encode(grayscale_bytes).decode('ascii')
+                html += f"""
+                <details><summary style='color:#A371F7; cursor:pointer;'><b>Binary Visualization (Grayscale 256x256)</b></summary>
+                <div style='text-align:center; padding:8px;'>
+                    <img src='data:image/png;base64,{b64}' width='256' height='256'
+                         style='border:1px solid #30363D; image-rendering:pixelated;'/>
+                    <p style='color:#8B949E; font-size:11px;'>Each pixel = one byte of the binary (0x00=black, 0xFF=white)</p>
+                </div>
+                </details>
+                """
+        else:
+            html += "<p style='color:#8B949E;'><b>Visual CNN:</b> Model not loaded — run training script first (tools/train_visual_model.py)</p>"
         
         # Determine Auto Quarantine
         if threat_level != "Clean":
@@ -272,7 +416,7 @@ class ScannerTab(QWidget):
 
         # Log to Database
         try:
-            db = DatabaseManager()
+            db = engine_registry.get_db()
             db.log_scan(
                 file_path=result['file'],
                 scan_type="Manual UI Scan",
@@ -282,9 +426,98 @@ class ScannerTab(QWidget):
         except Exception as e:
             print(f"Error logging scan to DB: {e}")
 
+    def _update_status(self, text):
+        self.lbl_status.setText(text)
+
     def scan_finished(self):
         self.btn_scan.setEnabled(True)
         self.btn_browse.setEnabled(True)
         self.btn_browse_folder.setEnabled(True)
-        # Prevent bar from staying empty if max was 0
+        if self.target_files and len(self.target_files) == 1 and self.target_files[0].lower().endswith(('.exe', '.dll')):
+            self.btn_sandbox.setEnabled(True)
         self.progress_bar.setValue(self.progress_bar.maximum())
+        self.lbl_status.setStyleSheet("color: #3FB950; font-size: 13px; font-family: Consolas, monospace;")
+
+    def start_sandbox_analysis(self):
+        if not self.target_files or len(self.target_files) != 1:
+            return
+        file_path = self.target_files[0]
+        if not file_path.lower().endswith(('.exe', '.dll')):
+            return
+
+        self.btn_sandbox.setEnabled(False)
+        self.btn_scan.setEnabled(False)
+
+        # Try to get ETW session from the main window
+        etw_session = None
+        parent = self.parent()
+        while parent:
+            if hasattr(parent, 'etw_session'):
+                etw_session = parent.etw_session
+                break
+            parent = parent.parent()
+
+        self.lbl_status.setText(f"Running sandbox: {os.path.basename(file_path)} (up to 30s)...")
+        self.lbl_status.setStyleSheet("color: #6E33FF; font-size: 13px; font-family: Consolas, monospace;")
+
+        self.sandbox_thread = SandboxThread(file_path, etw_session)
+        self.sandbox_thread.result.connect(self.display_sandbox_results)
+        self.sandbox_thread.finished.connect(self._sandbox_finished)
+        self.sandbox_thread.start()
+
+    def _sandbox_finished(self):
+        self.btn_sandbox.setEnabled(True)
+        self.btn_scan.setEnabled(True)
+        self.lbl_status.setText("Sandbox analysis complete.")
+        self.lbl_status.setStyleSheet("color: #3FB950; font-size: 13px; font-family: Consolas, monospace;")
+
+    def display_sandbox_results(self, result):
+        if result.error:
+            color = "#D29922"
+            verdict = f"Error: {result.error}"
+        elif result.behavioral_score >= 50:
+            color = "#F85149"
+            verdict = f"MALICIOUS (Behavioral Score: {result.behavioral_score})"
+        elif result.behavioral_score >= 20:
+            color = "#D29922"
+            verdict = f"Suspicious (Behavioral Score: {result.behavioral_score})"
+        else:
+            color = "#3FB950"
+            verdict = f"Clean (Behavioral Score: {result.behavioral_score})"
+
+        html = f"""
+        <h2 style='color: #6E33FF; margin-top: 10px;'>Dynamic Analysis Report</h2>
+        <hr style='background-color: #6E33FF; border: none; height: 2px;'/>
+        <p><b>Target:</b> {result.file_path}</p>
+        <p><b>Verdict:</b> <span style='color: {color}; font-weight: bold;'>{verdict}</span></p>
+        <p><b>Runtime:</b> {result.runtime_seconds}s | <b>Timed Out:</b> {'Yes' if result.timed_out else 'No'} | <b>Exit Code:</b> {result.exit_code}</p>
+        """
+
+        if result.behavioral_reasons:
+            html += "<p><b>Behavioral Indicators:</b><br/>"
+            for reason in result.behavioral_reasons:
+                html += f"<span style='color: #F85149;'>&bull; {reason}</span><br/>"
+            html += "</p>"
+
+        if result.etw_events:
+            event_types = {}
+            for evt in result.etw_events:
+                t = evt['type']
+                event_types[t] = event_types.get(t, 0) + 1
+
+            html += f"<p><b>ETW Events Captured:</b> {len(result.etw_events)}</p>"
+            html += "<table style='border-collapse:collapse; width:100%; margin:8px 0;'>"
+            html += "<tr style='background:#161B22;'>"
+            html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#6E33FF;'>Event Type</th>"
+            html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#6E33FF;'>Count</th></tr>"
+            for etype, count in sorted(event_types.items(), key=lambda x: -x[1]):
+                html += f"<tr><td style='padding:4px 8px; border:1px solid #30363D;'>{etype}</td>"
+                html += f"<td style='padding:4px 8px; border:1px solid #30363D;'>{count}</td></tr>"
+            html += "</table>"
+        elif result.executed and not result.error:
+            html += "<p style='color: #8B949E;'>No ETW events captured. Enable ETW monitoring from Dashboard for full behavioral analysis.</p>"
+
+        html += "<hr style='background-color: #30363D; border: none; height: 1px;'/>"
+
+        current_html = self.txt_results.toHtml()
+        self.txt_results.setHtml(html + current_html)

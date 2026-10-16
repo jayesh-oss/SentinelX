@@ -123,20 +123,3 @@ class MemoryScanner:
         if detection_details["threat"]:
             return detection_details
         return None
-        class SYSTEM_INFO(ctypes.Structure):
-            _fields_ = [
-                ("wProcessorArchitecture", wintypes.WORD),
-                ("wReserved", wintypes.WORD),
-                ("dwPageSize", wintypes.DWORD),
-                ("lpMinimumApplicationAddress", ctypes.c_void_p),
-                ("lpMaximumApplicationAddress", ctypes.c_void_p),
-                ("dwActiveProcessorMask", ctypes.c_void_p),
-                ("dwNumberOfProcessors", wintypes.DWORD),
-                ("dwProcessorType", wintypes.DWORD),
-                ("dwAllocationGranularity", wintypes.DWORD),
-                ("wProcessorLevel", wintypes.WORD),
-                ("wProcessorRevision", wintypes.WORD),
-            ]
-        sysinfo = SYSTEM_INFO()
-        k32.GetSystemInfo(ctypes.byref(sysinfo))
-        return sysinfo

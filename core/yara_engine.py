@@ -7,6 +7,7 @@ class YaraEngine:
     def __init__(self, rules_dir="rules"):
         self.rules_dir = rules_dir
         self.compiled_rules = None
+        self.rule_count = 0
         self._load_rules()
 
     def _load_rules(self):
@@ -27,14 +28,37 @@ class YaraEngine:
             logging.warning("No YARA rules found in directory.")
             return
 
+        logging.info(f"Attempting to compile {len(rule_files)} YARA rules...")
+
+        # Try all rules first
         try:
-            logging.info(f"Attempting to compile {len(rule_files)} YARA rules...")
             self.compiled_rules = yara.compile(filepaths=rule_files)
-            logging.info(f"Successfully compiled {len(rule_files)} YARA rule files.")
+            self.rule_count = len(rule_files)
+            logging.info(f"Successfully compiled {self.rule_count} YARA rule files.")
+            return
         except yara.SyntaxError as e:
-            logging.error(f"YARA Syntax Error: {e}")
-        except Exception as e:
-            logging.error(f"Error compiling YARA rules: {e}")
+            logging.warning(f"YARA batch compile failed: {e}")
+            logging.info("Retrying with per-file compilation to skip bad rules...")
+
+        # Fallback: compile one-by-one, skip bad rules
+        good_rules = {}
+        bad_count = 0
+        for name, path in rule_files.items():
+            try:
+                yara.compile(filepath=path)
+                good_rules[name] = path
+            except Exception:
+                bad_count += 1
+
+        if good_rules:
+            try:
+                self.compiled_rules = yara.compile(filepaths=good_rules)
+                self.rule_count = len(good_rules)
+                logging.info(f"Compiled {self.rule_count} YARA rules ({bad_count} skipped due to errors).")
+            except Exception as e:
+                logging.error(f"Error compiling YARA rules: {e}")
+        else:
+            logging.error("No valid YARA rules could be compiled.")
 
     def scan_file(self, file_path):
         """Scans a file against compiled YARA rules."""

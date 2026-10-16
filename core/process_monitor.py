@@ -4,17 +4,18 @@ import logging
 import psutil
 import os
 import sys
+import time
 import pythoncom
-from core.scanner import CoreScanner
-from core.yara_engine import YaraEngine
-from core.quarantine import QuarantineManager
+from core import engine_registry
+
 
 class ProcessMonitor:
-    def __init__(self, scanner, yara_engine, target_directory="J:\\SentinelX_Test"):
+    def __init__(self, scanner=None, yara_engine=None, target_directory="J:\\SentinelX_Test"):
         self.target_directory = target_directory.lower()
-        self.scanner = scanner
-        self.yara_engine = yara_engine
-        self.quarantine_mgr = QuarantineManager()
+        self.scanner = scanner or engine_registry.get_scanner()
+        self.yara_engine = yara_engine or engine_registry.get_yara_engine()
+        self.quarantine_mgr = engine_registry.get_quarantine_manager()
+        self.etw_session = None
         self.is_running = False
         self.thread = None
 
@@ -31,81 +32,88 @@ class ProcessMonitor:
     def _monitor_loop(self):
         try:
             pythoncom.CoInitialize()
-            # Initialize WMI to hook into Windows Process Creation Events
             c = wmi.WMI()
             process_watcher = c.Win32_Process.watch_for("creation")
-            
+
             while self.is_running:
                 try:
                     new_process = process_watcher(timeout_ms=2000)
                     if not new_process:
                         continue
-                        
+
                     exe_path = new_process.ExecutablePath
                     if not exe_path:
                         continue
-                        
+
                     exe_lower = exe_path.lower()
-                    
-                    # Self-Protection: Never kill our own Host Process
+
                     if int(new_process.ProcessId) == os.getpid():
                         continue
-                        
+
                     if exe_lower == sys.executable.lower() or exe_lower.endswith('\\sentinelx.exe'):
                         continue
-                    
-                    # Ignore common Windows system directories to avoid locking the OS
+
                     if exe_lower.startswith("c:\\windows\\") or exe_lower.startswith("c:\\program files"):
                         continue
-                        
+
                     cmd_line = getattr(new_process, "CommandLine", exe_path)
                     if not cmd_line:
                         cmd_line = exe_path
-                        
+
                     logging.info(f"[LIVE BEHAVIOR FEED] Launch: {cmd_line} (PID: {new_process.ProcessId})")
                     self._scan_and_terminate(exe_path, int(new_process.ProcessId), cmd_line)
-                        
+
                 except wmi.x_wmi_timed_out:
                     continue
                 except Exception as e:
                     logging.error(f"Error in process watcher loop: {e}")
-                    
+
         except Exception as e:
             logging.error(f"Failed to start WMI Process Watcher: {e}")
         finally:
             pythoncom.CoUninitialize()
 
+    def set_etw_session(self, etw_session):
+        self.etw_session = etw_session
+
     def _scan_and_terminate(self, file_path, pid, cmd_line=""):
-        """Scans the executable that was just launched. If malicious, kill it."""
         try:
             if not os.path.exists(file_path):
                 return
 
-            # Check YARA first for speed
             yara_matches = self.yara_engine.scan_file(file_path)
-            
-            # Check Static & ML Heuristics
             res = self.scanner.scan_file(file_path)
-            
-            # Unify into Threat Thresholds
             res = self.scanner.evaluate_threat(res, yara_matches, None)
             threat_name = res.get('threat_level', 'Clean')
 
-            if threat_name != "Clean":
-                logging.warning(f"THREAT EXECUTED! Terminating PID {pid}: {cmd_line}")
-                
-                # 1. Kill the Process
-                try:
-                    p = psutil.Process(pid)
-                    p.terminate()
-                    p.wait(timeout=3)
-                    logging.info(f"Successfully killed malicious process PID {pid}")
-                except Exception as e:
-                    logging.error(f"Failed to kill process {pid}: {e}")
-
-                # 2. Quarantine the executable
-                file_hash = res.get('hashes', {}).get('md5', 'unknown')
-                self.quarantine_mgr.quarantine_file(file_path, threat_name, file_hash)
+            if threat_name.startswith("Malicious"):
+                self._kill_and_quarantine(file_path, pid, cmd_line, res, threat_name)
+            elif threat_name.startswith("Suspicious") and self.etw_session and self.etw_session.is_running:
+                logging.info(f"[ETW] Observing suspicious process PID {pid} for 5 seconds...")
+                observe_start = time.time()
+                time.sleep(5)
+                from core.etw_monitor import score_behavioral_events
+                events = self.etw_session.get_events_since(observe_start)
+                behavior_score, behavior_reasons = score_behavioral_events(events, pid)
+                if behavior_score >= 50:
+                    escalated = f"Malicious (Behavioral: {', '.join(behavior_reasons)})"
+                    logging.warning(f"[ETW] Escalated PID {pid} to {escalated}")
+                    self._kill_and_quarantine(file_path, pid, cmd_line, res, escalated)
+                else:
+                    logging.info(f"[ETW] PID {pid} behavioral score {behavior_score} — no escalation.")
 
         except Exception as e:
             logging.error(f"Error scanning launched process {file_path}: {e}")
+
+    def _kill_and_quarantine(self, file_path, pid, cmd_line, res, threat_name):
+        logging.warning(f"THREAT EXECUTED! Terminating PID {pid}: {cmd_line}")
+        try:
+            p = psutil.Process(pid)
+            p.terminate()
+            p.wait(timeout=3)
+            logging.info(f"Successfully killed malicious process PID {pid}")
+        except Exception as e:
+            logging.error(f"Failed to kill process {pid}: {e}")
+
+        file_hash = res.get('hashes', {}).get('md5', 'unknown')
+        self.quarantine_mgr.quarantine_file(file_path, threat_name, file_hash)

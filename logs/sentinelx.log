@@ -923,3 +923,661 @@ TypeError: ProcessMonitor.__init__() missing 2 required positional arguments: 's
 2026-02-23 15:47:25,145 - root - INFO - Real-Time Process Execution Monitoring started.
 2026-02-23 15:47:25,172 - root - INFO - Database initialized at database/sentinelx.db
 2026-02-23 15:47:25,174 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:24:01,359 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 11:24:01,362 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:24:01,365 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:24:01,709 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:24:01,714 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 11:24:01,714 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:24:01,718 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 11:24:01,719 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:24:01,721 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:24:02,061 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:24:02,062 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:24:02,062 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 11:24:02,063 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:24:02,063 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 11:24:02,230 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:24:02,232 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:30:02,997 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Temp\qapmmv2s.y1u\resources\app\ServiceHub\Services\Microsoft.VisualStudio.Setup.Service\BackgroundDownload.exe"  --child --activityId e0f87f33-4fd7-46d9-999a-022b52f31539 --childClientVersion 4.11.24.302448642 --childClientInstallerVersion 4.11.24.2075 (PID: 38036)
+2026-10-16 11:30:03,000 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:30:03,342 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:44:22,609 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\loader.exe
+2026-10-16 11:44:22,612 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:44:22,958 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:44:33,584 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 11:44:33,584 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:44:33,587 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:44:33,922 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:44:34,021 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:44:34,358 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:45:11,696 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:47:08,043 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 11:47:08,044 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:47:08,047 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:47:08,385 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:47:08,484 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:47:08,819 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:47:09,561 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:47:37,042 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Notion\Notion.exe" --type=renderer --user-data-dir="C:\Users\Pain\AppData\Roaming\Notion" --app-user-model-id=notion.id --app-path="C:\Users\Pain\AppData\Local\Programs\Notion\resources\app.asar" --enable-sandbox --video-capture-use-gpu-memory-buffer --lang=en-GB --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=13 --time-ticks-at-unix-epoch=-1792125417281953 --launch-time-ticks=6039632490 --field-trial-handle=1712,i,10623725160531695386,7944734611085637135,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,MacCatapLoopbackAudioForScreenShare,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1716,i,1907439267867752266,11713711810011492832,4 --trace-process-track-uuid=3190708998493415531 --mojo-platform-channel-handle=1112 /prefetch:1 (PID: 31216)
+2026-10-16 11:47:37,048 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:47:37,654 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:49:22,249 - root - WARNING - THREAT EXECUTED! Terminating PID 31216: "C:\Users\Pain\AppData\Local\Programs\Notion\Notion.exe" --type=renderer --user-data-dir="C:\Users\Pain\AppData\Roaming\Notion" --app-user-model-id=notion.id --app-path="C:\Users\Pain\AppData\Local\Programs\Notion\resources\app.asar" --enable-sandbox --video-capture-use-gpu-memory-buffer --lang=en-GB --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=13 --time-ticks-at-unix-epoch=-1792125417281953 --launch-time-ticks=6039632490 --field-trial-handle=1712,i,10623725160531695386,7944734611085637135,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,MacCatapLoopbackAudioForScreenShare,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1716,i,1907439267867752266,11713711810011492832,4 --trace-process-track-uuid=3190708998493415531 --mojo-platform-channel-handle=1112 /prefetch:1
+2026-10-16 11:49:22,278 - root - INFO - Successfully killed malicious process PID 31216
+2026-10-16 11:49:22,348 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Notion\Notion.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Notion\\Notion.exe'
+2026-10-16 11:54:32,859 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709004115666625 --mojo-platform-channel-handle=6780 /prefetch:14 (PID: 36784)
+2026-10-16 11:54:32,862 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:54:33,203 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:56:21,118 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-10-16 11:56:21,861 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:56:27,313 - root - WARNING - THREAT EXECUTED! Terminating PID 36784: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709004115666625 --mojo-platform-channel-handle=6780 /prefetch:14
+2026-10-16 11:56:27,325 - root - INFO - Successfully killed malicious process PID 36784
+2026-10-16 11:56:27,373 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 11:56:27,636 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:56:27,721 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709005052708474 --mojo-platform-channel-handle=5336 /prefetch:14 (PID: 34640)
+2026-10-16 11:56:27,724 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:56:28,061 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:56:31,762 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 11:56:33,366 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:56:36,659 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:57:01,952 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:57:05,085 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:57:21,645 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:57:23,147 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:57:23,450 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:57:42,957 - root - WARNING - THREAT EXECUTED! Terminating PID 34640: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709005052708474 --mojo-platform-channel-handle=5336 /prefetch:14
+2026-10-16 11:57:42,998 - root - INFO - Successfully killed malicious process PID 34640
+2026-10-16 11:57:42,999 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:57:43,028 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 11:57:43,039 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 11:57:43,096 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 11:57:44,046 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709005989750323 --mojo-platform-channel-handle=7008 /prefetch:14 (PID: 2060)
+2026-10-16 11:57:44,051 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:57:44,476 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 11:59:17,913 - root - WARNING - THREAT EXECUTED! Terminating PID 2060: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709005989750323 --mojo-platform-channel-handle=7008 /prefetch:14
+2026-10-16 11:59:17,923 - root - INFO - Successfully killed malicious process PID 2060
+2026-10-16 11:59:18,013 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 11:59:18,568 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709006926792172 --mojo-platform-channel-handle=5732 /prefetch:14 (PID: 6976)
+2026-10-16 11:59:18,573 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 11:59:19,177 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:01:11,007 - root - WARNING - THREAT EXECUTED! Terminating PID 6976: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709006926792172 --mojo-platform-channel-handle=5732 /prefetch:14
+2026-10-16 12:01:11,016 - root - INFO - Successfully killed malicious process PID 6976
+2026-10-16 12:01:11,108 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 12:01:11,621 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709007863834021 --mojo-platform-channel-handle=6172 /prefetch:14 (PID: 5884)
+2026-10-16 12:01:11,626 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:01:12,261 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:03:05,892 - root - WARNING - THREAT EXECUTED! Terminating PID 5884: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709007863834021 --mojo-platform-channel-handle=6172 /prefetch:14
+2026-10-16 12:03:05,906 - root - INFO - Successfully killed malicious process PID 5884
+2026-10-16 12:03:05,970 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 12:03:06,691 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709008800875870 --mojo-platform-channel-handle=3412 /prefetch:14 (PID: 27632)
+2026-10-16 12:03:06,694 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:03:07,035 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:04:12,639 - root - WARNING - THREAT EXECUTED! Terminating PID 27632: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709008800875870 --mojo-platform-channel-handle=3412 /prefetch:14
+2026-10-16 12:04:12,662 - root - INFO - Successfully killed malicious process PID 27632
+2026-10-16 12:04:12,752 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 12:04:13,453 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709009737917719 --mojo-platform-channel-handle=3988 /prefetch:14 (PID: 36120)
+2026-10-16 12:04:13,457 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:04:14,039 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:06:12,002 - root - WARNING - THREAT EXECUTED! Terminating PID 36120: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709009737917719 --mojo-platform-channel-handle=3988 /prefetch:14
+2026-10-16 12:06:12,011 - root - INFO - Successfully killed malicious process PID 36120
+2026-10-16 12:06:12,094 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 12:46:02,965 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 12:46:02,972 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 12:46:03,043 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:46:03,396 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:47:42,392 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 12:47:42,393 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 12:47:42,402 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:47:42,739 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:47:44,617 - root - INFO - Training synthetic base heuristic model (8 features)...
+2026-10-16 12:47:44,658 - root - INFO - Synthetic ML Model saved to models/pe_heuristic_model.pkl
+2026-10-16 12:47:44,660 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 12:47:44,661 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 12:48:11,576 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-10-16 12:48:11,586 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:48:11,667 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\loader.exe
+2026-10-16 12:48:11,671 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:48:11,940 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:48:12,033 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:48:12,084 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\loader.exe
+2026-10-16 12:48:12,090 - root - INFO - Successfully quarantined J:\SentinelX_Test\loader.exe to quarantine\3488d727beeed183ba4e4dc7e98703aa_loader.exe.isolated
+2026-10-16 12:48:40,954 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-10-16 12:48:52,059 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:49:06,831 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:49:07,183 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:49:07,199 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:49:07,202 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 12:50:12,698 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\loader.exe
+2026-10-16 12:50:21,448 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:51:15,710 - root - INFO - [Sandbox] Process started: PID 11720, timeout=30s
+2026-10-16 12:51:16,516 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Temp\sentinelx_sandbox_a6r6aggh\loader.exe" (PID: 11720)
+2026-10-16 12:51:35,551 - root - INFO - ETW session started successfully.
+2026-10-16 12:53:06,467 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 12:53:06,468 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 12:53:06,476 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:53:06,827 - root - ERROR - YARA Syntax Error: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:53:07,827 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 12:53:07,828 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 12:53:07,829 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 12:53:25,777 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:58:36,573 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 12:58:36,574 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 12:58:36,581 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 12:58:36,924 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 12:58:36,924 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 12:58:38,547 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 12:58:39,484 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 12:58:39,485 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 12:58:39,485 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 12:58:58,888 - root - INFO - Successfully quarantined J:\SentinelX_Test\loader.exe to quarantine\3488d727beeed183ba4e4dc7e98703aa_loader.exe.isolated
+2026-10-16 12:59:31,062 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709012549043266 --mojo-platform-channel-handle=5568 /prefetch:14 (PID: 16984)
+2026-10-16 12:59:41,346 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\nc.exe
+2026-10-16 12:59:41,421 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\nc.exe
+2026-10-16 12:59:41,424 - root - INFO - Successfully quarantined J:\SentinelX_Test\nc.exe to quarantine\5dcf26e3fbce71902b0cd7c72c60545b_nc.exe.isolated
+2026-10-16 13:00:33,801 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\resolve23.exe
+2026-10-16 13:00:34,140 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\resolve23.exe
+2026-10-16 13:00:34,143 - root - INFO - Successfully quarantined J:\SentinelX_Test\resolve23.exe to quarantine\4fca60644dcb6c557d3a98c8b0226879_resolve23.exe.isolated
+2026-10-16 13:02:07,580 - root - WARNING - THREAT EXECUTED! Terminating PID 16984: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709012549043266 --mojo-platform-channel-handle=5568 /prefetch:14
+2026-10-16 13:02:07,580 - root - ERROR - Failed to kill process 16984: process PID not found (pid=16984)
+2026-10-16 13:02:07,673 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 13:02:07,681 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709013486085115 --mojo-platform-channel-handle=7460 /prefetch:14 (PID: 18180)
+2026-10-16 13:02:36,252 - root - INFO - [Sandbox] Process started: PID 26208, timeout=30s
+2026-10-16 13:03:53,644 - root - INFO - Successfully quarantined J:\SentinelX_scanner\loader.exe to quarantine\3488d727beeed183ba4e4dc7e98703aa_loader.exe.isolated
+2026-10-16 13:03:53,941 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 13:04:41,008 - root - WARNING - THREAT EXECUTED! Terminating PID 18180: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709013486085115 --mojo-platform-channel-handle=7460 /prefetch:14
+2026-10-16 13:04:41,008 - root - ERROR - Failed to kill process 18180: process PID not found (pid=18180)
+2026-10-16 13:04:41,073 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 13:04:41,080 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=crashpad-handler --user-data-dir=C:\Users\Pain\AppData\Roaming\Code /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\Users\Pain\AppData\Roaming\Code\Crashpad --url=appcenter://code?aid=a4e3233c-699c-46ec-b4f4-9c2a77254662&uid=3a546158-91ce-4f12-98d1-3502a71d951a&iid=3a546158-91ce-4f12-98d1-3502a71d951a&sid=3a546158-91ce-4f12-98d1-3502a71d951a --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.142.0 --annotation=plat=Win64 --annotation=prod=Electron --annotation=ver=43.7.7 --initial-client-data=0x534,0x538,0x53c,0x58,0x540,0x7ff7f8463748,0x7ff7f8463758,0x7ff7f8463768 (PID: 29464)
+2026-10-16 13:05:18,057 - root - INFO - Successfully quarantined J:\SentinelX_scanner\signed-loader.exe to quarantine\696939315b90d4bc65aa9afd120dbdbc_signed-loader.exe.isolated
+2026-10-16 13:07:11,048 - root - WARNING - THREAT EXECUTED! Terminating PID 29464: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=crashpad-handler --user-data-dir=C:\Users\Pain\AppData\Roaming\Code /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\Users\Pain\AppData\Roaming\Code\Crashpad --url=appcenter://code?aid=a4e3233c-699c-46ec-b4f4-9c2a77254662&uid=3a546158-91ce-4f12-98d1-3502a71d951a&iid=3a546158-91ce-4f12-98d1-3502a71d951a&sid=3a546158-91ce-4f12-98d1-3502a71d951a --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.142.0 --annotation=plat=Win64 --annotation=prod=Electron --annotation=ver=43.7.7 --initial-client-data=0x534,0x538,0x53c,0x58,0x540,0x7ff7f8463748,0x7ff7f8463758,0x7ff7f8463768
+2026-10-16 13:07:11,048 - root - ERROR - Failed to kill process 29464: process PID not found (pid=29464)
+2026-10-16 13:07:11,112 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 13:07:11,122 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=renderer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Microsoft.VisualStudioCode --app-path="C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app" --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=27 --time-ticks-at-unix-epoch=-1792125417281953 --launch-time-ticks=10353154354 --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709011612001417 --mojo-platform-channel-handle=4572 --vscode-window-config=vscode:e265f039-2b8e-4df5-9ec4-6100eb85eaeb /prefetch:1 (PID: 33536)
+2026-10-16 13:07:32,482 - root - INFO - Successfully quarantined J:\SentinelX_scanner\helloworld.exe to quarantine\615e3f431cafa6711910ac02fbb04426_helloworld.exe.isolated
+2026-10-16 13:11:24,998 - root - WARNING - THREAT EXECUTED! Terminating PID 33536: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=renderer --user-data-dir="C:\Users\Pain\AppData\Roaming\Code" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Microsoft.VisualStudioCode --app-path="C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app" --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=27 --time-ticks-at-unix-epoch=-1792125417281953 --launch-time-ticks=10353154354 --field-trial-handle=1804,i,12493669052062038561,15364124512795287221,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1836,i,1049199880757230096,6573272645159391836,4 --trace-process-track-uuid=3190709011612001417 --mojo-platform-channel-handle=4572 --vscode-window-config=vscode:e265f039-2b8e-4df5-9ec4-6100eb85eaeb /prefetch:1
+2026-10-16 13:11:25,000 - root - ERROR - Failed to kill process 33536: process PID not found (pid=33536)
+2026-10-16 13:11:25,107 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+2026-10-16 13:11:25,123 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" -n (PID: 37648)
+2026-10-16 13:22:32,383 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 13:22:32,384 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 13:22:32,391 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 13:22:32,726 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 13:22:32,726 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 13:22:34,392 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 13:22:35,292 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 13:22:35,293 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 13:22:35,293 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 13:22:38,225 - root - INFO - ETW session started successfully.
+2026-10-16 13:23:36,985 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 13:23:36,986 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 13:23:36,993 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 13:23:37,337 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 13:23:37,338 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 13:23:39,001 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 13:23:39,929 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 13:23:39,930 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 13:23:39,930 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 13:23:49,289 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 13:24:42,205 - root - INFO - ETW session started successfully.
+2026-10-16 13:25:16,844 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 13:25:19,000 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Whisker.exe to quarantine\69de9a014c22108256f0854d1f76627e_Whisker.exe.isolated
+2026-10-16 13:29:49,641 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-24788" (PID: 10408)
+2026-10-16 13:30:08,180 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 13:30:08,181 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 13:30:08,188 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 13:30:08,530 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 13:30:08,530 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 13:30:10,210 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 13:30:11,184 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 13:30:11,186 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 13:30:11,186 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 13:31:40,649 - root - INFO - Successfully quarantined J:\SentinelX_scanner\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-10-16 13:31:41,021 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 13:31:56,277 - root - ERROR - VT API Error: HTTPSConnectionPool(host='www.virustotal.com', port=443): Read timed out. (read timeout=15)
+2026-10-16 13:31:56,383 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Whisker.exe to quarantine\69de9a014c22108256f0854d1f76627e_Whisker.exe.isolated
+2026-10-16 13:37:34,303 - root - INFO - [LIVE BEHAVIOR FEED] Launch: c:\Users\Pain\.vscode\extensions\ms-vscode.cpptools-1.34.4-win32-x64/bin/cpptools-srv2.exe -s {D8367725-FCF0-4370-B46E-870604B828FB} -p 31204 -i TagParser (PID: 38236)
+2026-10-16 13:37:44,770 - root - WARNING - THREAT EXECUTED! Terminating PID 38236: c:\Users\Pain\.vscode\extensions\ms-vscode.cpptools-1.34.4-win32-x64/bin/cpptools-srv2.exe -s {D8367725-FCF0-4370-B46E-870604B828FB} -p 31204 -i TagParser
+2026-10-16 13:37:44,774 - root - INFO - Successfully killed malicious process PID 38236
+2026-10-16 13:37:44,778 - root - ERROR - Failed to quarantine c:\Users\Pain\.vscode\extensions\ms-vscode.cpptools-1.34.4-win32-x64\bin\cpptools-srv2.exe: [WinError 5] Access is denied: 'c:\\Users\\Pain\\.vscode\\extensions\\ms-vscode.cpptools-1.34.4-win32-x64\\bin\\cpptools-srv2.exe'
+2026-10-16 13:38:26,068 - root - INFO - Successfully quarantined J:\SentinelX_scanner\FortiClientVPNInstaller.exe to quarantine\f840ccbc53c2010b5e5f583c758e6634_FortiClientVPNInstaller.exe.isolated
+2026-10-16 14:57:25,071 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 14:57:25,072 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 14:57:25,083 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 14:57:25,434 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 14:57:25,434 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 14:57:27,120 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 14:57:28,758 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 14:57:28,759 - root - ERROR - FATAL ERROR ON STARTUP: No module named 'PIL'
+2026-10-16 14:57:28,759 - root - ERROR - Traceback (most recent call last):
+  File "J:\Project\Github\SentinelX\main.py", line 64, in main
+    engine_registry.get_scanner()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\engine_registry.py", line 30, in get_scanner
+    _instances["scanner"] = CoreScanner()
+                            ~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\scanner.py", line 13, in __init__
+    self.visual_engine = engine_registry.get_visual_engine()
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\engine_registry.py", line 65, in get_visual_engine
+    from core.visual_engine import VisualMLEngine
+  File "J:\Project\Github\SentinelX\core\visual_engine.py", line 18, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+
+2026-10-16 14:57:34,323 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 14:57:34,324 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 14:57:34,331 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 14:57:34,678 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 14:57:34,678 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 14:57:36,335 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 14:57:37,220 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 14:57:37,220 - root - ERROR - FATAL ERROR ON STARTUP: No module named 'PIL'
+2026-10-16 14:57:37,221 - root - ERROR - Traceback (most recent call last):
+  File "J:\Project\Github\SentinelX\main.py", line 64, in main
+    engine_registry.get_scanner()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\engine_registry.py", line 30, in get_scanner
+    _instances["scanner"] = CoreScanner()
+                            ~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\scanner.py", line 13, in __init__
+    self.visual_engine = engine_registry.get_visual_engine()
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\engine_registry.py", line 65, in get_visual_engine
+    from core.visual_engine import VisualMLEngine
+  File "J:\Project\Github\SentinelX\core\visual_engine.py", line 18, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+
+2026-10-16 14:58:32,348 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 14:58:32,349 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 14:58:32,356 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 14:58:32,703 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 14:58:32,703 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 14:58:34,397 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 14:58:35,317 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 14:58:35,317 - root - ERROR - FATAL ERROR ON STARTUP: No module named 'PIL'
+2026-10-16 14:58:35,318 - root - ERROR - Traceback (most recent call last):
+  File "J:\Project\Github\SentinelX\main.py", line 64, in main
+    engine_registry.get_scanner()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\engine_registry.py", line 30, in get_scanner
+    _instances["scanner"] = CoreScanner()
+                            ~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\scanner.py", line 13, in __init__
+    self.visual_engine = engine_registry.get_visual_engine()
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "J:\Project\Github\SentinelX\core\engine_registry.py", line 65, in get_visual_engine
+    from core.visual_engine import VisualMLEngine
+  File "J:\Project\Github\SentinelX\core\visual_engine.py", line 18, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+
+2026-10-16 15:00:18,051 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 15:00:18,052 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 15:00:18,058 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 15:00:18,407 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 15:00:18,407 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 15:00:20,106 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 15:00:21,019 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 15:00:22,900 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-16 15:00:22,904 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 15:00:22,904 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 15:01:10,853 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.4475104808807373}, {"name": "Benign", "confidence": 0.17836430668830872}, {"name": "RedLineStealer", "confidence": 0.1426929086446762}]
+2026-10-16 15:01:11,666 - root - INFO - Successfully quarantined J:\SentinelX_scanner\helloworld.exe to quarantine\7fe3faa6d89ee2c9e5ba130b0a04b008_helloworld.exe.isolated
+2026-10-16 15:01:12,527 - root - INFO - Successfully quarantined J:\SentinelX_scanner\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-10-16 15:01:12,846 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 15:01:12,974 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243805050849915}, {"name": "CoinMinerXMRig", "confidence": 0.26680928468704224}, {"name": "RedLineStealer", "confidence": 0.06093721091747284}]
+2026-10-16 15:06:17,787 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:06:17,801 - root - INFO - Successfully killed malicious process PID 39564
+2026-10-16 15:06:17,802 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:06:26,217 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -I -c "
+import sys
+sys.path.insert(0, '.')
+from core import engine_registry
+scanner = engine_registry.get_scanner()
+
+# helloworld.exe scenario
+r1 = {
+    'file': 'helloworld.exe',
+    'ml_score': 0.42,
+    'pe_analysis': {'entropy': 4.51, 'threat_categories': {'Code Loading': ['GetProcAddress', 'LoadLibraryA']}, 'anomalies': []},
+    'visual_cnn': {'available': True, 'score': 0.82, 'family': 'CoinMinerXMRig', 'confidence': 0.448},
+}
+r1 = scanner.evaluate_threat(r1, ['IsPE64', 'IsConsole', 'HasOverlay', 'spyeye', 'contains_base64', 'domain'], None)
+print('helloworld.exe:', r1['threat_level'])
+
+# real malware scenario
+r2 = {
+    'file': 'mimikatz.exe',
+    'ml_score': 0.92,
+    'pe_analysis': {'entropy': 6.8, 'threat_categories': {'Credential Access': ['CryptUnprotectData', 'LsaRetrievePrivateData']}, 'anomalies': ['Zero PE checksum']},
+    'visual_cnn': {'available': True, 'score': 0.95, 'family': 'Zeus', 'confidence': 0.78},
+}
+r2 = scanner.evaluate_threat(r2, ['mimikatz', 'hacktool_windows_mimikatz'], None)
+print('mimikatz.exe:', r2['threat_level'])
+" (PID: 20888)
+2026-10-16 15:06:26,575 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:06:26,577 - root - WARNING - THREAT EXECUTED! Terminating PID 20888: J:\Project\Github\SentinelX\venv\Scripts\python.exe -I -c "
+import sys
+sys.path.insert(0, '.')
+from core import engine_registry
+scanner = engine_registry.get_scanner()
+
+# helloworld.exe scenario
+r1 = {
+    'file': 'helloworld.exe',
+    'ml_score': 0.42,
+    'pe_analysis': {'entropy': 4.51, 'threat_categories': {'Code Loading': ['GetProcAddress', 'LoadLibraryA']}, 'anomalies': []},
+    'visual_cnn': {'available': True, 'score': 0.82, 'family': 'CoinMinerXMRig', 'confidence': 0.448},
+}
+r1 = scanner.evaluate_threat(r1, ['IsPE64', 'IsConsole', 'HasOverlay', 'spyeye', 'contains_base64', 'domain'], None)
+print('helloworld.exe:', r1['threat_level'])
+
+# real malware scenario
+r2 = {
+    'file': 'mimikatz.exe',
+    'ml_score': 0.92,
+    'pe_analysis': {'entropy': 6.8, 'threat_categories': {'Credential Access': ['CryptUnprotectData', 'LsaRetrievePrivateData']}, 'anomalies': ['Zero PE checksum']},
+    'visual_cnn': {'available': True, 'score': 0.95, 'family': 'Zeus', 'confidence': 0.78},
+}
+r2 = scanner.evaluate_threat(r2, ['mimikatz', 'hacktool_windows_mimikatz'], None)
+print('mimikatz.exe:', r2['threat_level'])
+"
+2026-10-16 15:06:26,585 - root - INFO - Successfully killed malicious process PID 20888
+2026-10-16 15:06:26,587 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:06:55,856 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -I C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py (PID: 38016)
+2026-10-16 15:06:56,253 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:06:56,255 - root - WARNING - THREAT EXECUTED! Terminating PID 38016: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -I C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py
+2026-10-16 15:06:56,283 - root - INFO - Successfully killed malicious process PID 38016
+2026-10-16 15:06:56,285 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:07:05,733 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -I C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py  (PID: 7460)
+2026-10-16 15:07:06,103 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:07:06,105 - root - WARNING - THREAT EXECUTED! Terminating PID 7460: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -I C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py 
+2026-10-16 15:07:06,115 - root - INFO - Successfully killed malicious process PID 7460
+2026-10-16 15:07:06,116 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:07:12,358 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -I C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py (PID: 33540)
+2026-10-16 15:07:12,769 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:07:12,771 - root - WARNING - THREAT EXECUTED! Terminating PID 33540: J:\Project\Github\SentinelX\venv\Scripts\python.exe -I C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py
+2026-10-16 15:07:12,779 - root - INFO - Successfully killed malicious process PID 33540
+2026-10-16 15:07:12,780 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:07:18,973 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py (PID: 29416)
+2026-10-16 15:07:19,340 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:07:19,343 - root - WARNING - THREAT EXECUTED! Terminating PID 29416: J:\Project\Github\SentinelX\venv\Scripts\python.exe C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_scoring.py
+2026-10-16 15:07:19,375 - root - INFO - Successfully killed malicious process PID 29416
+2026-10-16 15:07:19,376 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:07:31,170 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "import sys; sys.path.insert(0, '.'); from core import engine_registry; s = engine_registry.get_scanner(); print('scanner OK')" (PID: 20816)
+2026-10-16 15:07:31,548 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:07:31,551 - root - WARNING - THREAT EXECUTED! Terminating PID 20816: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "import sys; sys.path.insert(0, '.'); from core import engine_registry; s = engine_registry.get_scanner(); print('scanner OK')"
+2026-10-16 15:07:31,582 - root - INFO - Successfully killed malicious process PID 20816
+2026-10-16 15:07:31,583 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:07:36,678 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "import sys; sys.path.insert(0, '.'); from core.visual_engine import VisualMLEngine; print('OK')" (PID: 17140)
+2026-10-16 15:07:37,052 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:07:37,054 - root - WARNING - THREAT EXECUTED! Terminating PID 17140: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "import sys; sys.path.insert(0, '.'); from core.visual_engine import VisualMLEngine; print('OK')"
+2026-10-16 15:07:37,082 - root - INFO - Successfully killed malicious process PID 17140
+2026-10-16 15:07:37,083 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:07:43,339 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "import torch; print(torch.__version__)" (PID: 26452)
+2026-10-16 15:07:43,748 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:07:43,751 - root - WARNING - THREAT EXECUTED! Terminating PID 26452: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "import torch; print(torch.__version__)"
+2026-10-16 15:07:43,777 - root - INFO - Successfully killed malicious process PID 26452
+2026-10-16 15:07:43,778 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:07:58,662 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -v -c "import torch" (PID: 23296)
+2026-10-16 15:07:59,033 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:07:59,036 - root - WARNING - THREAT EXECUTED! Terminating PID 23296: J:\Project\Github\SentinelX\venv\Scripts\python.exe -v -c "import torch"
+2026-10-16 15:07:59,062 - root - INFO - Successfully killed malicious process PID 23296
+2026-10-16 15:07:59,063 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:08:10,815 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "
+import sys
+sys.path.insert(0, '.')
+print('step 1: importing visual_engine')
+from core import visual_engine
+print(f'step 2: TORCH_AVAILABLE={visual_engine.TORCH_AVAILABLE}')
+print('step 3: creating engine')
+ve = visual_engine.VisualMLEngine()
+print(f'step 4: model loaded={ve.model is not None}')
+" (PID: 10620)
+2026-10-16 15:08:11,166 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:08:11,169 - root - WARNING - THREAT EXECUTED! Terminating PID 10620: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "
+import sys
+sys.path.insert(0, '.')
+print('step 1: importing visual_engine')
+from core import visual_engine
+print(f'step 2: TORCH_AVAILABLE={visual_engine.TORCH_AVAILABLE}')
+print('step 3: creating engine')
+ve = visual_engine.VisualMLEngine()
+print(f'step 4: model loaded={ve.model is not None}')
+"
+2026-10-16 15:08:11,199 - root - INFO - Successfully killed malicious process PID 10620
+2026-10-16 15:08:11,200 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:08:16,342 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('start'); from core import visual_engine; print('done')" (PID: 25316)
+2026-10-16 15:08:16,719 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:08:16,721 - root - WARNING - THREAT EXECUTED! Terminating PID 25316: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('start'); from core import visual_engine; print('done')"
+2026-10-16 15:08:16,747 - root - INFO - Successfully killed malicious process PID 25316
+2026-10-16 15:08:16,748 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:08:22,921 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('a'); import numpy; print('b'); from PIL import Image; print('c'); import torch; print('d')" (PID: 2812)
+2026-10-16 15:08:23,297 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:08:23,299 - root - WARNING - THREAT EXECUTED! Terminating PID 2812: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('a'); import numpy; print('b'); from PIL import Image; print('c'); import torch; print('d')"
+2026-10-16 15:08:23,300 - root - ERROR - Failed to kill process 2812: process PID not found (pid=2812)
+2026-10-16 15:08:23,301 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:08:29,494 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('a'); import torch; print('b'); import torchvision; print('c'); from torchvision import models; print('d'); from torchvision.models import EfficientNet_B0_Weights; print('e')" (PID: 26616)
+2026-10-16 15:08:29,869 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:08:29,871 - root - WARNING - THREAT EXECUTED! Terminating PID 26616: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('a'); import torch; print('b'); import torchvision; print('c'); from torchvision import models; print('d'); from torchvision.models import EfficientNet_B0_Weights; print('e')"
+2026-10-16 15:08:29,895 - root - INFO - Successfully killed malicious process PID 26616
+2026-10-16 15:08:29,896 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:08:36,091 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('a'); import torchvision; print('b')" (PID: 22872)
+2026-10-16 15:08:36,467 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:08:36,470 - root - WARNING - THREAT EXECUTED! Terminating PID 22872: J:\Project\Github\SentinelX\venv\Scripts\python.exe -c "print('a'); import torchvision; print('b')"
+2026-10-16 15:08:36,498 - root - INFO - Successfully killed malicious process PID 22872
+2026-10-16 15:08:36,499 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:08:58,095 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu128 (PID: 17396)
+2026-10-16 15:08:58,422 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:08:58,425 - root - WARNING - THREAT EXECUTED! Terminating PID 17396: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu128
+2026-10-16 15:08:58,426 - root - INFO - Successfully killed malicious process PID 17396
+2026-10-16 15:08:58,426 - root - ERROR - Failed to quarantine J:\Project\Github\SentinelX\venv\Scripts\pip.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\Project\\Github\\SentinelX\\venv\\Scripts\\pip.exe'
+2026-10-16 15:08:58,471 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu128 (PID: 6660)
+2026-10-16 15:08:58,804 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:08:58,806 - root - WARNING - THREAT EXECUTED! Terminating PID 6660: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu128
+2026-10-16 15:08:58,807 - root - ERROR - Failed to kill process 6660: process PID not found (pid=6660)
+2026-10-16 15:08:58,808 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:04,673 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall (PID: 13164)
+2026-10-16 15:09:05,050 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:09:05,052 - root - WARNING - THREAT EXECUTED! Terminating PID 13164: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall
+2026-10-16 15:09:05,053 - root - INFO - Successfully killed malicious process PID 13164
+2026-10-16 15:09:05,054 - root - ERROR - Failed to quarantine J:\Project\Github\SentinelX\venv\Scripts\pip.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\Project\\Github\\SentinelX\\venv\\Scripts\\pip.exe'
+2026-10-16 15:09:05,092 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall (PID: 37832)
+2026-10-16 15:09:05,430 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:09:05,433 - root - WARNING - THREAT EXECUTED! Terminating PID 37832: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall
+2026-10-16 15:09:05,433 - root - ERROR - Failed to kill process 37832: process PID not found (pid=37832)
+2026-10-16 15:09:05,434 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:10,159 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall (PID: 16956)
+2026-10-16 15:09:10,537 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:09:10,539 - root - WARNING - THREAT EXECUTED! Terminating PID 16956: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall
+2026-10-16 15:09:10,540 - root - INFO - Successfully killed malicious process PID 16956
+2026-10-16 15:09:10,541 - root - ERROR - Failed to quarantine J:\Project\Github\SentinelX\venv\Scripts\pip.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\Project\\Github\\SentinelX\\venv\\Scripts\\pip.exe'
+2026-10-16 15:09:10,549 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall (PID: 20972)
+2026-10-16 15:09:10,901 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:09:10,904 - root - WARNING - THREAT EXECUTED! Terminating PID 20972: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall
+2026-10-16 15:09:10,904 - root - ERROR - Failed to kill process 20972: process PID not found (pid=20972)
+2026-10-16 15:09:10,905 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:15,633 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall (PID: 31604)
+2026-10-16 15:09:15,998 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:09:16,000 - root - WARNING - THREAT EXECUTED! Terminating PID 31604: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall
+2026-10-16 15:09:16,002 - root - INFO - Successfully killed malicious process PID 31604
+2026-10-16 15:09:16,002 - root - ERROR - Failed to quarantine J:\Project\Github\SentinelX\venv\Scripts\pip.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\Project\\Github\\SentinelX\\venv\\Scripts\\pip.exe'
+2026-10-16 15:09:16,039 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall (PID: 6780)
+2026-10-16 15:09:16,370 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:09:16,372 - root - WARNING - THREAT EXECUTED! Terminating PID 6780: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 --force-reinstall
+2026-10-16 15:09:16,373 - root - ERROR - Failed to kill process 6780: process PID not found (pid=6780)
+2026-10-16 15:09:16,374 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:27,587 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe uninstall torch torchvision -y (PID: 12708)
+2026-10-16 15:09:27,958 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:09:27,961 - root - WARNING - THREAT EXECUTED! Terminating PID 12708: J:\Project\Github\SentinelX\venv\Scripts\pip.exe uninstall torch torchvision -y
+2026-10-16 15:09:27,962 - root - INFO - Successfully killed malicious process PID 12708
+2026-10-16 15:09:27,963 - root - ERROR - Failed to quarantine J:\Project\Github\SentinelX\venv\Scripts\pip.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\Project\\Github\\SentinelX\\venv\\Scripts\\pip.exe'
+2026-10-16 15:09:28,018 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" uninstall torch torchvision -y (PID: 3556)
+2026-10-16 15:09:28,344 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:09:28,346 - root - WARNING - THREAT EXECUTED! Terminating PID 3556: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" uninstall torch torchvision -y
+2026-10-16 15:09:28,346 - root - ERROR - Failed to kill process 3556: process PID not found (pid=3556)
+2026-10-16 15:09:28,348 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:33,076 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 (PID: 24492)
+2026-10-16 15:09:33,452 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:09:33,455 - root - WARNING - THREAT EXECUTED! Terminating PID 24492: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+2026-10-16 15:09:33,456 - root - INFO - Successfully killed malicious process PID 24492
+2026-10-16 15:09:33,457 - root - ERROR - Failed to quarantine J:\Project\Github\SentinelX\venv\Scripts\pip.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\Project\\Github\\SentinelX\\venv\\Scripts\\pip.exe'
+2026-10-16 15:09:33,472 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 (PID: 24688)
+2026-10-16 15:09:33,838 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:09:33,841 - root - WARNING - THREAT EXECUTED! Terminating PID 24688: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+2026-10-16 15:09:33,841 - root - ERROR - Failed to kill process 24688: process PID not found (pid=24688)
+2026-10-16 15:09:33,842 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:45,071 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe uninstall torchvision -y (PID: 23816)
+2026-10-16 15:09:45,448 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:09:45,451 - root - WARNING - THREAT EXECUTED! Terminating PID 23816: J:\Project\Github\SentinelX\venv\Scripts\pip.exe uninstall torchvision -y
+2026-10-16 15:09:45,452 - root - INFO - Successfully killed malicious process PID 23816
+2026-10-16 15:09:45,453 - root - ERROR - Failed to quarantine J:\Project\Github\SentinelX\venv\Scripts\pip.exe: [WinError 32] The process cannot access the file because it is being used by another process: 'J:\\Project\\Github\\SentinelX\\venv\\Scripts\\pip.exe'
+2026-10-16 15:09:45,461 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" uninstall torchvision -y (PID: 26972)
+2026-10-16 15:09:45,820 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:09:45,822 - root - WARNING - THREAT EXECUTED! Terminating PID 26972: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" uninstall torchvision -y
+2026-10-16 15:09:45,823 - root - ERROR - Failed to kill process 26972: process PID not found (pid=26972)
+2026-10-16 15:09:45,824 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:46,166 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126 (PID: 22080)
+2026-10-16 15:09:46,538 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869789481163025}, {"name": "Benign", "confidence": 0.1732453554868698}, {"name": "Remcos", "confidence": 0.10242088884115219}]
+2026-10-16 15:09:46,540 - root - WARNING - THREAT EXECUTED! Terminating PID 22080: "J:\Project\Github\SentinelX\venv\Scripts\python.exe"  "J:\Project\Github\SentinelX\venv\Scripts\pip.exe" install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+2026-10-16 15:09:46,546 - root - INFO - Successfully killed malicious process PID 22080
+2026-10-16 15:09:46,547 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:09:46,555 - root - INFO - [LIVE BEHAVIOR FEED] Launch: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126 (PID: 30356)
+2026-10-16 15:09:46,907 - sentinelx.visual.test - INFO - Prediction | file_size=108356 | class=Benign | confidence=0.9980 | malware_score=0.0020 | top3=[{"name": "Benign", "confidence": 0.9979738593101501}, {"name": "Gh0stRAT", "confidence": 0.0011104492004960775}, {"name": "Trickbot", "confidence": 0.0002996967814397067}]
+2026-10-16 15:09:46,910 - root - WARNING - THREAT EXECUTED! Terminating PID 30356: J:\Project\Github\SentinelX\venv\Scripts\pip.exe install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+2026-10-16 15:09:46,910 - root - ERROR - Failed to kill process 30356: process PID not found (pid=30356)
+2026-10-16 15:09:46,914 - root - INFO - Successfully quarantined J:\Project\Github\SentinelX\venv\Scripts\pip.exe to quarantine\bdbbe344de33ab153a7488dac788047f_pip.exe.isolated
+2026-10-16 15:11:49,537 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\pip3.exe" show torchvision (PID: 20068)
+2026-10-16 15:18:44,099 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 15:18:44,100 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 15:18:44,107 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 15:18:44,458 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 15:18:44,458 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 15:18:46,151 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 15:18:47,117 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 15:18:49,197 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-16 15:18:49,200 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 15:18:49,201 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 15:19:35,535 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-16 15:19:37,146 - root - INFO - Successfully quarantined J:\SentinelX_scanner\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-10-16 15:19:37,563 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 15:19:37,598 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-16 15:27:30,939 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-16 15:30:07,228 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 15:30:07,229 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 15:30:07,237 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 15:30:07,607 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 15:30:07,607 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 15:30:09,296 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 15:30:10,231 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 15:30:12,308 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-16 15:30:12,311 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 15:30:12,311 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 15:30:21,228 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-16 15:30:22,313 - root - INFO - Successfully quarantined J:\SentinelX_scanner\cmd.exe to quarantine\040194d8b98280c088c5b435eda3dd1f_cmd.exe.isolated
+2026-10-16 15:30:22,466 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-16 15:30:23,360 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-16 15:35:28,490 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -I - (PID: 33564)
+2026-10-16 15:35:28,931 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:35:28,933 - root - WARNING - THREAT EXECUTED! Terminating PID 33564: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -I -
+2026-10-16 15:35:28,936 - root - INFO - Successfully killed malicious process PID 33564
+2026-10-16 15:35:28,938 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:39:30,138 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" - (PID: 38520)
+2026-10-16 15:39:30,517 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:39:30,519 - root - WARNING - THREAT EXECUTED! Terminating PID 38520: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -
+2026-10-16 15:39:30,531 - root - INFO - Successfully killed malicious process PID 38520
+2026-10-16 15:39:30,532 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:39:58,950 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_yara_scoring.py (PID: 26908)
+2026-10-16 15:39:59,306 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:39:59,309 - root - WARNING - THREAT EXECUTED! Terminating PID 26908: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" C:\Users\Pain\AppData\Local\Temp\claude\j--Project-Github-SentinelX\f154dff0-2b18-44b9-bc50-924b261ed6f3\scratchpad\test_yara_scoring.py
+2026-10-16 15:39:59,340 - root - INFO - Successfully killed malicious process PID 26908
+2026-10-16 15:39:59,341 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:40:08,078 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torch; print(torch.__version__); import torchvision; print(torchvision.__version__)" (PID: 33464)
+2026-10-16 15:40:08,483 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:40:08,485 - root - WARNING - THREAT EXECUTED! Terminating PID 33464: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torch; print(torch.__version__); import torchvision; print(torchvision.__version__)"
+2026-10-16 15:40:08,516 - root - INFO - Successfully killed malicious process PID 33464
+2026-10-16 15:40:08,517 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:40:13,754 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torch; print(torch.__version__)" (PID: 19192)
+2026-10-16 15:40:14,147 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:40:14,150 - root - WARNING - THREAT EXECUTED! Terminating PID 19192: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torch; print(torch.__version__)"
+2026-10-16 15:40:14,150 - root - ERROR - Failed to kill process 19192: process PID not found (pid=19192)
+2026-10-16 15:40:14,151 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:40:19,397 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torchvision; print(torchvision.__version__)" (PID: 36752)
+2026-10-16 15:40:19,784 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:40:19,786 - root - WARNING - THREAT EXECUTED! Terminating PID 36752: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torchvision; print(torchvision.__version__)"
+2026-10-16 15:40:19,815 - root - INFO - Successfully killed malicious process PID 36752
+2026-10-16 15:40:19,816 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:40:30,757 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torch; import torchvision; print('OK:', torchvision.__version__)" (PID: 10796)
+2026-10-16 15:40:31,150 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:40:31,152 - root - WARNING - THREAT EXECUTED! Terminating PID 10796: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import torch; import torchvision; print('OK:', torchvision.__version__)"
+2026-10-16 15:40:31,178 - root - INFO - Successfully killed malicious process PID 10796
+2026-10-16 15:40:31,179 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:40:43,351 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import faulthandler; faulthandler.enable(); import torch; print('torch ok'); import torchvision; print('tv ok')" (PID: 24416)
+2026-10-16 15:40:43,745 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:40:43,748 - root - WARNING - THREAT EXECUTED! Terminating PID 24416: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -c "import faulthandler; faulthandler.enable(); import torch; print('torch ok'); import torchvision; print('tv ok')"
+2026-10-16 15:40:43,771 - root - INFO - Successfully killed malicious process PID 24416
+2026-10-16 15:40:43,772 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:40:48,996 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -v -c "import torchvision" (PID: 27860)
+2026-10-16 15:40:49,380 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:40:49,382 - root - WARNING - THREAT EXECUTED! Terminating PID 27860: "J:\Project\Github\SentinelX\venv\Scripts\python.exe" -v -c "import torchvision"
+2026-10-16 15:40:49,408 - root - INFO - Successfully killed malicious process PID 27860
+2026-10-16 15:40:49,409 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:41:00,224 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe"  -c "import torchvision; print(torchvision.__version__)" (PID: 23976)
+2026-10-16 15:41:00,611 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:41:00,614 - root - WARNING - THREAT EXECUTED! Terminating PID 23976: "C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe"  -c "import torchvision; print(torchvision.__version__)"
+2026-10-16 15:41:00,648 - root - INFO - Successfully killed malicious process PID 23976
+2026-10-16 15:41:00,649 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 15:41:05,819 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe"  -c "import torch; print(torch.__version__)" (PID: 15396)
+2026-10-16 15:41:06,212 - sentinelx.visual.test - INFO - Prediction | file_size=106208 | class=Gh0stRAT | confidence=0.4870 | malware_score=0.8268 | top3=[{"name": "Gh0stRAT", "confidence": 0.4869788587093353}, {"name": "Benign", "confidence": 0.17324486374855042}, {"name": "Remcos", "confidence": 0.10242120176553726}]
+2026-10-16 15:41:06,214 - root - WARNING - THREAT EXECUTED! Terminating PID 15396: "C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe"  -c "import torch; print(torch.__version__)"
+2026-10-16 15:41:06,215 - root - ERROR - Failed to kill process 15396: process PID not found (pid=15396)
+2026-10-16 15:41:06,216 - root - ERROR - Failed to quarantine C:\Users\Pain\AppData\Local\Programs\Python\Python314\python.exe: [WinError 5] Access is denied: 'C:\\Users\\Pain\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+2026-10-16 16:24:05,840 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 16:24:05,841 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 16:24:05,848 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 16:24:06,197 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 16:24:06,197 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 16:24:07,895 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 16:24:08,862 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 16:24:10,717 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-16 16:24:10,720 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 16:24:10,721 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-16 16:30:41,579 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588" (PID: 19460)
+2026-10-16 16:30:45,849 - sentinelx.visual.test - INFO - Prediction | file_size=3507640 | class=Benign | confidence=0.9771 | malware_score=0.0229 | top3=[{"name": "Benign", "confidence": 0.9771236181259155}, {"name": "Zeus", "confidence": 0.016838591545820236}, {"name": "Gozi", "confidence": 0.002040014835074544}]
+2026-10-16 16:30:45,859 - root - WARNING - THREAT EXECUTED! Terminating PID 19460: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588"
+2026-10-16 16:30:45,899 - root - INFO - Successfully killed malicious process PID 19460
+2026-10-16 16:30:45,902 - root - ERROR - Failed to quarantine \\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe: [WinError 5] Access is denied: '\\\\?\\C:\\Users\\Pain\\AppData\\Local\\Discord\\app-1.0.9262\\modules\\discord_clips-1\\discord_clips\\discord_clips.exe'
+2026-10-16 16:30:45,908 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\sentry-crash.exe" 19460 6c2c 940 944 (PID: 20044)
+2026-10-16 16:30:46,451 - sentinelx.visual.test - INFO - Prediction | file_size=419768 | class=Benign | confidence=0.9662 | malware_score=0.0338 | top3=[{"name": "Benign", "confidence": 0.9662320017814636}, {"name": "RedLineStealer", "confidence": 0.0258373711258173}, {"name": "RecordBreaker", "confidence": 0.00788643304258585}]
+2026-10-16 16:30:46,462 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588" (PID: 16072)
+2026-10-16 16:30:50,609 - sentinelx.visual.test - INFO - Prediction | file_size=3507640 | class=Benign | confidence=0.9771 | malware_score=0.0229 | top3=[{"name": "Benign", "confidence": 0.9771236181259155}, {"name": "Zeus", "confidence": 0.016838591545820236}, {"name": "Gozi", "confidence": 0.002040014835074544}]
+2026-10-16 16:30:50,612 - root - WARNING - THREAT EXECUTED! Terminating PID 16072: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588"
+2026-10-16 16:30:50,654 - root - INFO - Successfully killed malicious process PID 16072
+2026-10-16 16:30:50,657 - root - ERROR - Failed to quarantine \\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe: [WinError 5] Access is denied: '\\\\?\\C:\\Users\\Pain\\AppData\\Local\\Discord\\app-1.0.9262\\modules\\discord_clips-1\\discord_clips\\discord_clips.exe'
+2026-10-16 16:30:50,663 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\sentry-crash.exe" 16072 9600 936 940 (PID: 9080)
+2026-10-16 16:30:51,188 - sentinelx.visual.test - INFO - Prediction | file_size=419768 | class=Benign | confidence=0.9662 | malware_score=0.0338 | top3=[{"name": "Benign", "confidence": 0.9662320017814636}, {"name": "RedLineStealer", "confidence": 0.0258373711258173}, {"name": "RecordBreaker", "confidence": 0.00788643304258585}]
+2026-10-16 16:30:51,535 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588" (PID: 15436)
+2026-10-16 16:30:55,647 - sentinelx.visual.test - INFO - Prediction | file_size=3507640 | class=Benign | confidence=0.9771 | malware_score=0.0229 | top3=[{"name": "Benign", "confidence": 0.9771236181259155}, {"name": "Zeus", "confidence": 0.016838591545820236}, {"name": "Gozi", "confidence": 0.002040014835074544}]
+2026-10-16 16:30:55,650 - root - WARNING - THREAT EXECUTED! Terminating PID 15436: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588"
+2026-10-16 16:30:55,693 - root - INFO - Successfully killed malicious process PID 15436
+2026-10-16 16:30:55,696 - root - ERROR - Failed to quarantine \\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe: [WinError 5] Access is denied: '\\\\?\\C:\\Users\\Pain\\AppData\\Local\\Discord\\app-1.0.9262\\modules\\discord_clips-1\\discord_clips\\discord_clips.exe'
+2026-10-16 16:30:55,702 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\sentry-crash.exe" 15436 2280 944 948 (PID: 16044)
+2026-10-16 16:30:56,266 - sentinelx.visual.test - INFO - Prediction | file_size=419768 | class=Benign | confidence=0.9662 | malware_score=0.0338 | top3=[{"name": "Benign", "confidence": 0.9662320017814636}, {"name": "RedLineStealer", "confidence": 0.0258373711258173}, {"name": "RecordBreaker", "confidence": 0.00788643304258585}]
+2026-10-16 16:30:56,276 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\sentry-crash.exe" 27452 9b40 944 948 (PID: 14460)
+2026-10-16 16:30:56,810 - sentinelx.visual.test - INFO - Prediction | file_size=419768 | class=Benign | confidence=0.9662 | malware_score=0.0338 | top3=[{"name": "Benign", "confidence": 0.9662320017814636}, {"name": "RedLineStealer", "confidence": 0.0258373711258173}, {"name": "RecordBreaker", "confidence": 0.00788643304258585}]
+2026-10-16 16:30:56,817 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588" (PID: 27452)
+2026-10-16 16:31:01,408 - sentinelx.visual.test - INFO - Prediction | file_size=3507640 | class=Benign | confidence=0.9771 | malware_score=0.0229 | top3=[{"name": "Benign", "confidence": 0.9771236181259155}, {"name": "Zeus", "confidence": 0.016838591545820236}, {"name": "Gozi", "confidence": 0.002040014835074544}]
+2026-10-16 16:31:01,410 - root - WARNING - THREAT EXECUTED! Terminating PID 27452: "\\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe" "--log-dir" "C:\Users\Pain\AppData\Roaming\discord\logs" "--data-dir" "C:\Users\Pain\AppData\Roaming\discord\discord_asset_cache\clips" "--sentry-release" "discord_clips@94186" "--sentry-db-path" "C:\Users\Pain\AppData\Roaming\discord\sentry_clips" "--sentry-sample-rate" "0.050000" "\\.\pipe\discord-clips-36588"
+2026-10-16 16:31:01,457 - root - INFO - Successfully killed malicious process PID 27452
+2026-10-16 16:31:01,463 - root - INFO - Successfully quarantined \\?\C:\Users\Pain\AppData\Local\Discord\app-1.0.9262\modules\discord_clips-1\discord_clips\discord_clips.exe to quarantine\41ab07318b1099d4e4ba968c14e6401b_discord_clips.exe.isolated
+2026-10-16 16:31:07,976 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-16 16:31:08,444 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-16 16:31:10,159 - root - INFO - Successfully quarantined J:\SentinelX_scanner\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-10-16 16:31:10,581 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-16 16:31:10,638 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-16 16:33:23,964 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-16 16:33:24,434 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-16 16:33:25,340 - sentinelx.visual.test - INFO - Prediction | file_size=875134 | class=Glupteba | confidence=0.2699 | malware_score=0.9917 | top3=[{"name": "Glupteba", "confidence": 0.269931823015213}, {"name": "Gh0stRAT", "confidence": 0.2586917579174042}, {"name": "Danabot", "confidence": 0.1370232105255127}]
+2026-10-16 16:33:26,843 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-16 16:35:10,970 - root - INFO - ETW session started successfully.

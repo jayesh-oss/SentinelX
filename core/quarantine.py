@@ -2,12 +2,12 @@ import os
 import shutil
 import logging
 import sqlite3
-from database.db_manager import DatabaseManager
+from core import engine_registry
 
 class QuarantineManager:
     def __init__(self, quarantine_dir="quarantine"):
         self.quarantine_dir = quarantine_dir
-        self.db = DatabaseManager()
+        self.db = engine_registry.get_db()
         if not os.path.exists(self.quarantine_dir):
             os.makedirs(self.quarantine_dir)
 

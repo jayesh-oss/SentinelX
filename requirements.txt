@@ -4,12 +4,14 @@ scikit-learn
 xgboost
 psutil
 pefile
-vt-py
+requests
 watchdog
 pywin32
 WMI
 cryptography
-requests
 joblib
 numpy
 pandas
+torch
+torchvision
+Pillow
