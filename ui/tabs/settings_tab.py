@@ -93,8 +93,9 @@ class SettingsTab(QWidget):
         lbl_dir.setStyleSheet("color: #C9D1D9;")
         
         self.txt_monitor_dir = QLineEdit()
-        current_dir = self.behavior_monitor.target_directory if self.behavior_monitor else os.path.join(os.path.expanduser("~"), "Documents")
+        current_dir = (self.behavior_monitor.target_directory or "") if self.behavior_monitor else ""
         self.txt_monitor_dir.setText(current_dir)
+        self.txt_monitor_dir.setPlaceholderText("Click Browse to choose a folder to monitor...")
         self.txt_monitor_dir.setStyleSheet("padding: 5px; border-radius: 4px; border: 1px solid #30363D; background-color: #0D1117; color: white;")
         
         btn_browse_dir = QPushButton("Browse")

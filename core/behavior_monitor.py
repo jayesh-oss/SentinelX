@@ -69,13 +69,14 @@ class SentinelEventHandler(FileSystemEventHandler):
 
 class BehaviorMonitor:
     def __init__(self, target_directory=None):
-        if target_directory is None:
-            target_directory = os.path.join(os.path.expanduser("~"), "Documents")
         self.target_directory = target_directory
         self.event_handler = SentinelEventHandler()
         self.is_running = False
 
     def start(self):
+        if not self.target_directory:
+            logging.warning("BehaviorMonitor: no target directory set — monitoring not started.")
+            return
         if not os.path.exists(self.target_directory):
             try:
                 os.makedirs(self.target_directory, exist_ok=True)

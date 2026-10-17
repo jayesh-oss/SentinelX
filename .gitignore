@@ -1,0 +1,71 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── SentinelX runtime data ────────────────────────────────────────────────────
+# Quarantined files (contain real malware samples)
+quarantine/*.isolated
+
+# Database (contains user scan history — regenerated on first run)
+database/sentinelx.db
+
+# Logs
+logs/*.log
+
+# ── ML / AI model artifacts ───────────────────────────────────────────────────
+# Large binary model files — too big for git, download/train separately
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.h5
+*.model
+
+# ── Dataset ───────────────────────────────────────────────────────────────────
+# PE image dataset used for training — not part of the app itself
+Dataset/
+
+# ── Compiled / build output ───────────────────────────────────────────────────
+*.spec
+dist/
+build/
+*.exe
+# Exception: keep setup.bat and run_sentinel.bat
+!setup.bat
+!run_sentinel.bat
+
+# ── IDE and OS files ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+Thumbs.db
+Desktop.ini
+.DS_Store
+ehthumbs.db
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+config.ini
+secrets.json
+
+# ── Pytest / coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/

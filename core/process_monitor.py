@@ -10,9 +10,7 @@ from core import engine_registry
 
 class ProcessMonitor:
     def __init__(self, scanner=None, yara_engine=None, target_directory=None):
-        if target_directory is None:
-            target_directory = os.path.join(os.path.expanduser("~"), "Documents")
-        self.target_directory = target_directory.lower()
+        self.target_directory = target_directory.lower() if target_directory else None
         self.scanner = scanner or engine_registry.get_scanner()
         self.yara_engine = yara_engine or engine_registry.get_yara_engine()
         self.quarantine_mgr = engine_registry.get_quarantine_manager()

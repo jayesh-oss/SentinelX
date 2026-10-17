@@ -62,16 +62,10 @@ def main():
         engine_registry.get_yara_engine()
         engine_registry.get_scanner()
 
-        # Default monitor directory: user's Documents folder (works on any machine)
-        default_monitor_dir = os.path.join(os.path.expanduser("~"), "Documents")
-
-        # Start Real-Time Protection
-        monitor = BehaviorMonitor(target_directory=default_monitor_dir)
-        monitor.start()
-
-        # Start Active Process Execution Protection
-        process_monitor = ProcessMonitor(target_directory=default_monitor_dir)
-        process_monitor.start()
+        # Real-Time Protection monitors — no path set by default.
+        # The user picks the directory in Settings and enables via the Dashboard toggle.
+        monitor = BehaviorMonitor()
+        process_monitor = ProcessMonitor()
 
         # Start Anti-Ransomware Shield (background daemon threads — non-blocking)
         ransomware_shield = engine_registry.get_ransomware_shield()
