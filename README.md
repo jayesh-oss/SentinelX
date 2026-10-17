@@ -1,6 +1,6 @@
 # SentinelX
 
-A next-generation antivirus engine for Windows, built in Python. SentinelX layers five independent detection methods on top of each other — signatures, machine learning, deep learning, cloud intelligence, and ransomware behavioural analysis — so that no single engine is a point of failure.
+A next-generation antivirus engine for Windows, built in Python. SentinelX layers five independent detection methods on top of each other - signatures, machine learning, deep learning, cloud intelligence, and ransomware behavioural analysis - so that no single engine is a point of failure.
 
 ---
 
@@ -9,11 +9,11 @@ A next-generation antivirus engine for Windows, built in Python. SentinelX layer
 ### 1. YARA Signature Scanning
 Over 1,150 compiled YARA rules sourced from the Elastic detection rules repository. Every scanned file is matched against the full ruleset. A single match is treated as a high-confidence indicator and contributes the maximum weight to the threat score.
 
-### 2. Machine Learning — PE Heuristics
+### 2. Machine Learning - PE Heuristics
 A pre-trained Random Forest / XGBoost model analyses eight features extracted from the PE header: section entropy, import count, suspicious API presence, section count, resource size, timestamp anomalies, overlay size, and header checksum validity. The model outputs a probability score that is fed into the unified scoring pipeline alongside the YARA result.
 
-### 3. Visual CNN — Binary Image Classification
-The file's raw bytes are rendered as a grayscale image and passed through a fine-tuned EfficientNet-B0 convolutional neural network. This catches obfuscated or packed samples that defeat signature matching — malware families tend to produce visually distinct byte patterns regardless of how the code is encrypted.
+### 3. Visual CNN - Binary Image Classification
+The file's raw bytes are rendered as a grayscale image and passed through a fine-tuned EfficientNet-B0 convolutional neural network. This catches obfuscated or packed samples that defeat signature matching - malware families tend to produce visually distinct byte patterns regardless of how the code is encrypted.
 
 ### 4. VirusTotal Cloud Intelligence
 File MD5 hashes are looked up against the VirusTotal API with local SQLite caching to avoid redundant network calls. Results feed into the scoring model: fewer than 3 vendor detections can override a marginal heuristic positive; 3 or more detections add significant weight toward a malicious verdict.
@@ -27,7 +27,7 @@ Every scanned file goes through a four-layer ransomware-specific analysis pass (
 | Layer | What it checks |
 |-------|---------------|
 | Extension | Known ransomware file extensions (.locked, .ryuk, .wncry, .conti, .hive, .lockbit, and 35+ others) |
-| Entropy | Shannon entropy of the first 8 KB — encrypted/compressed content scores above 7.2 bits/byte |
+| Entropy | Shannon entropy of the first 8 KB - encrypted/compressed content scores above 7.2 bits/byte |
 | Ransom strings | Scans the first 512 KB for embedded ransom note phrases and VSS deletion commands |
 | PE reuse | Reuses the already-parsed PE data to flag crypto APIs (CryptEncrypt, BCryptEncrypt) and anti-recovery imports |
 
@@ -44,11 +44,11 @@ A `watchdog` observer watches the directory you configure in Settings. Any new o
 WMI `Win32_Process` creation events are intercepted at the kernel notification level. When an executable launches outside of `C:\Windows\` and `C:\Program Files\`, SentinelX scans it before it has a chance to run. If the verdict is Malicious, the process is terminated via `psutil` and the binary is quarantined immediately.
 
 ### Anti-Ransomware Shield
-Runs as a set of background daemon threads — completely separate from the scan pipeline. Three independent tripwires:
+Runs as a set of background daemon threads - completely separate from the scan pipeline. Three independent tripwires:
 
-- **Canary files** — Honeypot decoys named `!SentinelX_Canary_do_not_delete.txt` are placed in Desktop, Documents, Downloads, Pictures, and Videos. Ransomware encrypts files alphabetically, so it hits these first. Any modification to a canary is an immediate high-confidence trigger.
-- **Mass modification counter** — A sliding 60-second window counts modifications to protected file types (.docx, .pdf, .jpg, .mp4, .zip, etc.). If 20 or more modifications occur within the window, the shield triggers.
-- **VSS deletion watcher** — A separate WMI thread watches for process launches containing `vssadmin delete shadows`, `bcdedit /set`, `wbadmin delete catalog`, and similar shadow copy destruction commands — a near-universal behaviour in ransomware.
+- **Canary files** - Honeypot decoys named `!SentinelX_Canary_do_not_delete.txt` are placed in Desktop, Documents, Downloads, Pictures, and Videos. Ransomware encrypts files alphabetically, so it hits these first. Any modification to a canary is an immediate high-confidence trigger.
+- **Mass modification counter** - A sliding 60-second window counts modifications to protected file types (.docx, .pdf, .jpg, .mp4, .zip, etc.). If 20 or more modifications occur within the window, the shield triggers.
+- **VSS deletion watcher** - A separate WMI thread watches for process launches containing `vssadmin delete shadows`, `bcdedit /set`, `wbadmin delete catalog`, and similar shadow copy destruction commands - a near-universal behaviour in ransomware.
 
 When any tripwire fires, SentinelX identifies the process with the highest disk write rate over a 150ms I/O snapshot, terminates it, and queues an alert that appears in the dashboard banner within 2 seconds.
 
@@ -69,10 +69,10 @@ Detected files are never deleted. The quarantine process:
 
 Built with PySide6. Four tabs:
 
-- **Dashboard** — Live statistics (total scans, threats detected, quarantined items), protection status with a donut chart, engine toggle controls, and the ransomware shield alert banner
-- **Scanner** — Drag-and-drop or browse file/folder selection, real-time per-file status updates during scanning, and a full structured results view per file showing every engine's output
-- **Quarantine** — Lists all quarantined items with their original paths, lets you restore or permanently delete entries
-- **Settings** — VirusTotal API key input, monitor directory selector, and UI theme switcher (Professional Dark, Cyberpunk, Hacker Terminal)
+- **Dashboard** - Live statistics (total scans, threats detected, quarantined items), protection status with a donut chart, engine toggle controls, and the ransomware shield alert banner
+- **Scanner** - Drag-and-drop or browse file/folder selection, real-time per-file status updates during scanning, and a full structured results view per file showing every engine's output
+- **Quarantine** - Lists all quarantined items with their original paths, lets you restore or permanently delete entries
+- **Settings** - VirusTotal API key input, monitor directory selector, and UI theme switcher (Professional Dark, Cyberpunk, Hacker Terminal)
 
 ---
 
@@ -89,7 +89,7 @@ Double-click **`setup.bat`**. It creates the virtual environment, installs all d
 
 To run it later: double-click **`run_sentinel.bat`**.
 
-SentinelX requests administrator elevation on launch — required for WMI process monitoring and process termination.
+SentinelX requests administrator elevation on launch - required for WMI process monitoring and process termination.
 
 ---
 
