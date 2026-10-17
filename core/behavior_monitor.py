@@ -68,7 +68,9 @@ class SentinelEventHandler(FileSystemEventHandler):
 
 
 class BehaviorMonitor:
-    def __init__(self, target_directory="J:\\SentinelX_Test"):
+    def __init__(self, target_directory=None):
+        if target_directory is None:
+            target_directory = os.path.join(os.path.expanduser("~"), "Documents")
         self.target_directory = target_directory
         self.event_handler = SentinelEventHandler()
         self.is_running = False

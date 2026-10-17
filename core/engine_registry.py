@@ -2,6 +2,16 @@ import threading
 
 _lock = threading.RLock()
 _instances = {}
+_ransomware_enabled = True   # global toggle — set by dashboard, read by ScanThread
+
+
+def is_ransomware_enabled() -> bool:
+    return _ransomware_enabled
+
+
+def set_ransomware_enabled(value: bool):
+    global _ransomware_enabled
+    _ransomware_enabled = value
 
 
 def get_db(db_path="database/sentinelx.db"):
@@ -65,3 +75,21 @@ def get_visual_engine():
                 from core.visual_engine import VisualMLEngine
                 _instances["visual"] = VisualMLEngine()
     return _instances["visual"]
+
+
+def get_ransomware_engine():
+    if "ransomware_engine" not in _instances:
+        with _lock:
+            if "ransomware_engine" not in _instances:
+                from core.ransomware_engine import RansomwareEngine
+                _instances["ransomware_engine"] = RansomwareEngine()
+    return _instances["ransomware_engine"]
+
+
+def get_ransomware_shield():
+    if "ransomware_shield" not in _instances:
+        with _lock:
+            if "ransomware_shield" not in _instances:
+                from core.ransomware_shield import RansomwareShield
+                _instances["ransomware_shield"] = RansomwareShield()
+    return _instances["ransomware_shield"]

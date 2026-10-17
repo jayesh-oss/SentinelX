@@ -4,13 +4,14 @@ import logging
 import psutil
 import os
 import sys
-import time
 import pythoncom
 from core import engine_registry
 
 
 class ProcessMonitor:
-    def __init__(self, scanner=None, yara_engine=None, target_directory="J:\\SentinelX_Test"):
+    def __init__(self, scanner=None, yara_engine=None, target_directory=None):
+        if target_directory is None:
+            target_directory = os.path.join(os.path.expanduser("~"), "Documents")
         self.target_directory = target_directory.lower()
         self.scanner = scanner or engine_registry.get_scanner()
         self.yara_engine = yara_engine or engine_registry.get_yara_engine()
@@ -73,9 +74,6 @@ class ProcessMonitor:
         finally:
             pythoncom.CoUninitialize()
 
-    def set_etw_session(self, etw_session):
-        self.etw_session = etw_session
-
     def _scan_and_terminate(self, file_path, pid, cmd_line=""):
         try:
             if not os.path.exists(file_path):
@@ -88,19 +86,6 @@ class ProcessMonitor:
 
             if threat_name.startswith("Malicious"):
                 self._kill_and_quarantine(file_path, pid, cmd_line, res, threat_name)
-            elif threat_name.startswith("Suspicious") and self.etw_session and self.etw_session.is_running:
-                logging.info(f"[ETW] Observing suspicious process PID {pid} for 5 seconds...")
-                observe_start = time.time()
-                time.sleep(5)
-                from core.etw_monitor import score_behavioral_events
-                events = self.etw_session.get_events_since(observe_start)
-                behavior_score, behavior_reasons = score_behavioral_events(events, pid)
-                if behavior_score >= 50:
-                    escalated = f"Malicious (Behavioral: {', '.join(behavior_reasons)})"
-                    logging.warning(f"[ETW] Escalated PID {pid} to {escalated}")
-                    self._kill_and_quarantine(file_path, pid, cmd_line, res, escalated)
-                else:
-                    logging.info(f"[ETW] PID {pid} behavioral score {behavior_score} — no escalation.")
 
         except Exception as e:
             logging.error(f"Error scanning launched process {file_path}: {e}")

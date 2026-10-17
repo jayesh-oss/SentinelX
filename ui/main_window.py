@@ -1,3 +1,4 @@
+import os
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, 
     QPushButton, QLabel, QStackedWidget, QFrame
@@ -10,18 +11,18 @@ from ui.tabs.quarantine_tab import QuarantineTab
 from ui.tabs.settings_tab import SettingsTab
 
 class MainWindow(QMainWindow):
-    def __init__(self, behavior_monitor=None, process_monitor=None, etw_session=None):
+    def __init__(self, behavior_monitor=None, process_monitor=None):
         super().__init__()
         self.setWindowTitle("SentinelX Antivirus")
         self.setMinimumSize(1000, 650)
 
         self.behavior_monitor = behavior_monitor
         self.process_monitor = process_monitor
-        self.etw_session = etw_session
         
-        # Load the generated logo
-        logo_path = r"C:\Users\pain\.gemini\antigravity\brain\e6eedf20-b819-46dd-9a24-24e211133ff6\sentinelx_logo_1771791546041.png"
-        self.setWindowIcon(QIcon(logo_path))
+        # Load logo from project assets (gracefully skip if absent)
+        logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "logo.png")
+        if os.path.exists(logo_path):
+            self.setWindowIcon(QIcon(logo_path))
 
         # Central widget
         self.central_widget = QWidget()
@@ -95,7 +96,7 @@ class MainWindow(QMainWindow):
         self.stacked_pages.setObjectName("MainContent")
         
         # Initialize Pages
-        self.page_dashboard = DashboardTab(self.behavior_monitor, self.process_monitor, self.etw_session)
+        self.page_dashboard = DashboardTab(self.behavior_monitor, self.process_monitor)
         self.page_scanner = ScannerTab() 
         self.page_quarantine = QuarantineTab() 
         self.page_settings = SettingsTab(self, self.behavior_monitor)

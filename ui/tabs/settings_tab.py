@@ -1,6 +1,7 @@
+import os
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
-    QLabel, QComboBox, QCheckBox, QFrame, QMessageBox, QLineEdit, QFileDialog, QSpinBox
+    QLabel, QComboBox, QCheckBox, QFrame, QMessageBox, QLineEdit, QFileDialog
 )
 from PySide6.QtCore import Qt
 from core import engine_registry
@@ -23,7 +24,6 @@ class SettingsTab(QWidget):
         
         self._build_theme_section()
         self._build_protection_section()
-        self._build_sandbox_section()
         self._build_api_section()
         
         self.layout.addStretch()
@@ -93,7 +93,7 @@ class SettingsTab(QWidget):
         lbl_dir.setStyleSheet("color: #C9D1D9;")
         
         self.txt_monitor_dir = QLineEdit()
-        current_dir = self.behavior_monitor.target_directory if self.behavior_monitor else "J:\\SentinelX_Test"
+        current_dir = self.behavior_monitor.target_directory if self.behavior_monitor else os.path.join(os.path.expanduser("~"), "Documents")
         self.txt_monitor_dir.setText(current_dir)
         self.txt_monitor_dir.setStyleSheet("padding: 5px; border-radius: 4px; border: 1px solid #30363D; background-color: #0D1117; color: white;")
         
@@ -119,45 +119,6 @@ class SettingsTab(QWidget):
         self.chk_quarantine.setChecked(auto_quar)
         lyt.addWidget(self.chk_quarantine)
         
-        self.layout.addWidget(frame)
-
-    def _build_sandbox_section(self):
-        frame = QFrame()
-        frame.setObjectName("SettingCard")
-        self._apply_card_style(frame)
-
-        lyt = QVBoxLayout(frame)
-        lbl = QLabel("Dynamic Analysis (Sandbox)")
-        lbl.setStyleSheet("font-size: 18px; font-weight: bold; color: #E6EDF3;")
-        lyt.addWidget(lbl)
-
-        # Timeout
-        h_timeout = QHBoxLayout()
-        lbl_timeout = QLabel("Execution Timeout (seconds):")
-        lbl_timeout.setStyleSheet("color: #C9D1D9;")
-        self.spin_sandbox_timeout = QSpinBox()
-        self.spin_sandbox_timeout.setRange(5, 120)
-        self.spin_sandbox_timeout.setValue(30)
-        self.spin_sandbox_timeout.setStyleSheet("padding: 4px; border: 1px solid #30363D; background: #0D1117; color: white; border-radius: 4px;")
-        h_timeout.addWidget(lbl_timeout)
-        h_timeout.addWidget(self.spin_sandbox_timeout)
-        h_timeout.addStretch()
-        lyt.addLayout(h_timeout)
-
-        # Memory limit
-        h_mem = QHBoxLayout()
-        lbl_mem = QLabel("Memory Limit (MB):")
-        lbl_mem.setStyleSheet("color: #C9D1D9;")
-        self.spin_sandbox_memory = QSpinBox()
-        self.spin_sandbox_memory.setRange(64, 1024)
-        self.spin_sandbox_memory.setValue(256)
-        self.spin_sandbox_memory.setSingleStep(64)
-        self.spin_sandbox_memory.setStyleSheet("padding: 4px; border: 1px solid #30363D; background: #0D1117; color: white; border-radius: 4px;")
-        h_mem.addWidget(lbl_mem)
-        h_mem.addWidget(self.spin_sandbox_memory)
-        h_mem.addStretch()
-        lyt.addLayout(h_mem)
-
         self.layout.addWidget(frame)
 
     def _build_api_section(self):

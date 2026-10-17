@@ -1581,3 +1581,164 @@ print(f'step 4: model loaded={ve.model is not None}')
 2026-10-16 16:33:25,340 - sentinelx.visual.test - INFO - Prediction | file_size=875134 | class=Glupteba | confidence=0.2699 | malware_score=0.9917 | top3=[{"name": "Glupteba", "confidence": 0.269931823015213}, {"name": "Gh0stRAT", "confidence": 0.2586917579174042}, {"name": "Danabot", "confidence": 0.1370232105255127}]
 2026-10-16 16:33:26,843 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
 2026-10-16 16:35:10,970 - root - INFO - ETW session started successfully.
+2026-10-16 17:28:29,062 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-16 17:28:29,063 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-16 17:28:29,071 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-16 17:28:29,418 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-16 17:28:29,418 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-16 17:28:31,091 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-16 17:28:32,081 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-16 17:28:34,046 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-16 17:28:34,048 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-16 17:28:34,048 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 20:13:24,846 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 20:13:24,851 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 20:13:24,931 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 20:13:25,375 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 20:13:25,375 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 20:13:27,134 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 20:13:29,872 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 20:13:32,970 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 20:13:32,973 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 20:13:32,974 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 20:21:54,460 - root - INFO - [LIVE BEHAVIOR FEED] Launch: "C:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\Code.exe" "c:\Users\Pain\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\extensions\markdown-language-features\dist\serverWorkerMain" --node-ipc --clientProcessId=11428 (PID: 34788)
+2026-10-17 20:27:34,219 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 20:27:34,220 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 20:27:34,228 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 20:27:34,584 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 20:27:34,584 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 20:27:36,254 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 20:27:37,242 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 20:27:39,123 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 20:27:39,125 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 20:27:39,126 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 20:29:12,522 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 20:29:12,523 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 20:29:12,530 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 20:29:12,894 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 20:29:12,894 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 20:29:14,605 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 20:29:15,602 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 20:29:17,553 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 20:29:17,555 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 20:29:17,556 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 20:32:35,011 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 20:32:35,012 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 20:32:35,019 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 20:32:35,372 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 20:32:35,372 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 20:32:37,054 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 20:32:38,026 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 20:32:39,918 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 20:32:39,920 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 20:32:39,921 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 20:32:48,215 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-17 20:32:48,686 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-17 20:32:50,365 - root - INFO - Successfully quarantined J:\SentinelX_scanner\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-10-17 20:32:50,691 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-17 20:32:50,832 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-17 20:56:37,866 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 20:56:37,867 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 20:56:37,874 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 20:56:38,220 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 20:56:38,220 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 20:56:39,914 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 20:56:40,916 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 20:56:43,266 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 20:56:43,268 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 20:56:43,269 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 20:57:02,838 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\Rubeus.exe
+2026-10-17 20:57:03,149 - root - WARNING - THREAT DETECTED by Real-Time Protection: J:\SentinelX_Test\Rubeus.exe
+2026-10-17 20:57:03,153 - root - INFO - Successfully quarantined J:\SentinelX_Test\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-17 20:57:11,767 - root - INFO - Real-Time Monitor scanning: J:\SentinelX_Test\cmd.exe
+2026-10-17 20:57:12,198 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-17 20:59:12,936 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 20:59:12,937 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 20:59:12,944 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 20:59:13,311 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 20:59:13,311 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 20:59:15,054 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 20:59:16,040 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 20:59:17,987 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 20:59:17,989 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 20:59:17,989 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 21:33:01,735 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 21:33:01,736 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 21:33:01,743 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 21:33:02,101 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 21:33:02,101 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 21:33:03,809 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 21:33:04,809 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 21:33:06,752 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 21:33:06,755 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 21:33:06,756 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 21:33:06,769 - root - INFO - Canary deployed: C:\Users\Pain\Desktop\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:33:06,771 - root - INFO - Canary deployed: C:\Users\Pain\Documents\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:33:06,772 - root - INFO - Canary deployed: C:\Users\Pain\Downloads\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:33:06,773 - root - INFO - Canary deployed: C:\Users\Pain\Pictures\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:33:06,775 - root - INFO - Canary deployed: C:\Users\Pain\Videos\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:33:06,778 - root - INFO - Anti-Ransomware Shield started.
+2026-10-17 21:33:56,989 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-17 21:34:37,056 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 21:34:37,057 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 21:34:37,064 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 21:34:37,411 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 21:34:37,412 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 21:34:39,129 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 21:34:40,112 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 21:34:41,966 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 21:34:41,968 - root - INFO - Real-Time Protection started. Monitoring: J:\SentinelX_Test
+2026-10-17 21:34:41,969 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 21:34:41,970 - root - INFO - Canary deployed: C:\Users\Pain\Desktop\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:34:41,971 - root - INFO - Canary deployed: C:\Users\Pain\Documents\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:34:41,971 - root - INFO - Canary deployed: C:\Users\Pain\Downloads\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:34:41,971 - root - INFO - Canary deployed: C:\Users\Pain\Pictures\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:34:41,972 - root - INFO - Canary deployed: C:\Users\Pain\Videos\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:34:41,975 - root - INFO - Anti-Ransomware Shield started.
+2026-10-17 21:34:52,610 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-17 21:34:53,085 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-17 21:34:54,706 - root - INFO - Successfully quarantined J:\SentinelX_scanner\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-10-17 21:34:55,123 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-17 21:34:55,140 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-17 21:35:38,106 - root - INFO - Anti-Ransomware Shield stopped.
+2026-10-17 21:35:46,179 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-17 21:35:46,644 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-17 21:35:47,493 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-17 21:43:25,005 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 21:43:25,006 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 21:43:25,013 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 21:43:25,366 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 21:43:25,366 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 21:43:27,067 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 21:43:28,010 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 21:43:29,872 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 21:43:29,874 - root - INFO - Real-Time Protection started. Monitoring: C:\Users\Pain\Documents
+2026-10-17 21:43:29,875 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 21:43:29,876 - root - INFO - Canary deployed: C:\Users\Pain\Desktop\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:43:29,877 - root - INFO - Canary deployed: C:\Users\Pain\Documents\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:43:29,877 - root - INFO - Canary deployed: C:\Users\Pain\Downloads\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:43:29,877 - root - INFO - Canary deployed: C:\Users\Pain\Pictures\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:43:29,878 - root - INFO - Canary deployed: C:\Users\Pain\Videos\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:43:29,881 - root - INFO - Anti-Ransomware Shield started.
+2026-10-17 21:43:57,785 - sentinelx.visual.test - INFO - Prediction | file_size=339968 | class=Benign | confidence=0.9812 | malware_score=0.0188 | top3=[{"name": "Benign", "confidence": 0.9812324047088623}, {"name": "Trickbot", "confidence": 0.015028217807412148}, {"name": "CoinMinerXMRig", "confidence": 0.002539534354582429}]
+2026-10-17 21:43:58,263 - sentinelx.visual.test - INFO - Prediction | file_size=58156 | class=CoinMinerXMRig | confidence=0.4475 | malware_score=0.8216 | top3=[{"name": "CoinMinerXMRig", "confidence": 0.447506844997406}, {"name": "Benign", "confidence": 0.1783655881881714}, {"name": "RedLineStealer", "confidence": 0.14269398152828217}]
+2026-10-17 21:43:59,908 - root - INFO - Successfully quarantined J:\SentinelX_scanner\mimikatz.exe to quarantine\e930b05efe23891d19bc354a4209be3e_mimikatz.exe.isolated
+2026-10-17 21:44:00,325 - root - INFO - Successfully quarantined J:\SentinelX_scanner\Rubeus.exe to quarantine\95ba181c0359495effef4a990365752f_Rubeus.exe.isolated
+2026-10-17 21:44:00,344 - sentinelx.visual.test - INFO - Prediction | file_size=63576 | class=Benign | confidence=0.5244 | malware_score=0.4756 | top3=[{"name": "Benign", "confidence": 0.5243802666664124}, {"name": "CoinMinerXMRig", "confidence": 0.2668091058731079}, {"name": "RedLineStealer", "confidence": 0.06093737483024597}]
+2026-10-17 21:47:35,580 - root - INFO - [LIVE BEHAVIOR FEED] Launch: c:\Users\Pain\.vscode\extensions\anthropic.claude-code-2.1.301-win32-x64\resources\native-binary\claude.exe --claude-in-chrome-mcp (PID: 27652)
+2026-10-17 21:48:36,857 - root - INFO - Starting SentinelX Antivirus Engine...
+2026-10-17 21:48:36,858 - root - INFO - Database initialized at database/sentinelx.db
+2026-10-17 21:48:36,865 - root - INFO - Attempting to compile 1156 YARA rules...
+2026-10-17 21:48:37,215 - root - WARNING - YARA batch compile failed: rules\yara-rules-repo\malware\APT_Shamoon_StoneDrill.yar(25): invalid field name "number_of_signatures"
+2026-10-17 21:48:37,215 - root - INFO - Retrying with per-file compilation to skip bad rules...
+2026-10-17 21:48:38,937 - root - INFO - Compiled 1155 YARA rules (1 skipped due to errors).
+2026-10-17 21:48:39,903 - root - INFO - ML Heuristic Model loaded from models/pe_heuristic_model.pkl
+2026-10-17 21:48:41,849 - sentinelx.visual.test - INFO - Visual model loaded successfully (40 classes).
+2026-10-17 21:48:41,851 - root - INFO - Real-Time Protection started. Monitoring: C:\Users\Pain\Documents
+2026-10-17 21:48:41,852 - root - INFO - Real-Time Process Execution Monitoring started.
+2026-10-17 21:48:41,853 - root - INFO - Canary deployed: C:\Users\Pain\Desktop\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:48:41,854 - root - INFO - Canary deployed: C:\Users\Pain\Documents\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:48:41,854 - root - INFO - Canary deployed: C:\Users\Pain\Downloads\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:48:41,855 - root - INFO - Canary deployed: C:\Users\Pain\Pictures\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:48:41,855 - root - INFO - Canary deployed: C:\Users\Pain\Videos\!SentinelX_Canary_do_not_delete.txt
+2026-10-17 21:48:41,858 - root - INFO - Anti-Ransomware Shield started.

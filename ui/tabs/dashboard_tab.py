@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame
 )
-from PySide6.QtCore import Qt, QThread, Signal
+from PySide6.QtCore import Qt, QThread, Signal, QTimer
 from ui.custom_widgets.toggle_button import ToggleSwitch
 from ui.custom_widgets.charts import DonutChartWidget
 import sqlite3
@@ -54,11 +54,10 @@ class StatCard(QFrame):
 
 
 class DashboardTab(QWidget):
-    def __init__(self, behavior_monitor=None, process_monitor=None, etw_session=None):
+    def __init__(self, behavior_monitor=None, process_monitor=None):
         super().__init__()
         self.behavior_monitor = behavior_monitor
         self.process_monitor = process_monitor
-        self.etw_session = etw_session
         self._stats_worker = None
 
         self.layout = QVBoxLayout(self)
@@ -155,21 +154,31 @@ class DashboardTab(QWidget):
         self.chk_behavior.clicked.connect(self.toggle_active_protection)
         self.chk_behavior.setStyleSheet("color: #C9D1D9; font-size: 15px; font-weight: bold; padding: 5px;")
 
-        self.chk_etw = ToggleSwitch("Enable ETW Runtime Monitoring [Requires Admin]")
-        etw_running = self.etw_session.is_running if self.etw_session else False
-        self.chk_etw.setChecked(etw_running)
-        self.chk_etw.clicked.connect(self.toggle_etw_monitoring)
-        self.chk_etw.setStyleSheet("color: #C9D1D9; font-size: 15px; font-weight: bold; padding: 5px;")
+        self.chk_ransomware = ToggleSwitch("Enable Anti-Ransomware Shield")
+        self.chk_ransomware.setChecked(True)
+        self.chk_ransomware.setEnabled(True)
+        self.chk_ransomware.clicked.connect(self.toggle_ransomware_shield)
+        self.chk_ransomware.setStyleSheet("color: #C9D1D9; font-size: 15px; font-weight: bold; padding: 5px;")
 
-        self.chk_ransomware = ToggleSwitch("Enable Anti-Ransomware Shield [Coming Soon]")
-        self.chk_ransomware.setChecked(False)
-        self.chk_ransomware.setEnabled(False)
-        self.chk_ransomware.setStyleSheet("color: #8B949E; font-size: 15px; padding: 5px;")
+        # Alert label — hidden until the shield blocks something
+        self.lbl_ransomware_alert = QLabel("")
+        self.lbl_ransomware_alert.setStyleSheet(
+            "color: #F85149; font-weight: bold; font-size: 13px; "
+            "background-color: #2D1117; border: 1px solid #F85149; "
+            "border-radius: 4px; padding: 6px 10px;"
+        )
+        self.lbl_ransomware_alert.setWordWrap(True)
+        self.lbl_ransomware_alert.setVisible(False)
 
         engine_layout.addWidget(self.chk_yara)
         engine_layout.addWidget(self.chk_behavior)
-        engine_layout.addWidget(self.chk_etw)
         engine_layout.addWidget(self.chk_ransomware)
+        engine_layout.addWidget(self.lbl_ransomware_alert)
+
+        # Poll shield for alerts every 2 seconds (non-blocking Qt timer)
+        self._shield_timer = QTimer(self)
+        self._shield_timer.timeout.connect(self._check_shield_alerts)
+        self._shield_timer.start(2000)
 
         link_lbl = QLabel("<a href='https://elastic.github.io/detection-rules-explorer/' style='color: #58A6FF; text-decoration: none;'>View Elastic Detection Rules Explorer</a>")
         link_lbl.setOpenExternalLinks(True)
@@ -224,25 +233,34 @@ class DashboardTab(QWidget):
             self.lbl_system_status.setText("System is Protected")
             self.lbl_system_status.setStyleSheet("color: #3FB950; font-size: 20px; font-weight: bold;")
 
-    def toggle_etw_monitoring(self):
-        if not self.etw_session:
-            from PySide6.QtWidgets import QMessageBox
-            QMessageBox.warning(self, "ETW Unavailable", "ETW session was not initialized.")
-            self.chk_etw.setChecked(False)
-            return
-
-        enabled = self.chk_etw.isChecked()
+    def toggle_ransomware_shield(self):
+        from core import engine_registry
+        enabled = self.chk_ransomware.isChecked()
+        engine_registry.set_ransomware_enabled(enabled)
+        shield = engine_registry.get_ransomware_shield()
         if enabled:
-            success = self.etw_session.start()
-            if not success:
-                from PySide6.QtWidgets import QMessageBox
-                QMessageBox.warning(
-                    self, "ETW Requires Admin",
-                    "ETW runtime monitoring requires Administrator privileges.\nPlease restart SentinelX as Administrator."
-                )
-                self.chk_etw.setChecked(False)
+            if not shield.is_running:
+                shield.start()
         else:
-            self.etw_session.stop()
+            if shield.is_running:
+                shield.stop()
+        # Hide the alert banner when the shield is turned off
+        if not enabled:
+            self.lbl_ransomware_alert.setVisible(False)
+
+    def _check_shield_alerts(self):
+        """Called every 2s by QTimer — drains shield alerts and shows them in the banner."""
+        try:
+            from core import engine_registry
+            shield = engine_registry.get_ransomware_shield()
+            alerts = shield.pop_alerts()
+            if alerts:
+                # Show the most recent alert in the banner
+                self.lbl_ransomware_alert.setText(f"RANSOMWARE BLOCKED: {alerts[-1]}")
+                self.lbl_ransomware_alert.setVisible(True)
+                self.refresh_stats()
+        except Exception:
+            pass
 
     def toggle_active_protection(self):
         enabled = self.chk_behavior.isChecked()

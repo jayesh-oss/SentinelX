@@ -20,6 +20,7 @@ class ScanThread(QThread):
         self.scanner = engine_registry.get_scanner()
         self.yara_engine = engine_registry.get_yara_engine()
         self.vt_engine = engine_registry.get_vt_engine()
+        self.ransomware_engine = engine_registry.get_ransomware_engine()
 
     def run(self):
         total_files = len(self.target_paths)
@@ -53,6 +54,16 @@ class ScanThread(QThread):
                 res = self.scanner.evaluate_threat(res, yara_matches, vt_data)
 
                 res['yara_matches'] = yara_matches
+
+                # ── Ransomware detection (runs only when shield is enabled) ──
+                if engine_registry.is_ransomware_enabled():
+                    self.status.emit(f"[{i+1}/{total_files}] Ransomware analysis: {file_name}")
+                    rw_result = self.ransomware_engine.analyze(
+                        file_path=path,
+                        pe_analysis=res.get('pe_analysis', {}),
+                    )
+                    res['ransomware_analysis'] = rw_result
+
                 self.result.emit(res)
             except Exception as e:
                 self.status.emit(f"[{i+1}/{total_files}] ERROR: {file_name} — {e}")
@@ -60,23 +71,6 @@ class ScanThread(QThread):
             self.progress.emit(i + 1)
 
         self.status.emit(f"Scan complete — {total_files} file(s) processed.")
-        self.finished.emit()
-
-
-class SandboxThread(QThread):
-    result = Signal(object)
-    finished = Signal()
-
-    def __init__(self, file_path, etw_session=None):
-        super().__init__()
-        self.file_path = file_path
-        self.etw_session = etw_session
-
-    def run(self):
-        from core.sandbox import run_in_sandbox, SandboxConfig
-        config = SandboxConfig(timeout_seconds=30, memory_limit_mb=256)
-        res = run_in_sandbox(self.file_path, config, self.etw_session)
-        self.result.emit(res)
         self.finished.emit()
 
 
@@ -129,16 +123,9 @@ class ScannerTab(QWidget):
         self.btn_scan.setStyleSheet("padding: 10px; background-color: #1F6FEB; color: white; border-radius: 5px; font-weight: bold;")
         self.btn_scan.setEnabled(False)
 
-        self.btn_sandbox = QPushButton("Dynamic Analysis")
-        self.btn_sandbox.setCursor(Qt.PointingHandCursor)
-        self.btn_sandbox.setStyleSheet("padding: 10px; background-color: #6E33FF; color: white; border-radius: 5px; font-weight: bold;")
-        self.btn_sandbox.setEnabled(False)
-        self.btn_sandbox.setToolTip("Run selected PE file in a restricted sandbox for dynamic behavioral analysis")
-
         btn_layout.addWidget(self.btn_browse)
         btn_layout.addWidget(self.btn_browse_folder)
         btn_layout.addWidget(self.btn_scan)
-        btn_layout.addWidget(self.btn_sandbox)
         btn_layout.addStretch()
         
         controls_layout.addLayout(btn_layout)
@@ -194,11 +181,9 @@ class ScannerTab(QWidget):
         self.btn_browse.clicked.connect(self.browse_file)
         self.btn_browse_folder.clicked.connect(self.browse_folder)
         self.btn_scan.clicked.connect(self.start_scan)
-        self.btn_sandbox.clicked.connect(self.start_sandbox_analysis)
 
         self.target_files = []
         self.scan_thread = None
-        self.sandbox_thread = None
 
     def browse_file(self):
         file_path, _ = QFileDialog.getOpenFileName(self, "Select File to Scan", "", "All Files (*.*)")
@@ -206,8 +191,6 @@ class ScannerTab(QWidget):
             self.target_files = [os.path.normpath(file_path)]
             self.lbl_file_path.setText(f"Selected: {self.target_files[0]}")
             self.btn_scan.setEnabled(True)
-            is_pe = file_path.lower().endswith(('.exe', '.dll'))
-            self.btn_sandbox.setEnabled(is_pe)
             self.txt_results.clear()
 
     def browse_folder(self):
@@ -229,7 +212,6 @@ class ScannerTab(QWidget):
         self.btn_scan.setEnabled(False)
         self.btn_browse.setEnabled(False)
         self.btn_browse_folder.setEnabled(False)
-        self.btn_sandbox.setEnabled(False)
         self.txt_results.clear()
         self.progress_bar.setValue(0)
         self.lbl_status.setText("Initializing scan...")
@@ -397,6 +379,65 @@ class ScannerTab(QWidget):
         else:
             html += "<p style='color:#8B949E;'><b>Visual CNN:</b> Model not loaded — run training script first (tools/train_visual_model.py)</p>"
         
+        # ── Anti-Ransomware Detection Results ────────────────────────────────
+        rw = result.get('ransomware_analysis')
+        if rw:
+            rw_verdict = rw.get('verdict', 'Clean')
+            rw_score = rw.get('score', 0)
+            if rw_verdict == 'Ransomware':
+                rw_color = '#F85149'
+                rw_border = '#F85149'
+            elif 'Suspicious' in rw_verdict:
+                rw_color = '#D29922'
+                rw_border = '#D29922'
+            else:
+                rw_color = '#3FB950'
+                rw_border = '#238636'
+
+            html += f"""
+            <div style='background:#0D0A1A; border:2px solid {rw_border}; border-radius:8px; padding:14px; margin:10px 0;'>
+                <p style='color:#A371F7; font-weight:bold; font-size:15px; margin:0 0 10px 0;'>
+                    Anti-Ransomware Detection Report
+                </p>
+                <p style='margin:4px 0;'>
+                    <b>Verdict:</b>
+                    <span style='color:{rw_color}; font-weight:bold; font-size:14px;'>&nbsp;{rw_verdict}</span>
+                    &nbsp;&nbsp;<span style='color:#8B949E; font-size:12px;'>Risk Score: {rw_score}</span>
+                </p>
+            """
+
+            ext_v = rw.get('extension_verdict', 'Clean')
+            ext_color = '#F85149' if ext_v != 'Clean' else '#3FB950'
+            html += f"<p style='margin:4px 0;'><b>Extension Check:</b> <span style='color:{ext_color};'>{ext_v}</span></p>"
+
+            ent_v = rw.get('entropy_verdict', 'N/A')
+            if ent_v != 'N/A':
+                ent_color = '#F85149' if 'High' in ent_v else ('#D29922' if 'Elevated' in ent_v else '#3FB950')
+                html += f"<p style='margin:4px 0;'><b>Entropy Analysis:</b> <span style='color:{ent_color};'>{ent_v}</span></p>"
+
+            crypto = rw.get('crypto_apis', [])
+            if crypto:
+                html += f"<p style='margin:4px 0;'><b>Ransomware Crypto APIs:</b> <span style='color:#F85149;'>{', '.join(crypto[:5])}</span></p>"
+
+            ransom_strs = rw.get('ransom_strings_found', [])
+            if ransom_strs:
+                html += f"<p style='margin:4px 0;'><b>Ransom Strings in Binary:</b> <span style='color:#F85149;'>{', '.join(ransom_strs[:3])}</span></p>"
+
+            if rw.get('anti_recovery'):
+                html += "<p style='margin:4px 0;'><b>Anti-Recovery:</b> <span style='color:#F85149;'>Shadow copy / VSS deletion capability detected</span></p>"
+
+            indicators = rw.get('indicators', [])
+            if indicators:
+                html += "<p style='margin:6px 0 2px 0;'><b>Indicators:</b></p><ul style='margin:2px 0; padding-left:20px;'>"
+                for ind in indicators:
+                    html += f"<li style='color:#C9D1D9; font-size:13px;'>{ind}</li>"
+                html += "</ul>"
+
+            if 'error' in rw:
+                html += f"<p style='color:#8B949E; font-size:12px;'>Analysis error: {rw['error']}</p>"
+
+            html += "</div>"
+
         # Determine Auto Quarantine
         if threat_level != "Clean":
             if self.auto_quarantine:
@@ -410,9 +451,12 @@ class ScannerTab(QWidget):
             else:
                 html += f"<p style='color: #D29922; font-weight: bold;'>⚠️ AUTO-QUARANTINE DISABLED. Manual verification required.</p>"
 
-        # Prepend to results so newest is at the top
-        current_html = self.txt_results.toHtml()
-        self.txt_results.setHtml(html + current_html)
+        # Insert at top so newest result appears first — O(1), no full-doc rebuild
+        from PySide6.QtGui import QTextCursor
+        cursor = self.txt_results.textCursor()
+        cursor.movePosition(QTextCursor.MoveOperation.Start)
+        self.txt_results.setTextCursor(cursor)
+        self.txt_results.insertHtml(html + "<hr style='background-color:#30363D; border:none; height:1px; margin:12px 0;'/>")
 
         # Log to Database
         try:
@@ -433,91 +477,5 @@ class ScannerTab(QWidget):
         self.btn_scan.setEnabled(True)
         self.btn_browse.setEnabled(True)
         self.btn_browse_folder.setEnabled(True)
-        if self.target_files and len(self.target_files) == 1 and self.target_files[0].lower().endswith(('.exe', '.dll')):
-            self.btn_sandbox.setEnabled(True)
         self.progress_bar.setValue(self.progress_bar.maximum())
         self.lbl_status.setStyleSheet("color: #3FB950; font-size: 13px; font-family: Consolas, monospace;")
-
-    def start_sandbox_analysis(self):
-        if not self.target_files or len(self.target_files) != 1:
-            return
-        file_path = self.target_files[0]
-        if not file_path.lower().endswith(('.exe', '.dll')):
-            return
-
-        self.btn_sandbox.setEnabled(False)
-        self.btn_scan.setEnabled(False)
-
-        # Try to get ETW session from the main window
-        etw_session = None
-        parent = self.parent()
-        while parent:
-            if hasattr(parent, 'etw_session'):
-                etw_session = parent.etw_session
-                break
-            parent = parent.parent()
-
-        self.lbl_status.setText(f"Running sandbox: {os.path.basename(file_path)} (up to 30s)...")
-        self.lbl_status.setStyleSheet("color: #6E33FF; font-size: 13px; font-family: Consolas, monospace;")
-
-        self.sandbox_thread = SandboxThread(file_path, etw_session)
-        self.sandbox_thread.result.connect(self.display_sandbox_results)
-        self.sandbox_thread.finished.connect(self._sandbox_finished)
-        self.sandbox_thread.start()
-
-    def _sandbox_finished(self):
-        self.btn_sandbox.setEnabled(True)
-        self.btn_scan.setEnabled(True)
-        self.lbl_status.setText("Sandbox analysis complete.")
-        self.lbl_status.setStyleSheet("color: #3FB950; font-size: 13px; font-family: Consolas, monospace;")
-
-    def display_sandbox_results(self, result):
-        if result.error:
-            color = "#D29922"
-            verdict = f"Error: {result.error}"
-        elif result.behavioral_score >= 50:
-            color = "#F85149"
-            verdict = f"MALICIOUS (Behavioral Score: {result.behavioral_score})"
-        elif result.behavioral_score >= 20:
-            color = "#D29922"
-            verdict = f"Suspicious (Behavioral Score: {result.behavioral_score})"
-        else:
-            color = "#3FB950"
-            verdict = f"Clean (Behavioral Score: {result.behavioral_score})"
-
-        html = f"""
-        <h2 style='color: #6E33FF; margin-top: 10px;'>Dynamic Analysis Report</h2>
-        <hr style='background-color: #6E33FF; border: none; height: 2px;'/>
-        <p><b>Target:</b> {result.file_path}</p>
-        <p><b>Verdict:</b> <span style='color: {color}; font-weight: bold;'>{verdict}</span></p>
-        <p><b>Runtime:</b> {result.runtime_seconds}s | <b>Timed Out:</b> {'Yes' if result.timed_out else 'No'} | <b>Exit Code:</b> {result.exit_code}</p>
-        """
-
-        if result.behavioral_reasons:
-            html += "<p><b>Behavioral Indicators:</b><br/>"
-            for reason in result.behavioral_reasons:
-                html += f"<span style='color: #F85149;'>&bull; {reason}</span><br/>"
-            html += "</p>"
-
-        if result.etw_events:
-            event_types = {}
-            for evt in result.etw_events:
-                t = evt['type']
-                event_types[t] = event_types.get(t, 0) + 1
-
-            html += f"<p><b>ETW Events Captured:</b> {len(result.etw_events)}</p>"
-            html += "<table style='border-collapse:collapse; width:100%; margin:8px 0;'>"
-            html += "<tr style='background:#161B22;'>"
-            html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#6E33FF;'>Event Type</th>"
-            html += "<th style='padding:4px 8px; border:1px solid #30363D; color:#6E33FF;'>Count</th></tr>"
-            for etype, count in sorted(event_types.items(), key=lambda x: -x[1]):
-                html += f"<tr><td style='padding:4px 8px; border:1px solid #30363D;'>{etype}</td>"
-                html += f"<td style='padding:4px 8px; border:1px solid #30363D;'>{count}</td></tr>"
-            html += "</table>"
-        elif result.executed and not result.error:
-            html += "<p style='color: #8B949E;'>No ETW events captured. Enable ETW monitoring from Dashboard for full behavioral analysis.</p>"
-
-        html += "<hr style='background-color: #30363D; border: none; height: 1px;'/>"
-
-        current_html = self.txt_results.toHtml()
-        self.txt_results.setHtml(html + current_html)

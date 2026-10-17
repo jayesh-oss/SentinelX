@@ -8,7 +8,6 @@ from ui.main_window import MainWindow
 from core import engine_registry
 from core.behavior_monitor import BehaviorMonitor
 from core.process_monitor import ProcessMonitor
-from core.etw_monitor import ETWSession
 
 
 def ensure_admin():
@@ -63,17 +62,20 @@ def main():
         engine_registry.get_yara_engine()
         engine_registry.get_scanner()
 
+        # Default monitor directory: user's Documents folder (works on any machine)
+        default_monitor_dir = os.path.join(os.path.expanduser("~"), "Documents")
+
         # Start Real-Time Protection
-        monitor = BehaviorMonitor(target_directory="J:\\SentinelX_Test")
+        monitor = BehaviorMonitor(target_directory=default_monitor_dir)
         monitor.start()
 
-        # Initialize ETW session (off by default, user enables via dashboard)
-        etw_session = ETWSession()
-
         # Start Active Process Execution Protection
-        process_monitor = ProcessMonitor(target_directory="J:\\SentinelX_Test")
-        process_monitor.set_etw_session(etw_session)
+        process_monitor = ProcessMonitor(target_directory=default_monitor_dir)
         process_monitor.start()
+
+        # Start Anti-Ransomware Shield (background daemon threads — non-blocking)
+        ransomware_shield = engine_registry.get_ransomware_shield()
+        ransomware_shield.start()
 
         # Initialize Frontend (GUI)
         app = QApplication(sys.argv)
@@ -85,7 +87,7 @@ def main():
 
         app.setStyleSheet(load_stylesheet())
 
-        window = MainWindow(monitor, process_monitor, etw_session)
+        window = MainWindow(monitor, process_monitor)
         window.show()
 
         sys.exit(app.exec())
