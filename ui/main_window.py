@@ -37,20 +37,35 @@ class MainWindow(QMainWindow):
 
         # Connect signals and ensure data refresh on tab load
         self.btn_dashboard.clicked.connect(self._show_dashboard)
-        self.btn_scanner.clicked.connect(lambda: self.stacked_pages.setCurrentIndex(1))
+        self.btn_scanner.clicked.connect(self._show_scanner)
         self.btn_quarantine.clicked.connect(self._show_quarantine)
-        self.btn_settings.clicked.connect(lambda: self.stacked_pages.setCurrentIndex(3))
+        self.btn_settings.clicked.connect(self._show_settings)
 
         # Default Page
         self._show_dashboard()
 
+    def _set_active_nav(self, active_btn):
+        for btn in [self.btn_dashboard, self.btn_scanner, self.btn_quarantine, self.btn_settings]:
+            btn.setChecked(btn is active_btn)
+
     def _show_dashboard(self):
+        self._set_active_nav(self.btn_dashboard)
+        self.page_dashboard.animate_in()
         self.page_dashboard.refresh_stats()
         self.stacked_pages.setCurrentIndex(0)
 
+    def _show_scanner(self):
+        self._set_active_nav(self.btn_scanner)
+        self.stacked_pages.setCurrentIndex(1)
+
     def _show_quarantine(self):
+        self._set_active_nav(self.btn_quarantine)
         self.page_quarantine.load_quarantine_data()
         self.stacked_pages.setCurrentIndex(2)
+
+    def _show_settings(self):
+        self._set_active_nav(self.btn_settings)
+        self.stacked_pages.setCurrentIndex(3)
 
     def _setup_sidebar(self):
         self.sidebar = QFrame()
@@ -89,6 +104,7 @@ class MainWindow(QMainWindow):
         btn.setObjectName("NavButton")
         btn.setCursor(Qt.PointingHandCursor)
         btn.setFixedHeight(45)
+        btn.setCheckable(True)
         return btn
 
     def _setup_stacked_pages(self):

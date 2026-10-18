@@ -1,7 +1,10 @@
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame, QGraphicsOpacityEffect
 )
-from PySide6.QtCore import Qt, QThread, Signal, QTimer
+from PySide6.QtCore import (
+    Qt, QThread, Signal, QTimer,
+    QPropertyAnimation, QSequentialAnimationGroup, QEasingCurve
+)
 from ui.custom_widgets.toggle_button import ToggleSwitch
 from ui.custom_widgets.charts import DonutChartWidget
 import sqlite3
@@ -52,6 +55,49 @@ class StatCard(QFrame):
         layout.addWidget(lbl_title)
         layout.addWidget(self.lbl_value)
 
+        # ── Opacity effect (created once, reused on every fade_in call) ──
+        self._opacity_effect = QGraphicsOpacityEffect(self)
+        self.setGraphicsEffect(self._opacity_effect)
+        self._fade_anim = QPropertyAnimation(self._opacity_effect, b"opacity")
+        self._fade_anim.setDuration(450)
+        self._fade_anim.setEasingCurve(QEasingCurve.OutCubic)
+
+        # ── Count-up timer ──
+        self._count_timer = QTimer(self)
+        self._count_timer.timeout.connect(self._count_step)
+        self._target_val = 0
+        self._current_val = 0
+
+    # ── Fade in from transparent (called when dashboard tab is shown) ──
+    def fade_in(self, delay_ms=0):
+        self._fade_anim.stop()
+        self._fade_anim.setStartValue(0.0)
+        self._fade_anim.setEndValue(1.0)
+        if delay_ms > 0:
+            QTimer.singleShot(delay_ms, self._fade_anim.start)
+        else:
+            self._fade_anim.start()
+
+    # ── Count up to value with ease-out ──
+    def animate_to(self, value):
+        self._target_val = value
+        self._current_val = 0
+        if value == 0:
+            self.lbl_value.setText("0")
+            return
+        self._count_timer.start(16)
+
+    def _count_step(self):
+        remaining = self._target_val - self._current_val
+        if remaining <= 0:
+            self.lbl_value.setText(str(self._target_val))
+            self._count_timer.stop()
+            return
+        # Ease-out: close fast, slow near the end
+        step = max(1, int(remaining * 0.18))
+        self._current_val = min(self._current_val + step, self._target_val)
+        self.lbl_value.setText(str(self._current_val))
+
 
 class DashboardTab(QWidget):
     def __init__(self, behavior_monitor=None, process_monitor=None):
@@ -59,6 +105,10 @@ class DashboardTab(QWidget):
         self.behavior_monitor = behavior_monitor
         self.process_monitor = process_monitor
         self._stats_worker = None
+
+        # ── Pulse animation refs (prevent GC) ──
+        self._pulse_effect = None
+        self._pulse_group  = None
 
         self.layout = QVBoxLayout(self)
         self.layout.setContentsMargins(30, 30, 30, 30)
@@ -85,8 +135,8 @@ class DashboardTab(QWidget):
         metrics_layout.setSpacing(15)
 
         self.card_total_scans = StatCard("Total Files Scanned", "0", color="#58A6FF")
-        self.card_malware = StatCard("Threats Detected", "0", color="#F85149")
-        self.card_quarantine = StatCard("Quarantined Items", "0", color="#D29922")
+        self.card_malware     = StatCard("Threats Detected",    "0", color="#F85149")
+        self.card_quarantine  = StatCard("Quarantined Items",   "0", color="#D29922")
 
         metrics_layout.addWidget(self.card_total_scans)
         metrics_layout.addWidget(self.card_malware)
@@ -160,7 +210,6 @@ class DashboardTab(QWidget):
         self.chk_ransomware.clicked.connect(self.toggle_ransomware_shield)
         self.chk_ransomware.setStyleSheet("color: #C9D1D9; font-size: 15px; font-weight: bold; padding: 5px;")
 
-        # Alert label — hidden until the shield blocks something
         self.lbl_ransomware_alert = QLabel("")
         self.lbl_ransomware_alert.setStyleSheet(
             "color: #F85149; font-weight: bold; font-size: 13px; "
@@ -175,7 +224,6 @@ class DashboardTab(QWidget):
         engine_layout.addWidget(self.chk_ransomware)
         engine_layout.addWidget(self.lbl_ransomware_alert)
 
-        # Poll shield for alerts every 2 seconds (non-blocking Qt timer)
         self._shield_timer = QTimer(self)
         self._shield_timer.timeout.connect(self._check_shield_alerts)
         self._shield_timer.start(2000)
@@ -191,6 +239,46 @@ class DashboardTab(QWidget):
 
         self.refresh_stats()
 
+    # ── Called by MainWindow every time the Dashboard tab is shown ──────────
+    def animate_in(self):
+        self.card_total_scans.fade_in(0)
+        self.card_malware.fade_in(90)
+        self.card_quarantine.fade_in(180)
+
+    # ── Pulse helpers ────────────────────────────────────────────────────────
+    def _start_pulse(self):
+        if self._pulse_effect is None:
+            self._pulse_effect = QGraphicsOpacityEffect(self.lbl_system_status)
+            self.lbl_system_status.setGraphicsEffect(self._pulse_effect)
+
+        if self._pulse_group is not None:
+            self._pulse_group.stop()
+
+        fade_out = QPropertyAnimation(self._pulse_effect, b"opacity")
+        fade_out.setDuration(800)
+        fade_out.setStartValue(1.0)
+        fade_out.setEndValue(0.35)
+        fade_out.setEasingCurve(QEasingCurve.InOutSine)
+
+        fade_in = QPropertyAnimation(self._pulse_effect, b"opacity")
+        fade_in.setDuration(800)
+        fade_in.setStartValue(0.35)
+        fade_in.setEndValue(1.0)
+        fade_in.setEasingCurve(QEasingCurve.InOutSine)
+
+        self._pulse_group = QSequentialAnimationGroup(self)
+        self._pulse_group.addAnimation(fade_out)
+        self._pulse_group.addAnimation(fade_in)
+        self._pulse_group.setLoopCount(-1)
+        self._pulse_group.start()
+
+    def _stop_pulse(self):
+        if self._pulse_group is not None:
+            self._pulse_group.stop()
+        if self._pulse_effect is not None:
+            self._pulse_effect.setOpacity(1.0)
+
+    # ── Statistics ───────────────────────────────────────────────────────────
     def _reset_statistics(self):
         from PySide6.QtWidgets import QMessageBox
         reply = QMessageBox.question(
@@ -219,9 +307,10 @@ class DashboardTab(QWidget):
         self._stats_worker.start()
 
     def _apply_stats(self, total_scans, malware_scans, quarantine_count):
-        self.card_total_scans.lbl_value.setText(str(total_scans))
-        self.card_malware.lbl_value.setText(str(malware_scans))
-        self.card_quarantine.lbl_value.setText(str(quarantine_count))
+        # Animated count-up instead of instant setText
+        self.card_total_scans.animate_to(total_scans)
+        self.card_malware.animate_to(malware_scans)
+        self.card_quarantine.animate_to(quarantine_count)
 
         clean_scans = max(0, total_scans - malware_scans)
         self.chart.update_data(clean_count=clean_scans, malware_count=malware_scans)
@@ -229,10 +318,13 @@ class DashboardTab(QWidget):
         if malware_scans > 0:
             self.lbl_system_status.setText("Threats Detected - Action Required")
             self.lbl_system_status.setStyleSheet("color: #F85149; font-size: 20px; font-weight: bold;")
+            self._start_pulse()
         else:
             self.lbl_system_status.setText("System is Protected")
             self.lbl_system_status.setStyleSheet("color: #3FB950; font-size: 20px; font-weight: bold;")
+            self._stop_pulse()
 
+    # ── Protection toggles ───────────────────────────────────────────────────
     def toggle_ransomware_shield(self):
         from core import engine_registry
         enabled = self.chk_ransomware.isChecked()
@@ -244,18 +336,15 @@ class DashboardTab(QWidget):
         else:
             if shield.is_running:
                 shield.stop()
-        # Hide the alert banner when the shield is turned off
         if not enabled:
             self.lbl_ransomware_alert.setVisible(False)
 
     def _check_shield_alerts(self):
-        """Called every 2s by QTimer — drains shield alerts and shows them in the banner."""
         try:
             from core import engine_registry
             shield = engine_registry.get_ransomware_shield()
             alerts = shield.pop_alerts()
             if alerts:
-                # Show the most recent alert in the banner
                 self.lbl_ransomware_alert.setText(f"RANSOMWARE BLOCKED: {alerts[-1]}")
                 self.lbl_ransomware_alert.setVisible(True)
                 self.refresh_stats()

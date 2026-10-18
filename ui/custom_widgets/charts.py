@@ -1,71 +1,100 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
-from PySide6.QtGui import QPainter, QColor, QBrush, QPen, QFont
-from PySide6.QtCore import Qt, QRectF
+from PySide6.QtWidgets import QWidget
+from PySide6.QtGui import QPainter, QColor, QPen, QFont
+from PySide6.QtCore import Qt, QRectF, QTimer
+
 
 class DonutChartWidget(QWidget):
     def __init__(self, clean_count=0, malware_count=0):
         super().__init__()
-        self.setMinimumSize(200, 200)
-        self.clean_count = clean_count
-        self.malware_count = malware_count
+        self.setMinimumSize(160, 160)
+
+        self._target_clean = clean_count
+        self._target_malware = malware_count
+        self._progress = 1.0  # start complete so initial state draws instantly
+
+        self._timer = QTimer(self)
+        self._timer.timeout.connect(self._step)
 
     def update_data(self, clean_count, malware_count):
-        self.clean_count = clean_count
-        self.malware_count = malware_count
-        self.update() # Repaint
+        self._target_clean = clean_count
+        self._target_malware = malware_count
+        self._progress = 0.0
+        self._timer.start(16)  # ~60 fps
+
+    def _step(self):
+        self._progress = min(1.0, self._progress + 0.038)
+        if self._progress >= 1.0:
+            self._timer.stop()
+        self.update()
+
+    # ease-out cubic — fast start, smooth stop
+    @staticmethod
+    def _ease(t):
+        return 1 - (1 - t) ** 3
 
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
-        
-        total = self.clean_count + self.malware_count
+
+        w, h = self.width(), self.height()
+        ring_w = 15
+        margin = ring_w + 8
+        rect = QRectF(margin, margin, w - margin * 2, h - margin * 2)
+
+        total = self._target_clean + self._target_malware
+        eased = self._ease(self._progress)
+
+        # Background ring
+        pen = QPen(QColor("#21262D"))
+        pen.setWidth(ring_w)
+        pen.setCapStyle(Qt.FlatCap)
+        painter.setPen(pen)
+        painter.setBrush(Qt.NoBrush)
+        painter.drawEllipse(rect)
+
         if total == 0:
-            total = 1 # Prevent division by zero, draw a gray empty circle
-            clean_angle = 0
-            malware_angle = 360 * 16
+            # Empty placeholder ring
+            pen = QPen(QColor("#30363D"))
+            pen.setWidth(ring_w)
+            pen.setCapStyle(Qt.RoundCap)
+            painter.setPen(pen)
+            painter.drawArc(rect, int(91 * 16), int(-358 * 16))
         else:
-            clean_angle = int((self.clean_count / total) * 360 * 16)
-            malware_angle = 360 * 16 - clean_angle
+            malware_ratio = self._target_malware / total
+            clean_ratio   = self._target_clean   / total
+            sweep_total   = 360 * eased
+            start         = 90   # 12 o'clock
 
-        rect = QRectF(20, 20, self.width() - 40, self.height() - 40)
-        
-        # Draw Malware (Red)
-        painter.setPen(Qt.NoPen)
-        if total == 1 and self.clean_count == 0 and self.malware_count == 0:
-            painter.setBrush(QBrush(QColor("#30363D"))) # Gray placeholder
-            painter.drawPie(rect, 0, malware_angle)
-        else:
-            painter.setBrush(QBrush(QColor("#F85149"))) # Red
-            painter.drawPie(rect, 0, malware_angle)
-            
-            # Draw Clean (Green)
-            painter.setBrush(QBrush(QColor("#3FB950"))) # Green
-            painter.drawPie(rect, malware_angle, clean_angle)
+            # Malware arc (red) — drawn first
+            malware_sweep = malware_ratio * sweep_total
+            if malware_sweep > 0.5:
+                pen = QPen(QColor("#F85149"))
+                pen.setWidth(ring_w)
+                pen.setCapStyle(Qt.RoundCap)
+                painter.setPen(pen)
+                painter.drawArc(rect,
+                    int(start * 16),
+                    int(-malware_sweep * 16))
 
-        # Draw Inner Circle (Donut hole) to match background
-        # By making inner_rect larger, there is more room for the text
-        inner_rect = QRectF(40, 40, self.width() - 80, self.height() - 80)
-        
-        # We assume background is slightly dark like #161B22
-        painter.setBrush(QBrush(QColor("#161B22")))
-        painter.drawEllipse(inner_rect)
-        
-        # Draw Total Text
-        if total == 1 and self.clean_count == 0 and self.malware_count == 0:
-            display_total = 0
-        else:
-            display_total = total
-            
-        # Draw Total Text (Shifted UP)
+            # Clean arc (green) — follows immediately after red
+            clean_sweep = clean_ratio * sweep_total
+            if clean_sweep > 0.5:
+                clean_start = start - malware_sweep
+                pen = QPen(QColor("#3FB950"))
+                pen.setWidth(ring_w)
+                pen.setCapStyle(Qt.RoundCap)
+                painter.setPen(pen)
+                painter.drawArc(rect,
+                    int(clean_start * 16),
+                    int(-clean_sweep * 16))
+
+        # Centre — total count
+        cx, cy = w / 2, h / 2
         painter.setPen(QColor("#E6EDF3"))
-        font = QFont("Segoe UI", 20, QFont.Bold)
-        painter.setFont(font)
-        number_rect = QRectF(inner_rect.x(), inner_rect.y() - 12, inner_rect.width(), inner_rect.height())
-        painter.drawText(number_rect, Qt.AlignCenter, str(display_total))
-        
-        # Subtext (Shifted DOWN)
-        font2 = QFont("Segoe UI", 8)
-        painter.setFont(font2)
-        sub_rect = QRectF(inner_rect.x(), inner_rect.y() + 15, inner_rect.width(), inner_rect.height())
+        painter.setFont(QFont("Segoe UI", 20, QFont.Bold))
+        painter.drawText(QRectF(0, cy - 20, w, 28), Qt.AlignCenter, str(total))
+
+        # Centre — label
         painter.setPen(QColor("#8B949E"))
-        painter.drawText(sub_rect, Qt.AlignCenter, "Total Scans")
+        painter.setFont(QFont("Segoe UI", 8))
+        painter.drawText(QRectF(0, cy + 9, w, 16), Qt.AlignCenter, "Total Scans")
