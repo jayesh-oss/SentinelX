@@ -1,0 +1,958 @@
+<title>SentinelX ML Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<style>
+  :root {
+    --bg: #f0f2f5;
+    --bg2: #ffffff;
+    --bg3: #e8eaed;
+    --fg: #1a1d23;
+    --fg2: #4a5568;
+    --fg3: #718096;
+    --border: #d1d5db;
+    --accent: #2563eb;
+    --accent2: #3b82f6;
+    --accent-glow: rgba(37,99,235,0.15);
+    --green: #16a34a;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    --card-shadow-hover: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --fg: #e6edf3;
+      --fg2: #8b949e;
+      --fg3: #656d76;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent2: #79c0ff;
+      --accent-glow: rgba(88,166,255,0.12);
+      --green: #3fb950;
+      --red: #f85149;
+      --yellow: #e3b341;
+      --purple: #bc8cff;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.4);
+      --card-shadow-hover: 0 10px 25px rgba(0,0,0,0.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1117;
+    --bg2: #161b22;
+    --bg3: #21262d;
+    --fg: #e6edf3;
+    --fg2: #8b949e;
+    --fg3: #656d76;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #79c0ff;
+    --accent-glow: rgba(88,166,255,0.12);
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #e3b341;
+    --purple: #bc8cff;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    --card-shadow-hover: 0 10px 25px rgba(0,0,0,0.5);
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 20px max(24px, env(safe-area-inset-left, 0px)) 20px max(24px, env(safe-area-inset-right, 0px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    box-shadow: var(--card-shadow);
+  }
+  .logo-group { display: flex; align-items: center; gap: 12px; }
+  .logo-shield {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-shield svg { width: 22px; height: 22px; fill: white; }
+  .logo-text h1 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; }
+  .logo-text p { font-size: 0.75rem; color: var(--fg2); font-family: 'JetBrains Mono', monospace; }
+  .header-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .badge {
+    font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .badge-green { background: color-mix(in srgb, var(--green) 15%, transparent); color: var(--green); border: 1px solid color-mix(in srgb, var(--green) 30%, transparent); }
+  .badge-blue  { background: var(--accent-glow); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+  .badge-purple{ background: color-mix(in srgb, var(--purple) 12%, transparent); color: var(--purple); border: 1px solid color-mix(in srgb, var(--purple) 25%, transparent); }
+  .theme-btn {
+    background: var(--bg3); border: 1px solid var(--border); color: var(--fg2);
+    padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.8rem;
+    font-family: 'Inter', sans-serif; transition: all 0.2s;
+  }
+  .theme-btn:hover { background: var(--border); color: var(--fg); }
+
+  /* ── Layout ── */
+  .main { max-width: 1280px; margin: 0 auto; padding: 32px 0 64px; }
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--fg3); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── Stat Cards ── */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+  .stat-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px; box-shadow: var(--card-shadow);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .stat-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-1px); }
+  .stat-label { font-size: 0.72rem; color: var(--fg3); text-transform: uppercase; letter-spacing: 0.07em; font-weight: 500; margin-bottom: 6px; }
+  .stat-value {
+    font-size: 2rem; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+    color: var(--fg); letter-spacing: -0.03em; line-height: 1.1;
+  }
+  .stat-value.accent { color: var(--accent); }
+  .stat-value.green  { color: var(--green); }
+  .stat-value.purple { color: var(--purple); }
+  .stat-sub { font-size: 0.72rem; color: var(--fg3); margin-top: 4px; }
+
+  /* ── Chart Cards ── */
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .chart-grid { grid-template-columns: 1fr; } }
+  .chart-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; box-shadow: var(--card-shadow);
+    min-width: 0;
+  }
+  .chart-card.wide { grid-column: 1 / -1; }
+  .chart-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+  .chart-sub { font-size: 0.75rem; color: var(--fg3); margin-bottom: 20px; }
+  .chart-wrap { position: relative; width: 100%; }
+  .annotation-line {
+    position: absolute; top: 0; bottom: 0;
+    border-left: 2px dashed var(--yellow);
+    pointer-events: none; z-index: 5;
+  }
+  .annotation-label {
+    position: absolute; top: 6px;
+    background: color-mix(in srgb, var(--yellow) 15%, transparent);
+    color: var(--yellow); font-size: 0.65rem; font-family: 'JetBrains Mono', monospace;
+    padding: 2px 6px; border-radius: 4px; white-space: nowrap;
+    border: 1px solid color-mix(in srgb, var(--yellow) 30%, transparent);
+  }
+
+  /* ── Per-class table ── */
+  .class-table-wrap { overflow-x: auto; }
+  .class-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 560px; }
+  .class-table th {
+    text-align: left; padding: 8px 12px; font-size: 0.68rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.07em; color: var(--fg3);
+    border-bottom: 1px solid var(--border); background: var(--bg3);
+  }
+  .class-table th:first-child { border-radius: 8px 0 0 0; }
+  .class-table th:last-child  { border-radius: 0 8px 0 0; }
+  .class-table td { padding: 7px 12px; border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent); vertical-align: middle; }
+  .class-table tr:last-child td { border-bottom: none; }
+  .class-table tr:hover td { background: color-mix(in srgb, var(--accent) 4%, transparent); }
+  .acc-bar-bg { background: var(--bg3); border-radius: 100px; height: 6px; width: 100px; overflow: hidden; }
+  .acc-bar-fill { height: 100%; border-radius: 100px; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .tag-malware {
+    display: inline-block; font-size: 0.62rem; padding: 1px 6px; border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    background: color-mix(in srgb, var(--red) 10%, transparent);
+    color: var(--red); border: 1px solid color-mix(in srgb, var(--red) 20%, transparent);
+  }
+  .tag-benign {
+    display: inline-block; font-size: 0.62rem; padding: 1px 6px; border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    background: color-mix(in srgb, var(--green) 10%, transparent);
+    color: var(--green); border: 1px solid color-mix(in srgb, var(--green) 20%, transparent);
+  }
+
+  /* ── Architecture diagram ── */
+  .arch-wrap { overflow-x: auto; }
+  .arch-flow {
+    display: flex; align-items: stretch; gap: 0;
+    min-width: 700px; padding: 8px 0;
+  }
+  .arch-node {
+    flex: 1; background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 10px; text-align: center;
+    position: relative; min-width: 0;
+  }
+  .arch-node.accent { background: var(--accent-glow); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+  .arch-node.purple { background: color-mix(in srgb, var(--purple) 10%, transparent); border-color: color-mix(in srgb, var(--purple) 30%, transparent); }
+  .arch-node.green  { background: color-mix(in srgb, var(--green) 10%, transparent); border-color: color-mix(in srgb, var(--green) 30%, transparent); }
+  .arch-arrow {
+    display: flex; align-items: center; padding: 0 6px; color: var(--fg3); flex-shrink: 0;
+    font-size: 1.2rem;
+  }
+  .arch-icon { font-size: 1.4rem; margin-bottom: 6px; }
+  .arch-title { font-size: 0.78rem; font-weight: 600; color: var(--fg); }
+  .arch-desc  { font-size: 0.65rem; color: var(--fg3); margin-top: 3px; line-height: 1.4; }
+
+  /* ── Engine score breakdown ── */
+  .engine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .engine-card {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; text-align: center; box-shadow: var(--card-shadow);
+  }
+  .engine-icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .engine-name { font-size: 0.72rem; font-weight: 600; color: var(--fg2); text-transform: uppercase; letter-spacing: 0.05em; }
+  .engine-pts  { font-size: 0.65rem; color: var(--fg3); margin-top: 2px; font-family: 'JetBrains Mono', monospace; }
+
+  /* ── Confusion summary ── */
+  .perf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+  .perf-card {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; box-shadow: var(--card-shadow);
+  }
+  .perf-card .label { font-size: 0.7rem; color: var(--fg3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .perf-card .value { font-size: 1.5rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--fg); margin-top: 4px; }
+
+  /* ── Dataset bar ── */
+  .dataset-list { display: flex; flex-direction: column; gap: 6px; }
+  .ds-row { display: flex; align-items: center; gap: 10px; font-size: 0.78rem; }
+  .ds-name { width: 140px; flex-shrink: 0; color: var(--fg2); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ds-bar-bg { flex: 1; background: var(--bg3); border-radius: 100px; height: 8px; overflow: hidden; min-width: 0; }
+  .ds-bar-fill { height: 100%; border-radius: 100px; background: var(--accent); }
+  .ds-count { width: 48px; text-align: right; color: var(--fg3); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; flex-shrink: 0; }
+
+  /* ── Footer ── */
+  .footer {
+    background: var(--bg2); border-top: 1px solid var(--border);
+    padding: 20px max(24px, env(safe-area-inset-left, 0px)) 20px max(24px, env(safe-area-inset-right, 0px));
+    font-size: 0.72rem; color: var(--fg3); display: flex; gap: 24px; flex-wrap: wrap;
+    justify-content: space-between; align-items: center;
+  }
+  .footer span { font-family: 'JetBrains Mono', monospace; }
+
+  /* ── Info row ── */
+  .info-row {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;
+  }
+  .info-pill {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 6px; padding: 5px 10px;
+    font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; color: var(--fg2);
+    display: flex; align-items: center; gap: 5px;
+  }
+  .info-pill span { color: var(--fg); font-weight: 600; }
+</style>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="logo-group">
+    <div class="logo-shield">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    </div>
+    <div class="logo-text">
+      <h1>SentinelX</h1>
+      <p>ML Training &amp; Evaluation Report</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="badge badge-green">EfficientNet-B0</span>
+    <span class="badge badge-blue">85.0% Val Acc</span>
+    <span class="badge badge-purple">40 Classes</span>
+    <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- ── 1. Overview Cards ── -->
+  <section class="section">
+    <div class="section-title">Model Overview</div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Best Val Accuracy</div>
+        <div class="stat-value green">85.0%</div>
+        <div class="stat-sub">Epoch 15 / 15</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Final Train Accuracy</div>
+        <div class="stat-value accent">84.1%</div>
+        <div class="stat-sub">Epoch 15</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Parameters</div>
+        <div class="stat-value">4.3M</div>
+        <div class="stat-sub">338K trainable</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Dataset Size</div>
+        <div class="stat-value accent">12,964</div>
+        <div class="stat-sub">80 / 20 split</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Training Samples</div>
+        <div class="stat-value">10,371</div>
+        <div class="stat-sub">Stratified</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Validation Samples</div>
+        <div class="stat-value">2,593</div>
+        <div class="stat-sub">Held-out</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Model Size</div>
+        <div class="stat-value">16.8 MB</div>
+        <div class="stat-sub">visual_model.pth</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Training Time</div>
+        <div class="stat-value purple">8.4 min</div>
+        <div class="stat-sub">RTX 5060 GPU</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. Training Curves ── -->
+  <section class="section">
+    <div class="section-title">Training Curves</div>
+    <div class="info-row">
+      <div class="info-pill">Backbone: <span>EfficientNet-B0 (ImageNet pretrained)</span></div>
+      <div class="info-pill">LR: <span>0.001</span></div>
+      <div class="info-pill">Batch: <span>32</span></div>
+      <div class="info-pill">Fine-tune at: <span>Epoch 6</span></div>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Accuracy over Epochs</div>
+        <div class="chart-sub">Train vs. Validation — fine-tuning unlocked at epoch 6</div>
+        <div class="chart-wrap">
+          <canvas id="accChart" height="280"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Loss over Epochs</div>
+        <div class="chart-sub">Train loss drops steadily; val loss spikes after fine-tune unlock</div>
+        <div class="chart-wrap">
+          <canvas id="lossChart" height="280"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. Classification Metrics ── -->
+  <section class="section">
+    <div class="section-title">Classification Metrics (Val Set)</div>
+    <div class="perf-grid">
+      <div class="perf-card">
+        <div class="label">Overall Accuracy</div>
+        <div class="value" style="color:var(--green)">85.0%</div>
+      </div>
+      <div class="perf-card">
+        <div class="label">Macro Precision</div>
+        <div class="value" style="color:var(--accent)">84.7%</div>
+      </div>
+      <div class="perf-card">
+        <div class="label">Macro Recall</div>
+        <div class="value" style="color:var(--accent)">86.0%</div>
+      </div>
+      <div class="perf-card">
+        <div class="label">Macro F1-Score</div>
+        <div class="value" style="color:var(--accent)">85.0%</div>
+      </div>
+      <div class="perf-card">
+        <div class="label">Weighted Precision</div>
+        <div class="value">84.6%</div>
+      </div>
+      <div class="perf-card">
+        <div class="label">Weighted Recall</div>
+        <div class="value">85.0%</div>
+      </div>
+      <div class="perf-card">
+        <div class="label">Weighted F1</div>
+        <div class="value">84.3%</div>
+      </div>
+      <div class="perf-card">
+        <div class="label">Val Samples</div>
+        <div class="value">2,593</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Per-Class Accuracy Chart ── -->
+  <section class="section">
+    <div class="section-title">Per-Class Accuracy (Validation)</div>
+    <div class="chart-card wide">
+      <div class="chart-title">Accuracy by Malware Family</div>
+      <div class="chart-sub">Sorted descending — 40 classes including Benign. Hover for exact values.</div>
+      <div class="chart-wrap" style="height:420px">
+        <canvas id="classChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. Per-Class Table ── -->
+  <section class="section">
+    <div class="section-title">Detailed Per-Class Results</div>
+    <div class="chart-card wide">
+      <div class="class-table-wrap">
+        <table class="class-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Type</th>
+              <th>Samples</th>
+              <th>Correct</th>
+              <th>Accuracy</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1</th>
+            </tr>
+          </thead>
+          <tbody id="classTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. Dataset Distribution ── -->
+  <section class="section">
+    <div class="section-title">Dataset Distribution</div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Samples per Family</div>
+        <div class="chart-sub">Full dataset — 12,964 images, 39 malware families + Benign</div>
+        <div id="datasetList" class="dataset-list"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Dataset Composition</div>
+        <div class="chart-sub">Split by category and train/val proportion</div>
+        <div class="chart-wrap" style="max-width:280px;margin:0 auto">
+          <canvas id="donutChart" height="260"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. Architecture ── -->
+  <section class="section">
+    <div class="section-title">System Architecture — Detection Pipeline</div>
+    <div class="chart-card wide">
+      <div class="chart-title">Multi-Engine Threat Scoring</div>
+      <div class="chart-sub">Five independent engines corroborate before a Malicious verdict. Threshold: 100 points.</div>
+      <div class="arch-wrap" style="margin-top:20px;margin-bottom:8px">
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-icon">📄</div>
+            <div class="arch-title">File Input</div>
+            <div class="arch-desc">Raw bytes — PE, ELF, scripts</div>
+          </div>
+          <div class="arch-arrow">›</div>
+          <div class="arch-node accent">
+            <div class="arch-icon">🧠</div>
+            <div class="arch-title">Random Forest</div>
+            <div class="arch-desc">8 PE features<br>ML score 0–1</div>
+          </div>
+          <div class="arch-arrow">›</div>
+          <div class="arch-node accent">
+            <div class="arch-icon">🔬</div>
+            <div class="arch-title">PE Analyzer</div>
+            <div class="arch-desc">IAT · entropy<br>anomalies</div>
+          </div>
+          <div class="arch-arrow">›</div>
+          <div class="arch-node accent">
+            <div class="arch-icon">👁</div>
+            <div class="arch-title">Visual CNN</div>
+            <div class="arch-desc">EfficientNet-B0<br>40-class softmax</div>
+          </div>
+          <div class="arch-arrow">›</div>
+          <div class="arch-node purple">
+            <div class="arch-icon">📏</div>
+            <div class="arch-title">YARA Engine</div>
+            <div class="arch-desc">3-tier scoring<br>Sig · Beh · Info</div>
+          </div>
+          <div class="arch-arrow">›</div>
+          <div class="arch-node purple">
+            <div class="arch-icon">☁️</div>
+            <div class="arch-title">VirusTotal</div>
+            <div class="arch-desc">Cloud lookup<br>hash reputation</div>
+          </div>
+          <div class="arch-arrow">›</div>
+          <div class="arch-node green">
+            <div class="arch-icon">⚖️</div>
+            <div class="arch-title">Verdict</div>
+            <div class="arch-desc">Score ≥ 100<br>→ Malicious</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px">
+      <div class="section-title" style="margin-bottom:12px">Engine Scoring Weights</div>
+      <div class="engine-grid">
+        <div class="engine-card">
+          <div class="engine-icon">🧠</div>
+          <div class="engine-name">Random Forest</div>
+          <div class="engine-pts">score ≥ 0.85 → +102 pts<br>score ≥ 0.70 → +70 pts<br>score ≥ 0.50 → +30 pts</div>
+        </div>
+        <div class="engine-card">
+          <div class="engine-icon">🔬</div>
+          <div class="engine-name">PE Analysis</div>
+          <div class="engine-pts">Process Inject → +50<br>Crypto APIs → +40<br>High Entropy → +40</div>
+        </div>
+        <div class="engine-card">
+          <div class="engine-icon">👁</div>
+          <div class="engine-name">Visual CNN</div>
+          <div class="engine-pts">score ≥ 0.85 & conf ≥ 60% → +100<br>score ≥ 0.70 & conf ≥ 50% → +60<br>score ≥ 0.50 & conf ≥ 50% → +30</div>
+        </div>
+        <div class="engine-card">
+          <div class="engine-icon">📏</div>
+          <div class="engine-name">YARA (Signature)</div>
+          <div class="engine-pts">≥ 2 hits → +100 each<br>1 hit + corroboration → +60<br>Behavioral (eng≥50) → +15 ea.</div>
+        </div>
+        <div class="engine-card">
+          <div class="engine-icon">☁️</div>
+          <div class="engine-name">VirusTotal</div>
+          <div class="engine-pts">≥ 3 engines → +100<br>1–2 engines → +25 ea.<br>Hash reputation lookup</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. CNN Architecture Detail ── -->
+  <section class="section">
+    <div class="section-title">EfficientNet-B0 CNN Architecture</div>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Binary-to-Image Encoding</div>
+        <div class="chart-sub">File bytes → 256 × 256 grayscale PNG representation</div>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">📄</div>
+            <div>
+              <div style="font-size:0.8rem;font-weight:600">Raw Binary Input</div>
+              <div style="font-size:0.7rem;color:var(--fg3)">Any Windows PE/ELF file</div>
+            </div>
+          </div>
+          <div style="margin-left:17px;width:2px;height:12px;background:var(--border)"></div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">🔢</div>
+            <div>
+              <div style="font-size:0.8rem;font-weight:600">Byte Normalization</div>
+              <div style="font-size:0.7rem;color:var(--fg3)">Zero-pad short / stride-sample large files → 65,536 bytes</div>
+            </div>
+          </div>
+          <div style="margin-left:17px;width:2px;height:12px;background:var(--border)"></div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">🖼</div>
+            <div>
+              <div style="font-size:0.8rem;font-weight:600">Reshape to 256 × 256</div>
+              <div style="font-size:0.7rem;color:var(--fg3)">Grayscale image — pixel intensity = byte value ÷ 255</div>
+            </div>
+          </div>
+          <div style="margin-left:17px;width:2px;height:12px;background:var(--border)"></div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:8px;background:color-mix(in srgb,var(--purple) 12%,transparent);border:1px solid color-mix(in srgb,var(--purple) 30%,transparent);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">🔄</div>
+            <div>
+              <div style="font-size:0.8rem;font-weight:600">Preprocess → 224 × 224 RGB</div>
+              <div style="font-size:0.7rem;color:var(--fg3)">Duplicate to 3-channel, resize, ImageNet normalisation</div>
+            </div>
+          </div>
+          <div style="margin-left:17px;width:2px;height:12px;background:var(--border)"></div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:36px;height:36px;border-radius:8px;background:color-mix(in srgb,var(--green) 10%,transparent);border:1px solid color-mix(in srgb,var(--green) 30%,transparent);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">🏷</div>
+            <div>
+              <div style="font-size:0.8rem;font-weight:600">EfficientNet-B0 → Softmax (40)</div>
+              <div style="font-size:0.7rem;color:var(--fg3)">malware_score = 1 − P(Benign)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Transfer Learning Strategy</div>
+        <div class="chart-sub">Progressive fine-tuning in two phases</div>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px">
+            <div style="font-size:0.72rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Phase 1 — Epochs 1–5</div>
+            <div style="font-size:0.82rem;font-weight:600">Frozen Backbone</div>
+            <div style="font-size:0.72rem;color:var(--fg3);margin-top:3px">All EfficientNet layers frozen. Only the custom classifier head (338K params) trains at LR = 0.001. Fast convergence from ImageNet features.</div>
+          </div>
+          <div style="background:color-mix(in srgb,var(--yellow) 8%,transparent);border:1px solid color-mix(in srgb,var(--yellow) 25%,transparent);border-radius:8px;padding:12px">
+            <div style="font-size:0.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Fine-tune Trigger — Epoch 6</div>
+            <div style="font-size:0.82rem;font-weight:600">Last 2 Blocks Unfrozen</div>
+            <div style="font-size:0.72rem;color:var(--fg3);margin-top:3px">Blocks 7–8 unlocked. Backbone LR set to 0.0001 (0.1× classifier). Allows domain-specific low-level feature adaptation.</div>
+          </div>
+          <div style="background:color-mix(in srgb,var(--green) 8%,transparent);border:1px solid color-mix(in srgb,var(--green) 25%,transparent);border-radius:8px;padding:12px">
+            <div style="font-size:0.72rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Result — Epoch 15</div>
+            <div style="font-size:0.82rem;font-weight:600">85.0% Validation Accuracy</div>
+            <div style="font-size:0.72rem;color:var(--fg3);margin-top:3px">+8.4% gain from fine-tuning. Final model: 16.8 MB. Training completed in 8.4 minutes on RTX 5060.</div>
+          </div>
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px">
+            <div style="font-size:0.72rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Data Augmentation</div>
+            <div style="font-size:0.72rem;color:var(--fg3)">RandomHorizontalFlip · RandomRotation(5°) · ColorJitter<br>WeightedRandomSampler + weighted CrossEntropyLoss for class imbalance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div>SentinelX — Visual CNN Training Report &nbsp;·&nbsp; October 2026</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <span>Dataset: MaleBin 12,964 samples</span>
+    <span>Model: EfficientNet-B0</span>
+    <span>Device: NVIDIA RTX 5060</span>
+    <span>Best epoch: 15 / 15 · 85.0% val acc</span>
+  </div>
+</footer>
+
+<script>
+// ── Theme toggle ──
+function toggleTheme() {
+  const r = document.documentElement;
+  const cur = r.getAttribute('data-theme');
+  const mq = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (!cur) { r.setAttribute('data-theme', mq ? 'light' : 'dark'); }
+  else if (cur === 'dark') { r.setAttribute('data-theme', 'light'); }
+  else { r.removeAttribute('data-theme'); }
+}
+
+// ── Data ──
+const epochs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const trainAcc  = [56.7,69.3,71.1,73.1,73.5,74.9,77.1,78.6,80.3,80.9,81.4,82.1,83.2,83.9,84.1];
+const valAcc    = [66.6,75.8,77.1,77.4,77.3,78.8,81.6,81.2,76.4,83.1,82.9,83.1,83.3,82.1,85.0];
+const trainLoss = [1.6078,0.9394,0.8248,0.7656,0.7371,0.6654,0.5810,0.5274,0.4905,0.4611,0.4373,0.4135,0.3880,0.3749,0.3560];
+const valLoss   = [4.1515,1.1293,3.0993,2.6620,1.7715,5.7643,7.0077,4.1568,4.9815,0.7633,2.4274,4.8112,5.8815,0.9149,0.6680];
+
+const classData = [
+  {name:'Adialer.C',     samples:24,  correct:24,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Agent.FYI',     samples:23,  correct:23,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Allaple.A',     samples:200, correct:200, acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Allaple.L',     samples:200, correct:200, acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Alueron.gen!J', samples:40,  correct:40,  acc:100.0, prec:0.952, rec:1.000, f1:0.976},
+  {name:'Autorun.K',     samples:21,  correct:21,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Benign',        samples:100, correct:87,  acc:87.0,  prec:0.861, rec:0.870, f1:0.866},
+  {name:'C2LOP.P',       samples:29,  correct:28,  acc:96.6,  prec:0.848, rec:0.966, f1:0.903},
+  {name:'C2LOP.gen!g',   samples:40,  correct:34,  acc:85.0,  prec:0.971, rec:0.850, f1:0.907},
+  {name:'CoinMinerXMRig',samples:31,  correct:12,  acc:38.7,  prec:0.324, rec:0.387, f1:0.353},
+  {name:'Danabot',       samples:100, correct:80,  acc:80.0,  prec:0.741, rec:0.800, f1:0.769},
+  {name:'Dialplatform.B',samples:36,  correct:36,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Dontovo.A',     samples:32,  correct:32,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Dridex',        samples:100, correct:94,  acc:94.0,  prec:0.959, rec:0.940, f1:0.949},
+  {name:'Fakerean',      samples:76,  correct:76,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Gh0stRAT',      samples:42,  correct:17,  acc:40.5,  prec:0.425, rec:0.405, f1:0.415},
+  {name:'Glupteba',      samples:55,  correct:44,  acc:80.0,  prec:0.647, rec:0.800, f1:0.715},
+  {name:'Gozi',          samples:100, correct:82,  acc:82.0,  prec:0.921, rec:0.820, f1:0.868},
+  {name:'Instantaccess',  samples:86,  correct:86,  acc:100.0, prec:0.989, rec:1.000, f1:0.994},
+  {name:'Lolyda.AA1',    samples:43,  correct:43,  acc:100.0, prec:0.956, rec:1.000, f1:0.977},
+  {name:'Lolyda.AA2',    samples:37,  correct:36,  acc:97.3,  prec:1.000, rec:0.973, f1:0.986},
+  {name:'Lolyda.AA3',    samples:25,  correct:23,  acc:92.0,  prec:1.000, rec:0.920, f1:0.958},
+  {name:'Lolyda.AT',     samples:32,  correct:31,  acc:96.9,  prec:1.000, rec:0.969, f1:0.984},
+  {name:'Malex.gen!J',   samples:27,  correct:27,  acc:100.0, prec:0.844, rec:1.000, f1:0.915},
+  {name:'NanoCore',      samples:100, correct:72,  acc:72.0,  prec:0.605, rec:0.720, f1:0.658},
+  {name:'Obfuscator.AD', samples:28,  correct:28,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Quakbot',       samples:100, correct:94,  acc:94.0,  prec:0.989, rec:0.940, f1:0.964},
+  {name:'Rbot!gen',      samples:32,  correct:32,  acc:100.0, prec:0.970, rec:1.000, f1:0.985},
+  {name:'RecordBreaker', samples:100, correct:8,   acc:8.0,   prec:0.267, rec:0.080, f1:0.123},
+  {name:'RedLineStealer',samples:100, correct:69,  acc:69.0,  prec:0.445, rec:0.690, f1:0.541},
+  {name:'Remcos',        samples:100, correct:43,  acc:43.0,  prec:0.537, rec:0.430, f1:0.478},
+  {name:'Skintrim.N',    samples:16,  correct:16,  acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Swizzor.gen!E', samples:26,  correct:19,  acc:73.1,  prec:0.594, rec:0.731, f1:0.655},
+  {name:'Swizzor.gen!I', samples:26,  correct:17,  acc:65.4,  prec:0.586, rec:0.654, f1:0.618},
+  {name:'Tinba',         samples:37,  correct:34,  acc:91.9,  prec:0.971, rec:0.919, f1:0.944},
+  {name:'Trickbot',      samples:100, correct:93,  acc:93.0,  prec:0.969, rec:0.930, f1:0.949},
+  {name:'VB.AT',         samples:82,  correct:82,  acc:100.0, prec:0.976, rec:1.000, f1:0.988},
+  {name:'Wintrim.BX',    samples:19,  correct:19,  acc:100.0, prec:0.864, rec:1.000, f1:0.927},
+  {name:'Yuner.A',       samples:160, correct:160, acc:100.0, prec:1.000, rec:1.000, f1:1.000},
+  {name:'Zeus',          samples:68,  correct:41,  acc:60.3,  prec:0.661, rec:0.603, f1:0.631},
+];
+
+const datasetCounts = [
+  {name:'Allaple.A',    n:1000},{name:'Allaple.L',    n:1000},{name:'Yuner.A',      n:800},
+  {name:'Danabot',      n:500}, {name:'Dridex',       n:500}, {name:'Gozi',         n:500},
+  {name:'NanoCore',     n:500}, {name:'Quakbot',      n:500}, {name:'RecordBreaker',n:500},
+  {name:'RedLineStealer',n:500},{name:'Remcos',       n:500}, {name:'Trickbot',     n:500},
+  {name:'Benign',       n:500}, {name:'Fakerean',     n:381}, {name:'Instantaccess',n:431},
+  {name:'VB.AT',        n:408}, {name:'Zeus',         n:339}, {name:'Glupteba',     n:274},
+  {name:'Gh0stRAT',     n:211}, {name:'Lolyda.AA1',   n:213}, {name:'Alueron.gen!J',n:198},
+  {name:'C2LOP.gen!g',  n:200}, {name:'Tinba',        n:185}, {name:'Lolyda.AA2',   n:184},
+  {name:'Dialplatform.B',n:177},{name:'Dontovo.A',    n:162}, {name:'Lolyda.AT',    n:159},
+  {name:'Rbot!gen',     n:158}, {name:'CoinMinerXMRig',n:156},{name:'C2LOP.P',      n:146},
+  {name:'Obfuscator.AD',n:142}, {name:'Malex.gen!J',  n:136}, {name:'Swizzor.gen!I',n:132},
+  {name:'Swizzor.gen!E',n:128}, {name:'Adialer.C',    n:122}, {name:'Lolyda.AA3',   n:123},
+  {name:'Agent.FYI',    n:116}, {name:'Autorun.K',    n:106}, {name:'Wintrim.BX',   n:97},
+  {name:'Skintrim.N',   n:80},
+];
+
+// ── Helpers ──
+function getColor(acc) {
+  if (acc >= 90) return '#3fb950';
+  if (acc >= 70) return '#e3b341';
+  return '#f85149';
+}
+
+function cssVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+// ── Chart defaults ──
+Chart.defaults.font.family = "'JetBrains Mono', monospace";
+Chart.defaults.font.size = 11;
+
+function chartColors() {
+  const fg2  = cssVar('--fg2');
+  const fg3  = cssVar('--fg3');
+  const bord = cssVar('--border');
+  return {fg2, fg3, bord};
+}
+
+function baseOptions(title) {
+  const {fg2, fg3, bord} = chartColors();
+  return {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: { labels: { color: fg2, font: {size:11}, boxWidth: 12, padding: 16 } },
+      tooltip: {
+        backgroundColor: cssVar('--bg3'),
+        borderColor: bord, borderWidth: 1,
+        titleColor: cssVar('--fg'), bodyColor: fg2,
+        padding: 10, cornerRadius: 8,
+      }
+    },
+    scales: {
+      x: { ticks: { color: fg3 }, grid: { color: bord + '80' } },
+      y: { ticks: { color: fg3 }, grid: { color: bord + '80' } },
+    }
+  };
+}
+
+// ── Fine-tune plugin (dashed line annotation at x=5.5 between epoch 5 and 6) ──
+const finetuneLine = {
+  id: 'finetune',
+  afterDraw(chart) {
+    const {ctx, scales:{x, y}} = chart;
+    const xPx = (x.getPixelForValue(5) + x.getPixelForValue(6)) / 2;
+    ctx.save();
+    ctx.beginPath();
+    ctx.strokeStyle = cssVar('--yellow');
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([5, 4]);
+    ctx.moveTo(xPx, y.top);
+    ctx.lineTo(xPx, y.bottom);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    const lbl = 'Fine-tune unlocked';
+    ctx.font = '9px JetBrains Mono, monospace';
+    ctx.fillStyle = cssVar('--yellow');
+    const tw = ctx.measureText(lbl).width;
+    const lx = xPx + 5;
+    ctx.fillStyle = cssVar('--bg3') + 'cc';
+    ctx.fillRect(lx - 2, y.top + 6, tw + 8, 15);
+    ctx.fillStyle = cssVar('--yellow');
+    ctx.fillText(lbl, lx + 2, y.top + 17);
+    ctx.restore();
+  }
+};
+
+// ── Accuracy Chart ──
+new Chart(document.getElementById('accChart'), {
+  type: 'line',
+  data: {
+    labels: epochs.map(e => 'E'+e),
+    datasets: [
+      {
+        label: 'Train Accuracy',
+        data: trainAcc,
+        borderColor: cssVar('--accent'),
+        backgroundColor: cssVar('--accent') + '18',
+        borderWidth: 2, pointRadius: 3, pointHoverRadius: 5, fill: true, tension: 0.3,
+      },
+      {
+        label: 'Val Accuracy',
+        data: valAcc,
+        borderColor: cssVar('--green'),
+        backgroundColor: cssVar('--green') + '18',
+        borderWidth: 2, pointRadius: 3, pointHoverRadius: 5, fill: true, tension: 0.3,
+        borderDash: [],
+      }
+    ]
+  },
+  options: {
+    ...baseOptions(),
+    scales: {
+      x: { ticks: { color: cssVar('--fg3') }, grid: { color: cssVar('--border') + '80' } },
+      y: {
+        ticks: { color: cssVar('--fg3'), callback: v => v + '%' },
+        grid: { color: cssVar('--border') + '80' },
+        min: 50, max: 90,
+      }
+    }
+  },
+  plugins: [finetuneLine]
+});
+
+// ── Loss Chart ──
+new Chart(document.getElementById('lossChart'), {
+  type: 'line',
+  data: {
+    labels: epochs.map(e => 'E'+e),
+    datasets: [
+      {
+        label: 'Train Loss',
+        data: trainLoss,
+        borderColor: cssVar('--accent'),
+        backgroundColor: cssVar('--accent') + '18',
+        borderWidth: 2, pointRadius: 3, pointHoverRadius: 5, fill: true, tension: 0.3,
+      },
+      {
+        label: 'Val Loss',
+        data: valLoss,
+        borderColor: cssVar('--red'),
+        backgroundColor: cssVar('--red') + '18',
+        borderWidth: 2, pointRadius: 3, pointHoverRadius: 5, fill: true, tension: 0.3,
+      }
+    ]
+  },
+  options: baseOptions(),
+  plugins: [finetuneLine]
+});
+
+// ── Per-Class Bar Chart ──
+const sorted = [...classData].sort((a,b) => b.acc - a.acc);
+new Chart(document.getElementById('classChart'), {
+  type: 'bar',
+  data: {
+    labels: sorted.map(c => c.name),
+    datasets: [{
+      label: 'Accuracy (%)',
+      data: sorted.map(c => c.acc),
+      backgroundColor: sorted.map(c => getColor(c.acc) + 'bb'),
+      borderColor:     sorted.map(c => getColor(c.acc)),
+      borderWidth: 1,
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    ...baseOptions(),
+    indexAxis: 'y',
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: cssVar('--bg3'),
+        borderColor: cssVar('--border'), borderWidth: 1,
+        titleColor: cssVar('--fg'), bodyColor: cssVar('--fg2'),
+        callbacks: {
+          label: ctx => ` ${ctx.raw.toFixed(1)}% accuracy`
+        }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: cssVar('--fg3'), callback: v => v + '%' },
+        grid: { color: cssVar('--border') + '80' },
+        min: 0, max: 100
+      },
+      y: { ticks: { color: cssVar('--fg2'), font: {size:10} }, grid: { display: false } },
+    },
+    maintainAspectRatio: false,
+  }
+});
+
+// ── Donut Chart ──
+new Chart(document.getElementById('donutChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Train (80%)', 'Val (20%)'],
+    datasets: [{
+      data: [10371, 2593],
+      backgroundColor: [cssVar('--accent') + 'cc', cssVar('--green') + 'cc'],
+      borderColor: cssVar('--bg2'),
+      borderWidth: 3,
+      hoverOffset: 6,
+    }]
+  },
+  options: {
+    cutout: '68%',
+    plugins: {
+      legend: {
+        labels: { color: cssVar('--fg2'), font:{size:11}, boxWidth:12 }
+      },
+      tooltip: {
+        backgroundColor: cssVar('--bg3'),
+        borderColor: cssVar('--border'), borderWidth:1,
+        titleColor: cssVar('--fg'), bodyColor: cssVar('--fg2'),
+        callbacks: { label: ctx => ` ${ctx.raw.toLocaleString()} samples` }
+      }
+    }
+  }
+});
+
+// ── Dataset bar list ──
+const maxN = Math.max(...datasetCounts.map(d=>d.n));
+const dsContainer = document.getElementById('datasetList');
+datasetCounts.forEach(d => {
+  const pct = (d.n / maxN * 100).toFixed(1);
+  const isBenign = d.name === 'Benign';
+  dsContainer.insertAdjacentHTML('beforeend', `
+    <div class="ds-row">
+      <div class="ds-name">${d.name}</div>
+      <div class="ds-bar-bg">
+        <div class="ds-bar-fill" style="width:${pct}%;background:${isBenign ? 'var(--green)' : 'var(--accent)'}"></div>
+      </div>
+      <div class="ds-count">${d.n}</div>
+    </div>
+  `);
+});
+
+// ── Per-Class Table ──
+const tbody = document.getElementById('classTableBody');
+classData.forEach(c => {
+  const isBenign = c.name === 'Benign';
+  const barColor = getColor(c.acc);
+  tbody.insertAdjacentHTML('beforeend', `
+    <tr>
+      <td class="mono" style="font-size:0.75rem">${c.name}</td>
+      <td>${isBenign ? '<span class="tag-benign">Benign</span>' : '<span class="tag-malware">Malware</span>'}</td>
+      <td class="mono" style="color:var(--fg3)">${c.samples}</td>
+      <td class="mono" style="color:var(--fg3)">${c.correct}</td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="acc-bar-bg"><div class="acc-bar-fill" style="width:${c.acc}%;background:${barColor}"></div></div>
+          <span class="mono" style="font-size:0.72rem;color:${barColor};min-width:42px">${c.acc.toFixed(1)}%</span>
+        </div>
+      </td>
+      <td class="mono" style="font-size:0.72rem;color:var(--fg2)">${c.prec.toFixed(3)}</td>
+      <td class="mono" style="font-size:0.72rem;color:var(--fg2)">${c.rec.toFixed(3)}</td>
+      <td class="mono" style="font-size:0.72rem;color:var(--fg2)">${c.f1.toFixed(3)}</td>
+    </tr>
+  `);
+});
+</script>
